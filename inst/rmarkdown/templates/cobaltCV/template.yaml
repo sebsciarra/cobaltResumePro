@@ -1,0 +1,4 @@
+name: cobaltCV
+description: >
+   Generates CVs and résumé according to cobal theme.
+create_dir: FALSE
