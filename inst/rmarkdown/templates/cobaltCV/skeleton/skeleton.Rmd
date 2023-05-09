@@ -2,13 +2,12 @@
 title: "cobaltCV"
 author: "Your Name"
 date: "The Date"
-output: pdf_document:
-  template: 'cobaltV.tex'
+output: 
+  pdf_document:
+    template: "cobaltCV.tex"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 ## Adding an RMarkdown Template
 
