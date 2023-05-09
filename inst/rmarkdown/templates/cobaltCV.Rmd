@@ -1,0 +1,11 @@
+---
+title: "Cobalt CV"
+output:
+  pdf_document:
+    template: 'cobaltCV.tex'
+---
+
+# Introduction
+
+This is my document.
+
