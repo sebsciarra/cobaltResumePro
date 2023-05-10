@@ -1,7 +1,60 @@
 \documentclass{cobaltCV}
 
 
+%\definecolor{myblue}{RGB}{0,0,128}
+%\newlength{\leftcolumnwidth}
+%\newlength{\rightcolumnwidth}
+%\setlength{\leftcolumnwidth}{0.25\textwidth}
+%\setlength{\rightcolumnwidth}{0.75\textwidth}
+
+
+
 \begin{document}
+
+\begin{paracol}{2}
+
+\begin{minipage}{\leftcolumnwidth}
+      \color{white}
+
+        This is some text.
+      \end{minipage}
+
+\switchcolumn
+
+$body$
+\end{paracol}
+
+\end{document}
+
+
+%\newgeometry{left=0cm,right=0cm,top=0cm,bottom=0cm}
+%\begin{multicols}{2}
+%    \noindent\begin{tcolorbox}[colback = myblue,
+%                               colframe = myblue,
+%                               height = 2\textheight,
+%                               width = \leftcolumnwidth,
+%                               top = 0pt,
+%                               bottom = 0pt,
+%                               boxsep = 0pt,
+%                               sharp corners,
+%                               nobeforeafter]
+%     \begin{minipage}{\leftcolumnwidth}
+%      \color{white}
+%
+%        This is some text.
+%      \end{minipage}
+%    \end{tcolorbox}
+%
+%  \columnbreak
+%  \restoregeometry
+%
+%  {\begin{minipage}{\rightcolumnwidth}
+%    $body$
+%  \end{minipage}}
+%
+%\end{multicols}
+%
 
 
 \end{document}
+
