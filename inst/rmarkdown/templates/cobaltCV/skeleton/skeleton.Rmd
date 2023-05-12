@@ -1,12 +1,33 @@
 ---
-title: "cobaltCV"
-author: "Your Name"
+name: "Sebastian Sciarra"
+position: "PhD Candidate"
 date: "The Date"
 output: 
   pdf_document:
     template: "cobaltCV.tex"
+githubLink: "github.com/sebsciarra"
+githubName: "sebsciarra"
+personalWebsite: "sebastiansciarra.com"
+linkedinName: "Sebastian Sciarra"
+linkedinLink: "linkedin.com/in/sebsciarra"
+email: "seb\\@sciarra.io"
 ---
 
 
-## Adding an RMarkdown Template
+
+
+
+
+# Education
+
+\lipsum[1-3]
+
+# Employment 
+
+# Data Science Projects
+
+# Grants & Scholarships 
+
+# Certifiications
+
 

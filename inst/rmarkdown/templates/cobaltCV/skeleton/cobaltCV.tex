@@ -1,60 +1,52 @@
+
 \documentclass{cobaltCV}
 
+% Check whether YAML variables are defined and then create a LaTeX command that prints them
+$if(githubName)$
+\githubName{$githubName$}
+$endif$
 
-%\definecolor{myblue}{RGB}{0,0,128}
-%\newlength{\leftcolumnwidth}
-%\newlength{\rightcolumnwidth}
-%\setlength{\leftcolumnwidth}{0.25\textwidth}
-%\setlength{\rightcolumnwidth}{0.75\textwidth}
+$if(githubLink)$
+\githubLink{$githubLink$}
+$endif$
 
+$if(personalWebsite)$
+\personalWebsite{$personalWebsite$}
+$endif$
+
+$if(linkedinName)$
+\linkedinName{$linkedinName$}
+$endif$
+
+$if(linkedinLink)$
+\linkedinLink{$linkedinLink$}
+$endif$
+
+$if(email)$
+\email{$email$}
+$endif$
+
+$if(name)$
+\name{$name$}
+$endif$
+
+$if(position)$
+\position{$position$}
+$endif$
+
+\renewcommand{\familydefault}{qhv}
 
 
 \begin{document}
 
-\begin{paracol}{2}
+  \thispagestyle{cobaltHeader}
 
-\begin{minipage}{\leftcolumnwidth}
-      \color{white}
+  \setstretch{2}
+  \section{testing}
 
-        This is some text.
-      \end{minipage}
-
-\switchcolumn
-
-$body$
-\end{paracol}
+  $body$
+  \lipsum[1-15]
 
 \end{document}
 
-
-%\newgeometry{left=0cm,right=0cm,top=0cm,bottom=0cm}
-%\begin{multicols}{2}
-%    \noindent\begin{tcolorbox}[colback = myblue,
-%                               colframe = myblue,
-%                               height = 2\textheight,
-%                               width = \leftcolumnwidth,
-%                               top = 0pt,
-%                               bottom = 0pt,
-%                               boxsep = 0pt,
-%                               sharp corners,
-%                               nobeforeafter]
-%     \begin{minipage}{\leftcolumnwidth}
-%      \color{white}
-%
-%        This is some text.
-%      \end{minipage}
-%    \end{tcolorbox}
-%
-%  \columnbreak
-%  \restoregeometry
-%
-%  {\begin{minipage}{\rightcolumnwidth}
-%    $body$
-%  \end{minipage}}
-%
-%\end{multicols}
-%
-
-
-\end{document}
 

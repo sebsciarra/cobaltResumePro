@@ -25,7 +25,6 @@
 
 %preliminary declarations (set defaults of already-existing classes)
 \LoadClass[]{article}
-\RequirePackage{xcolor}
 
 
 
@@ -34,31 +33,89 @@
 %-------------------------------------------------------------------------------
 \RequirePackage{multicol}
 \RequirePackage{xcolor}
-
 \RequirePackage{geometry}
-\geometry{
-  left=0.5cm,
-  right=2.5cm,
-  top=2.5cm,
-  bottom=1cm,
-}
-
-\RequirePackage{hyperref}
-\RequirePackage{tcolorbox} %needed for coloring background of left column of page
+\RequirePackage[breaklinks=true, hidelinks]{hyperref}
 \RequirePackage{paracol}
-\RequirePackage{background}
+\RequirePackage{tikz}
+\RequirePackage[color=white,opacity=1,angle=0,scale=1]{background}
+\RequirePackage{fontawesome5}
+\RequirePackage{fancyhdr}
+\RequirePackage{setspace}
+\RequirePackage{lipsum}
+\RequirePackage{calc}
 
 
 \definecolor{bandcolor}{HTML}{002241}
-\newlength{\leftcolumnwidth}
-\newlength{\rightcolumnwidth}
-\setlength{\leftcolumnwidth}{0.4\textwidth}
-\setlength{\rightcolumnwidth}{0.6\textwidth}
+\definecolor{homecolor}{HTML}{d170c7}
+\definecolor{simcolor}{HTML}{C7547D}
+\definecolor{techcolor}{HTML}{33c304}
+\definecolor{codecolor}{HTML}{e38f01}
+\definecolor{resourcescolor}{HTML}{52aafa}
+\definecolor{aboutcolor}{HTML}{d4bd04}
 
+
+\newlength{\leftcolumnwidth}
+\setlength{\leftcolumnwidth}{0.35\textwidth}
+
+
+\newcommand*{\position}[1]{\def\@position{#1}}
+\newcommand*{\name}[1]{\def\@name{#1}}
+\newcommand*{\email}[1]{\def\@email{#1}}
+
+
+%Personal website variables
+\def\personalWebsite#1{\gdef \@personalWebsite{#1} \@personalWebsitetrue}
+\global\let\@personalWebsite\@empty
+\newif\if@personalWebsite
+\@personalWebsitefalse
+
+
+%Github variables
+\def\githubName#1{\gdef \@githubName{#1} \@githubNametrue}
+\global\let\@githubName\@empty
+\newif\if@githubName
+\@githubNamefalse
+
+\def\githubLink#1{\gdef \@githubLink{#1} \@githubLinktrue}
+\global\let\@githubLink\@empty
+\newif\if@githubLink
+\@githubLinkfalse
+
+%LinkedIn variables
+\def\linkedinName#1{\gdef \@linkedinName{#1} \@linkedinNametrue}
+\global\let\@linkedinName\@empty
+\newif\if@linkedinName
+\@linkedinNamefalse
+
+\def\linkedinLink#1{\gdef \@linkedinLink{#1} \@linkedinLinktrue}
+\global\let\@linkedinLink\@empty
+\newif\if@linkedinLink
+\@linkedinLinkfalse
+
+
+\newcommand{\printSocial}[4]{
+  \ifx#1\@empty\else
+    \ifx#2\@empty\else
+      \href{https://#1}{\textcolor{#3}{#4\ #2}}  \\
+      \vspace{.6cm}
+    \fi
+  \fi
+}
+
+
+%%repeat left band on every page with skills & socials
+%%https://tex.stackexchange.com/questions/270195/how-to-repeat-box-every-page
 \backgroundsetup{
-    contents={\begin{tikzpicture}[remember picture, overlay]
-        \fill [bandcolor] (current page.north west) rectangle ++(0.3\textwidth,-2\textheight);
-    \end{tikzpicture}},
+    contents={
+      \begin{tikzpicture}[remember picture, overlay]
+        \fill [bandcolor] (current page.north west) rectangle ++(\leftcolumnwidth,-2\textheight);
+        \node[font=\ttfamily\fontsize{11.5pt}{11.5pt}\selectfont, text width=\leftcolumnwidth, align = right]
+          (socials)
+           at ([xshift = 2.5cm, yshift=-2cm]current page.west)
+           {\printSocial{\@personalWebsite}{\@personalWebsite}{homecolor}{\faHome}
+            \printSocial{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare}
+            \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin}};
+      \end{tikzpicture}},
     opacity=1,
     scale=1,
     angle=0,
@@ -68,15 +125,53 @@
 
 
 
-
-
-
-
-
-
+%% Define page style
+\fancypagestyle{cobaltHeader}{%
+  \fancyhf{}% Clear header/footer
+  \renewcommand{\headrulewidth}{0pt}% Remove header rule
+  \renewcommand{\footrulewidth}{0pt}% Remove footer rule
+  \chead{% Centered header
+     \raggedleft
+       \setstretch{2}%
+       \textcolor{bandcolor}{\fontfamily{phv}\fontsize{25}{25}\selectfont\bfseries{\@name}} \\
+       \textcolor{bandcolor}{\fontfamily{qhv}\fontsize{10}{10}\selectfont\@position}\\
+       \ttfamily\fontsize{11pt}{11pt}\selectfont\textcolor{simcolor}{\href{\@email}{\faEnvelope\ \@email}}
+  }%
+  \setlength{\headheight}{3cm}
+}
 
 %mandatory components that all LaTeX classes must specify
 \renewcommand{\normalsize}{\fontsize{9}{10}\selectfont}
 \setlength{\textwidth}{17.5cm}
-\setlength{\textheight}{22cm}
+\setlength{\textheight}{24cm}
 \setcounter{secnumdepth}{0}
+%\usepackage{showframe}%
+
+
+\geometry{
+  left=\leftcolumnwidth + 1cm,
+  right=1cm,
+  top=2cm,
+  bottom=2.5cm,
+  includefoot = true,
+  footskip = 3.5cm
+}
+\columnratio{0.25}
+
+
+\usepackage{titlesec}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\usepackage[normalem]{ulem}
+%\sectionfont{\raggedright\bfseries\sectionrule{0pt}{0pt}{-4pt}{1pt}}
+
+
+\renewcommand{\section}[1]{%
+  \noindent\begin{tikzpicture}
+    \node[font=\fontfamily{phv}\fontsize{12}{12}\selectfont\bfseries, inner sep=0pt, text width=\textwidth, align=left] (A) {\textbf{#1}};
+    \draw[line width = 0.75pt, draw = bandcolor]([yshift=-0.25ex]A.south west) -- ([yshift=-0.25ex]A.south east) -- ++(0em,0em) node[inner sep=0pt,outer sep=0pt,font=\tiny, yshift = 0.28ex, text = bandcolor] {$\blacksquare$} -- ++(-\textwidth,0) -- cycle;
+  \end{tikzpicture}\par%
+}
+
+
+
