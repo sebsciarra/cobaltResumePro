@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.1)  12 MAY 2023 02:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.1)  12 MAY 2023 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -703,7 +703,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.68 \global\let\@pe
+l.69 \global\let\@pe
                     rsonalWebsite\@empty
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -715,7 +715,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.75 \global\let\@gi
+l.76 \global\let\@gi
                     thubName\@empty
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -727,7 +727,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.80 \global\let\@gi
+l.81 \global\let\@gi
                     thubLink\@empty
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -739,7 +739,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.86 \global\let\@li
+l.87 \global\let\@li
                     nkedinName\@empty
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -751,7 +751,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 \global\let\@li
+l.92 \global\let\@li
                     nkedinLink\@empty
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -763,46 +763,151 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.162 \usepackage{
+l.106 \usepackage{
+                  xstring}
+\usepackage may only appear in the document preamble, i.e.,
+between \documentclass and \begin{document}.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+Runaway argument?
+{ contents={ \begin {tikzpicture}[remember picture, overlay] \fill [b\ETC.
+! Paragraph ended before \backgroundsetup  was complete.
+<to be read again> 
+                   \par 
+l.124 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Undefined control sequence.
+l.125         \node
+                   [font=\ttfamily\fontsize{11.5pt}{11.5pt}\selectfont, text...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125         \node[
+                    font=\ttfamily\fontsize{11.5pt}{11.5pt}\selectfont, text...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Argument of reserved@f has an extra }.
+<inserted text> 
+                par 
+l.132       \end{tikzpicture}}
+                              ,
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+@nnil ifx external@font @empty @latex@error {Font expandafter string ETC.
+! Paragraph ended before reserved@f was complete.
+<to be read again> 
+                   par 
+l.132       \end{tikzpicture}}
+                              ,
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra }, or forgotten endgroup.
+<recently read> }
+                 
+l.132       \end{tikzpicture}}
+                              ,
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Missing begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.132       \end{tikzpicture}},
+                               
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Extra }, or forgotten endgroup.
+l.138 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: usepackage before documentclass.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.177 \usepackage{
                   titlesec}
-\usepackage may only appear in the document preamble, i.e.,
-between \documentclass and \begin{document}.
+usepackage may only appear in the document preamble, i.e.,
+between documentclass and begin{document}.
 
 
-! LaTeX Error: \usepackage before \documentclass.
+! LaTeX Error: usepackage before documentclass.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.163 \usepackage{
+l.178 \usepackage{
                   amssymb}
-\usepackage may only appear in the document preamble, i.e.,
-between \documentclass and \begin{document}.
+usepackage may only appear in the document preamble, i.e.,
+between documentclass and begin{document}.
 
 
-! LaTeX Error: \usepackage before \documentclass.
+! LaTeX Error: usepackage before documentclass.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.164 \usepackage{
+l.179 \usepackage{
                   sectsty}
-\usepackage may only appear in the document preamble, i.e.,
-between \documentclass and \begin{document}.
+usepackage may only appear in the document preamble, i.e.,
+between documentclass and begin{document}.
 
 
-! LaTeX Error: \usepackage before \documentclass.
+! LaTeX Error: usepackage before documentclass.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.165 \usepackage[normalem]{
+l.180 \usepackage[normalem]{
                             ulem}
-\usepackage may only appear in the document preamble, i.e.,
-between \documentclass and \begin{document}.
+usepackage may only appear in the document preamble, i.e.,
+between documentclass and begin{document}.
 
 )
 ! Emergency stop.
@@ -812,11 +917,11 @@ between \documentclass and \begin{document}.
 
  
 Here is how much of TeX's memory you used:
- 23179 strings out of 478268
- 451581 string characters out of 5846348
- 786787 words of memory out of 5000000
- 41074 multiletter control sequences out of 15000+600000
+ 23203 strings out of 478268
+ 452201 string characters out of 5846348
+ 783754 words of memory out of 5000000
+ 41095 multiletter control sequences out of 15000+600000
  469259 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 100i,0n,104p,455b,89s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 100i,0n,104p,455b,148s stack positions out of 10000i,1000n,20000p,200000b,200000s
 !  ==> Fatal error occurred, no output PDF file produced!

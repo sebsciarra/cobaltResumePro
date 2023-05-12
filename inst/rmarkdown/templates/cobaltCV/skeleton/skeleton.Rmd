@@ -11,6 +11,7 @@ personalWebsite: "sebastiansciarra.com"
 linkedinName: "Sebastian Sciarra"
 linkedinLink: "linkedin.com/in/sebsciarra"
 email: "seb\\@sciarra.io"
+skills: "R, SQL, Python, Bash, HTML, JavaScript, CSS, Machine learning, Data science, Data visualization, Knowledge translation"
 ---
 
 
@@ -18,16 +19,20 @@ email: "seb\\@sciarra.io"
 
 
 
-# Education
+# \faUniversity\ Education
 
-\lipsum[1-3]
+## University fo Guelph
 
-# Employment 
+\lipsum[1-2]
 
-# Data Science Projects
+# \faSuitcase\ Employment 
 
-# Grants & Scholarships 
+Some arbitraty text.
 
-# Certifiications
+# \faCode\ Data Science Projects
+
+# \faGraduationCap\ Grants & Scholarships 
+
+# \faCertificate\ Certifications
 
 

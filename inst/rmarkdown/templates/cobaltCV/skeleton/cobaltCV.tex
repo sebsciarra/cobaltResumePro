@@ -34,18 +34,22 @@ $if(position)$
 \position{$position$}
 $endif$
 
-\renewcommand{\familydefault}{qhv}
+$if(skills)$
+\skills{$skills$}
+$endif$
 
+\renewcommand{\familydefault}{qhv}
+%\setlength{\headsep}{3cm}
 
 \begin{document}
 
-  \thispagestyle{cobaltHeader}
 
-  \setstretch{2}
-  \section{testing}
+  \thispagestyle{cobaltHeader}
+  \vspace*{0cm}
+  \setstretch{1.5}
+
 
   $body$
-  \lipsum[1-15]
 
 \end{document}
 

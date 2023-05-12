@@ -61,6 +61,7 @@
 \newcommand*{\position}[1]{\def\@position{#1}}
 \newcommand*{\name}[1]{\def\@name{#1}}
 \newcommand*{\email}[1]{\def\@email{#1}}
+\newcommand*{\skills}[1]{\def\@skills{#1}}
 
 
 %Personal website variables
@@ -102,17 +103,36 @@
   \fi
 }
 
+\usetikzlibrary{fit}
+\usepackage{xstring}
+
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+
+\usepackage{amsmath}
+\newcommand{\dotSubstitute}{%
+  \StrSubstitute{\@skills}{,}{\space$\cdot$}
+}
+
+
 
 %%repeat left band on every page with skills & socials
 %%https://tex.stackexchange.com/questions/270195/how-to-repeat-box-every-page
 \backgroundsetup{
     contents={
       \begin{tikzpicture}[remember picture, overlay]
-        \fill [bandcolor] (current page.north west) rectangle ++(\leftcolumnwidth,-2\textheight);
+        \fill [bandcolor] (current page.north west) rectangle ++(\leftcolumnwidth+0.25cm,-2\textheight);
+        \node[font=\ttfamily\fontsize{11.5pt}{11.5pt}\selectfont, text width=\leftcolumnwidth, align = right]
+          (skills)
+           at ([xshift = 2.75cm, yshift=7.64cm]current page.west)
+          {\parbox[t][0pt][t]{\linewidth}
+          {\raggedleft \ttfamily\fontsize{14pt}{14pt}\selectfont\bfseries\underline{Skills} \\ \ttfamily\fontsize{10.5pt}{10.5pt}\selectfont{\dotSubstitute}}};
         \node[font=\ttfamily\fontsize{11.5pt}{11.5pt}\selectfont, text width=\leftcolumnwidth, align = right]
           (socials)
-           at ([xshift = 2.5cm, yshift=-2cm]current page.west)
-           {\printSocial{\@personalWebsite}{\@personalWebsite}{homecolor}{\faHome}
+           at ([xshift = 2.75cm, yshift=-6cm]current page.west)
+           {
+            \printSocial{\@personalWebsite}{\@personalWebsite}{homecolor}{\faHome}
             \printSocial{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare}
             \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin}};
       \end{tikzpicture}},
@@ -140,12 +160,13 @@
   \setlength{\headheight}{3cm}
 }
 
+
 %mandatory components that all LaTeX classes must specify
 \renewcommand{\normalsize}{\fontsize{9}{10}\selectfont}
 \setlength{\textwidth}{17.5cm}
 \setlength{\textheight}{24cm}
 \setcounter{secnumdepth}{0}
-%\usepackage{showframe}%
+
 
 
 \geometry{
@@ -163,15 +184,18 @@
 \usepackage{amssymb}
 \usepackage{sectsty}
 \usepackage[normalem]{ulem}
+
 %\sectionfont{\raggedright\bfseries\sectionrule{0pt}{0pt}{-4pt}{1pt}}
 
 
-\renewcommand{\section}[1]{%
-  \noindent\begin{tikzpicture}
+\renewcommand{\section}[1]{%}
+\vspace{1cm}
+  \noindent \begin{tikzpicture}
     \node[font=\fontfamily{phv}\fontsize{12}{12}\selectfont\bfseries, inner sep=0pt, text width=\textwidth, align=left] (A) {\textbf{#1}};
     \draw[line width = 0.75pt, draw = bandcolor]([yshift=-0.25ex]A.south west) -- ([yshift=-0.25ex]A.south east) -- ++(0em,0em) node[inner sep=0pt,outer sep=0pt,font=\tiny, yshift = 0.28ex, text = bandcolor] {$\blacksquare$} -- ++(-\textwidth,0) -- cycle;
   \end{tikzpicture}\par%
 }
 
 
-
+%default color in document
+\color{bandcolor}
