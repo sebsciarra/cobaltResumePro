@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.1)  12 MAY 2023 16:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.1)  14 MAY 2023 21:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -750,56 +750,57 @@ LaTeX Warning: Command \underline  has changed.
 \ULC@box=\box120
 Package: ulem 2019/11/18
 \ULdepth=\dimen291
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip73
+\enit@outerparindent=\dimen292
+\enit@toks=\toks41
+\enit@inbox=\box121
+\enit@count@id=\count337
+\enitdp@description=\count338
 ))
-LaTeX Font Info:    Trying to load font information for OT1+qhv on input line 2
-7.
+LaTeX Font Info:    Trying to load font information for OT1+qhv on input line 3
+2.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/tex-gyre/ot1qhv.fd
 File: ot1qhv.fd 2009/09/25 v1.2 font definition file for OT1/qhv
 ) (./skeleton.aux)
 \openout1 = `skeleton.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count337
-\scratchdimen=\dimen292
-\scratchbox=\box121
-\nofMPsegments=\count338
-\nofMParguments=\count339
-\everyMPshowfont=\toks41
-\MPscratchCnt=\count340
-\MPscratchDim=\dimen293
-\MPnumerator=\count341
-\makeMPintoPDFobject=\count342
-\everyMPtoPDFconversion=\toks42
+\scratchcounter=\count339
+\scratchdimen=\dimen293
+\scratchbox=\box122
+\nofMPsegments=\count340
+\nofMParguments=\count341
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count342
+\MPscratchDim=\dimen294
+\MPnumerator=\count343
+\makeMPintoPDFobject=\count344
+\everyMPtoPDFconversion=\toks43
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-(/usr/local/texlive/2022/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
@@ -811,20 +812,20 @@ e
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: includefoot 
+* modes: includehead includefoot 
 * h-part:(L,W,R)=(178.95699pt, 406.88527pt, 28.45274pt)
-* v-part:(T,H,B)=(56.9055pt, 666.9326pt, 71.13188pt)
+* v-part:(T,H,B)=(28.45274pt, 738.0645pt, 28.45274pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=406.88527pt
-* \textheight=567.34796pt
+* \textheight=626.159pt
 * \oddsidemargin=106.687pt
 * \evensidemargin=106.687pt
-* \topmargin=-52.36449pt
-* \headheight=12.0pt
+* \topmargin=-43.81725pt
+* \headheight=56.9055pt
 * \headsep=25.0pt
 * \topskip=10.0pt
-* \footskip=99.58464pt
+* \footskip=30.0pt
 * \marginparwidth=65.0pt
 * \marginparsep=11.0pt
 * \columnsep=10.0pt
@@ -838,7 +839,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 27.
+Package hyperref Info: Link coloring OFF on input line 32.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -848,149 +849,200 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count343
+\c@section@level=\count345
 )
-LaTeX Info: Redefining \ref on input line 27.
-LaTeX Info: Redefining \pageref on input line 27.
-LaTeX Info: Redefining \nameref on input line 27.
+LaTeX Info: Redefining \ref on input line 32.
+LaTeX Info: Redefining \pageref on input line 32.
+LaTeX Info: Redefining \nameref on input line 32.
 (./skeleton.out) (./skeleton.out)
 \@outlinefile=\write4
 \openout4 = `skeleton.out'.
 
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 3
-6.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ot1phv.fd
-File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
-)
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree3 on i
-nput line 36.
+nput line 41.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomefree3.fd
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (3.48334pt too wide) in paragraph at lines 36--36
-[] 
+Overfull \hbox (3.48334pt too wide) in paragraph at lines 41--42
+[]
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+qhv on input line 4
+3.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tex-gyre/ts1qhv.fd
+File: ts1qhv.fd 2009/09/25 v1.2 font definition file for TS1/qhv
+)
+Overfull \hbox (0.39563pt too wide) in paragraph at lines 47--47
+\OT1/qhv/b/n/11 Honours BSc, Psy-chol-ogy, Neu-ro-science & Be-haviour 
  []
 
 
-Overfull \hbox (3.48334pt too wide) in paragraph at lines 44--44
-[] 
+Overfull \hbox (3.48334pt too wide) in paragraph at lines 50--51
+[]
  []
 
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree0 on i
-nput line 50.
+nput line 61.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomefree0.fd
 )
-Overfull \hbox (3.48334pt too wide) in paragraph at lines 50--50
-[] 
+Overfull \hbox (3.48334pt too wide) in paragraph at lines 61--62
+[]
  []
 
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
-nput line 54.
+nput line 67.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd
 )
-Overfull \hbox (3.48334pt too wide) in paragraph at lines 54--54
-[] 
- []
 
+Package fancyhdr Warning: \headheight is too small (56.9055pt): 
+(fancyhdr)                Make it at least 67.36778pt, for example:
+(fancyhdr)                \setlength{\headheight}{67.36778pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
-Overfull \hbox (3.48334pt too wide) in paragraph at lines 57--57
-[] 
- []
+(fancyhdr)                \addtolength{\topmargin}{-10.46228pt}.
 
-
-LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <11.5> not available
-(Font)              size <12> substituted on input line 59.
-
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 59.
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 59.
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.5> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 59.
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 59.
+(Font)              size <10.95> substituted on input line 67.
 
-LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 59.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 67.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 67.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.5> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 67.
+
+LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 67.
+
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 67.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 59.
+(Font)              size <10.95> substituted on input line 67.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 59.
+(Font)              size <10.95> substituted on input line 67.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 59.
+(Font)              size <10.95> substituted on input line 67.
 
 LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on
- input line 59.
+ input line 67.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomebrands0.
 fd)
-LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <11.5> no
-t available
+LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <12> not 
+available
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
-n input line 59.
+n input line 67.
 
-Underfull \hbox (badness 2744) has occurred while \output is active
- [][][]\U/fontawesomebrands0/regular/n/11.5 © \OT1/cmtt/m/n/12 sebsciarra[][]
+Underfull \hbox (badness 2698) has occurred while \output is active
+ [][][]\U/fontawesomebrands0/regular/n/12 © \OT1/cmtt/m/n/12 sebsciarra[][]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][]\OT1/cmtt/m/n/9 May 2023[]
  []
 
 [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Underfull \hbox (badness 2744) has occurred while \output is active
- [][][]\U/fontawesomebrands0/regular/n/11.5 © \OT1/cmtt/m/n/12 sebsciarra[][]
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
+
+ []
+
+
+Overfull \hbox (3.48334pt too wide) in paragraph at lines 77--78
+[]
+ []
+
+
+Overfull \hbox (3.48334pt too wide) in paragraph at lines 80--81
+[]
+ []
+
+
+Overfull \hbox (3.48334pt too wide) in paragraph at lines 83--84
+[]
+ []
+
+
+Overfull \hbox (3.48334pt too wide) in paragraph at lines 86--87
+[]
+ []
+
+
+Overfull \hbox (3.48334pt too wide) in paragraph at lines 89--90
+[]
+ []
+
+
+Overfull \hbox (3.48334pt too wide) in paragraph at lines 92--94
+[]
+ []
+
+
+Underfull \hbox (badness 2698) has occurred while \output is active
+ [][][]\U/fontawesomebrands0/regular/n/12 © \OT1/cmtt/m/n/12 sebsciarra[][]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][]\OT1/cmtt/m/n/9 May 2023[]
  []
 
 [2] (./skeleton.aux)
 
 LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 0.5pt have occurred.
+(Font)              up to 0.45pt have occurred.
 
 Package rerunfilecheck Info: File `skeleton.out' has not changed.
-(rerunfilecheck)             Checksum: 0E94415FDF91EE3CA096F4574CFEA372;150.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26634 strings out of 478268
- 504313 string characters out of 5846348
- 853349 words of memory out of 5000000
- 44381 multiletter control sequences out of 15000+600000
- 497607 words of font info for 78 fonts, out of 8000000 for 9000
+ 27083 strings out of 478268
+ 511820 string characters out of 5846348
+ 871829 words of memory out of 5000000
+ 44814 multiletter control sequences out of 15000+600000
+ 523729 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,18n,118p,456b,1395s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 115i,18n,118p,516b,1612s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free0.enc
-}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/tex-gyre/q-rm.enc}{/usr/lo
-cal/texlive/2022/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free3.enc}{/usr/loc
-al/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2022
-/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}{/usr/local/texlive/202
-2/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}</usr/local/texlive/2022
-/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb></us
-r/local/texlive/2022/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Fre
-e-Solid.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-tt12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbol
-s/msam5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex-gyre/qhv
-b.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex-gyre/qhvr.pfb>
-</usr/local/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on skeleton.pdf (2 pages, 129894 bytes).
+}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/l
+ocal/texlive/2022/texmf-dist/fonts/enc/dvips/tex-gyre/q-rm.enc}{/usr/local/texl
+ive/2022/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free3.enc}{/usr/local/texli
+ve/2022/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}{/usr/local/texl
+ive/2022/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}</usr/local/texli
+ve/2022/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.p
+fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/fontawesome5/FontAwes
+ome5Free-Solid.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfo
+nts/cmextra/cmbsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmtt12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmtt9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfon
+ts/symbols/msam5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex
+-gyre/qhvb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex-gyre/
+qhvr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex-gyre/qhvri.
+pfb>
+Output written on skeleton.pdf (2 pages, 159600 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 108 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

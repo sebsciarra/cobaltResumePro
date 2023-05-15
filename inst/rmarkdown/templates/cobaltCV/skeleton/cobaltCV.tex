@@ -10,6 +10,10 @@ $if(githubLink)$
 \githubLink{$githubLink$}
 $endif$
 
+$if(date)$
+\date{$date$}
+$endif$
+
 $if(personalWebsite)$
 \personalWebsite{$personalWebsite$}
 $endif$
@@ -40,16 +44,21 @@ $endif$
 
 \renewcommand{\familydefault}{qhv}
 %\setlength{\headsep}{3cm}
+\usetikzlibrary{fit}
+
+\renewcommand{\rmdefault}{phv}
 
 \begin{document}
 
 
   \thispagestyle{cobaltHeader}
-  \vspace*{0cm}
+
+  \vspace*{1cm}
   \setstretch{1.5}
 
-
   $body$
+  \pagestyle{cobaltFooter}
+
 
 \end{document}
 
