@@ -17,7 +17,7 @@
 %-------------------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{cobaltCV}[2023/05/08]
+\ProvidesClass{cobaltCoverLetter}[2023/05/08]
 
 %-------------------------------------------------------------------------------
 %                Class options
@@ -46,6 +46,7 @@
 \RequirePackage{calc}
 
 
+
 \definecolor{bandcolor}{HTML}{002241}
 \definecolor{homecolor}{HTML}{d170c7}
 \definecolor{simcolor}{HTML}{C7547D}
@@ -53,6 +54,7 @@
 \definecolor{codecolor}{HTML}{e38f01}
 \definecolor{resourcescolor}{HTML}{52aafa}
 \definecolor{aboutcolor}{HTML}{d4bd04}
+
 
 \newlength{\leftcolumnwidth}
 \setlength{\leftcolumnwidth}{0.35\textwidth}
@@ -94,12 +96,19 @@
 \newif\if@linkedinLink
 \@linkedinLinkfalse
 
+%header variables (i.e., recruiter name, company, address, etc.)
+\newcommand*{\recruiterName}[1]{\def\@recruiterName{#1}}
+\newcommand*{\organization}[1]{\def\@organization{#1}}
+\newcommand*{\organizationStreet}[1]{\def\@organizationStreet{#1}}
+\newcommand*{\organizationCityPostal}[1]{\def\@organizationCityPostal{#1}}
+
+
 
 \newcommand{\printSocial}[4]{
   \ifx#1\@empty\else
     \ifx#2\@empty\else
       \href{https://#1}{\textcolor{#3}{#4\ #2}}  \\
-      \vspace{.6cm}
+      \vspace{.4cm}
     \fi
   \fi
 }
@@ -115,31 +124,24 @@
 }
 
 
-
 %%repeat left band on every page with skills & socials
 %%https://tex.stackexchange.com/questions/270195/how-to-repeat-box-every-page
 \backgroundsetup{
     contents={
       \begin{tikzpicture}[remember picture, overlay]
         \fill [bandcolor] (current page.north west) rectangle ++(\leftcolumnwidth+0.25cm,-2\textheight);
-        \node[font=\ttfamily\fontsize{10.5pt}{10.5pt}\selectfont, text width=\leftcolumnwidth, align = right]
-          (skills)
-           at ([xshift = 2.75cm, yshift=7.97cm]current page.west) %8.08
-          {\parbox[t][0pt][t]{\linewidth}
-          {\raggedleft \setstretch{2} \ttfamily\fontsize{14pt}{14pt}\selectfont\bfseries\underline{Skills} \\ \ttfamily\fontsize{10.5pt}{10.5pt}\selectfont{\dotSubstitute}}};
-        \node[font=\ttfamily\fontsize{12pt}{12pt}\selectfont, text width=\leftcolumnwidth, align = right]
-          (socials)
-           at ([xshift = 2.75cm, yshift=-6cm]current page.west)
-           {
-            \ifnum\value{page}>1  \printSocial{\@email}{\@email}{simcolor}{\faEnvelope} \fi
-            \printSocial{\@personalWebsite}{\@personalWebsite}{homecolor}{\faHome}
-            \printSocial{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare}
-            \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin}
-            };
-        \node[font=\ttfamily\fontsize{9pt}{9pt}\selectfont, text width=\leftcolumnwidth, align = right]
-          (date)
-           at ([xshift = 2.75cm, yshift=-13cm]current page.west)
-           {\textcolor{aboutcolor}{\@date}};
+        \node[font=\fontfamily{phv}\fontsize{12pt}{12pt}\selectfont, text width=\leftcolumnwidth, align = right]
+          (name)
+           at ([xshift = 2.75cm, yshift=7.2cm]current page.west) %
+          %header
+          {{\fontsize{25pt}{25pt}\selectfont\bfseries\@firstName \\ \vspace*{0.4cm} \@lastName} \\ \vspace*{0.4cm}
+          \@position \\ \vspace*{0.3cm}
+          \rule{1cm}{1pt} \\ \vspace*{1.25cm}
+          %contact info
+          \ttfamily\fontsize{11pt}{11pt}\selectfont\textcolor{simcolor}{\href{\@email}{\faEnvelope\ \@email}} \\  \vspace{.4cm}
+          \printSocial{\@personalWebsite}{\@personalWebsite}{homecolor}{\faHome}
+          \printSocial{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare}
+          \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin}};
       \end{tikzpicture}},
     opacity=1,
     scale=1,
@@ -149,34 +151,39 @@
 }
 
 
-\newcommand{\sscvcobalt}{\textcolor{bandcolor}{\@lastName\ $\boldsymbol{\cdot}$ CV}}
+\newcommand{\sscvcobalt}{\textcolor{bandcolor}{\@lastName\ $\boldsymbol{\cdot}$ Cover letter}}
+
+
 
 %% Define page style
 \fancypagestyle{cobaltHeader}{%
   \fancyhf{}% Clear header/footer
+  %\fancyheadoffset[R]{-0.5\textwidth}
   \renewcommand{\headrulewidth}{0pt}% Remove header rule
   \renewcommand{\footrulewidth}{0pt}% Remove footer rule
    \fancyfoot[R]{\thepage}% Page number in bottom right
-  \fancyfoot[C]{\sscvcobalt}% SS \cdot CV in bottom middle
-  \chead{% Centered header
-     \raggedleft
-       \setstretch{2}%
-       \vspace*{1.25cm}
-       \textcolor{bandcolor}{\fontsize{25}{25}\selectfont\bfseries{\@firstName\ \@lastName}} \\
-       \textcolor{bandcolor}{\fontsize{10}{10}\selectfont\@position}\\ \vspace*{0.15cm}
-       \ttfamily\fontsize{11pt}{11pt}\selectfont\textcolor{simcolor}{\href{\@email}{\faEnvelope\ \@email}}
-  }%
+  %\fancyfoot[C]{\sscvcobalt}% SS \cdot CV in bottom middle
+\lhead{% Left header
+  \setstretch{1.5}
+  \fontsize{9pt}{9pt}\selectfont
+  \rule{5cm}{1pt} \\
+   \@date \\ [0.5cm]
+  {\bfseries \@recruiterName} \\
+   \@organization \\
+  \@organizationStreet \\
+   \@organizationCityPostal \\
+}%
 }
 
 
-\fancypagestyle{cobaltFooter}{%
-  %\setlength{\headheight}{0cm}
-  \fancyhf{}% Clear header/footer
-  \renewcommand{\headrulewidth}{0pt}% Remove header rule
-  \renewcommand{\footrulewidth}{0pt}% Remove footer rule
-  \fancyfoot[R]{\thepage}% Page number in bottom right
-  \fancyfoot[C]{\sscvcobalt}% SS \cdot CV in bottom middle
-}
+%\fancypagestyle{cobaltFooter}{%
+%  %\setlength{\headheight}{0cm}
+%  \fancyhf{}% Clear header/footer
+%  \renewcommand{\headrulewidth}{0pt}% Remove header rule
+%  \renewcommand{\footrulewidth}{0pt}% Remove footer rule
+%  \fancyfoot[R]{\thepage}% Page number in bottom right
+%  \fancyfoot[C]{\sscvcobalt}% SS \cdot CV in bottom middle
+%}
 
 
 %mandatory components that all LaTeX classes must specify
@@ -190,9 +197,9 @@
 \geometry{
   left=\leftcolumnwidth + 1cm,
   right=1cm,
-  top=1.5cm,
+  top=2.5cm,
   bottom=1cm,
-  includehead = false,
+  includehead = true,
   includefoot = true
 }
 

@@ -1,16 +1,16 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.1)  18 MAY 2023 12:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.1)  18 MAY 2023 12:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**cobaltCV.cls
-(./cobaltCV.cls
+**cobaltCoverLetter.cls
+(./cobaltCoverLetter.cls
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 
 LaTeX Warning: You have requested package `',
-               but the package provides `cobaltCV'.
+               but the package provides `cobaltCoverLetter'.
 
-Package: cobaltCV 2023/05/08
+Package: cobaltCoverLetter 2023/05/08
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo
@@ -703,7 +703,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.70 \global\let\@pe
+l.72 \global\let\@pe
                     rsonalWebsite\@empty
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -715,7 +715,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 \global\let\@gi
+l.79 \global\let\@gi
                     thubName\@empty
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -727,7 +727,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.82 \global\let\@gi
+l.84 \global\let\@gi
                     thubLink\@empty
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -739,7 +739,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.88 \global\let\@li
+l.90 \global\let\@li
                     nkedinName\@empty
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -751,7 +751,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 \global\let\@li
+l.95 \global\let\@li
                     nkedinLink\@empty
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -768,7 +768,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.108 \usepackage{
+l.110 \usepackage{
                   xstring}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -780,7 +780,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.111 \usepackage{
+l.113 \usepackage{
                   amsmath}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -792,7 +792,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.186 \usepackage[]{
+l.187 \usepackage[]{
                     footnote}  %removes indentation in footnotes
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -804,7 +804,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.201 \usepackage{
+l.202 \usepackage{
                   titlesec}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -816,7 +816,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.202 \usepackage{
+l.203 \usepackage{
                   amssymb}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -828,7 +828,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.203 \usepackage{
+l.204 \usepackage{
                   sectsty}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -840,7 +840,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.204 \usepackage[normalem]{
+l.205 \usepackage[normalem]{
                             ulem}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -852,7 +852,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.221 \usepackage{
+l.222 \usepackage{
                   enumitem}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -864,24 +864,24 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.222 \usepackage{
+l.223 \usepackage{
                   xparse}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
 )
 ! Emergency stop.
-<*> cobaltCV.cls
-                
+<*> cobaltCoverLetter.cls
+                         
 *** (job aborted, no legal \end found)
 
  
 Here is how much of TeX's memory you used:
  23214 strings out of 478268
- 452430 string characters out of 5846348
- 792763 words of memory out of 5000000
+ 452466 string characters out of 5846348
+ 791821 words of memory out of 5000000
  41106 multiletter control sequences out of 15000+600000
  469259 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 100i,0n,104p,455b,89s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 100i,0n,104p,464b,89s stack positions out of 10000i,1000n,20000p,200000b,200000s
 !  ==> Fatal error occurred, no output PDF file produced!

@@ -1,5 +1,5 @@
 
-\documentclass{cobaltCV}
+\documentclass{cobaltCoverLetter}
 
 % Check whether YAML variables are defined and then create a LaTeX command that prints them
 $if(githubName)$
@@ -46,6 +46,24 @@ $if(skills)$
 \skills{$skills$}
 $endif$
 
+%company & recruiter info
+$if(recruiterName)$
+\recruiterName{$recruiterName$}
+$endif$
+
+$if(organization)$
+\organization{$organization$}
+$endif$
+
+$if(organizationStreet)$
+\organizationStreet{$organizationStreet$}
+$endif$
+
+$if(organizationCityPostal)$
+\organizationCityPostal{$organizationCityPostal$}
+$endif$
+
+
 
 %load additional latex packages needed within document
 $for(header-includes)$
@@ -59,13 +77,9 @@ $endfor$
 \renewcommand{\rmdefault}{phv}
 \begin{document}
 
-
-
   \thispagestyle{cobaltHeader}
-  \pagestyle{cobaltFooter}
-  \vspace*{3.5cm}
-
-  \setstretch{1.5}
+   \vspace*{3.3cm}
+  \setstretch{1.25}
 
   $body$
 
