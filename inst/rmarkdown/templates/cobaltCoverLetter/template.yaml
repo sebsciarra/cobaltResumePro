@@ -1,0 +1,4 @@
+name: cobaltCoverLetter
+description: >
+   Generates cover letters according to the cobalt theme.
+create_dir: FALSE

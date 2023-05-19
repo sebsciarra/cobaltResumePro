@@ -23,7 +23,7 @@ merge_CV_cover_letter <- function(input, ...) {
         quiet = TRUE),
 
       rmarkdown::render(
-        input = here::here("inst/rmarkdown/templates/cobaltCoverLetter/skeleton/skeleton_cover.Rmd"),
+        input = here::here("inst/rmarkdown/templates/cobaltCoverLetter/skeleton/skeleton.Rmd"),
         output_file = "cover_letter.pdf",
         envir = globalenv(),
         quiet = TRUE)
