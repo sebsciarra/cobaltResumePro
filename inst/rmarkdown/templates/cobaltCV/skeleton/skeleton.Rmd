@@ -5,7 +5,7 @@ position: "Data scientist"
 date: "May 2023"
 output: 
   pdf_document:
-    template: "cobaltCV.tex"
+    template: "template.tex"
 #hyperlinks
 githubLink: "github.com/sebsciarra"
 githubName: "sebsciarra"
