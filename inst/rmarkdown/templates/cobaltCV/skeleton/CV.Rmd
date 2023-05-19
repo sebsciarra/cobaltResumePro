@@ -5,7 +5,7 @@ position: "Data scientist"
 date: "May 2023"
 output: 
   pdf_document:
-    template: "cobaltCV.tex"
+    template: "resources/cobaltCV.tex"
 #hyperlinks
 githubLink: "github.com/sebsciarra"
 githubName: "sebsciarra"
@@ -18,7 +18,7 @@ citizenship: "Canadian"
 header-includes: 
   - \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 #leave knit YAML variable uncommented if you want to join the CV and cover letter in one PDF
-knit: cobaltCV::merge_CV_cover_letter
+#knit: cobaltCV::merge_CV_cover_letter
 ---
 
 ```{r echo=F, message=F, warning=F, message = F}
