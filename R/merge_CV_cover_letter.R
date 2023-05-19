@@ -29,11 +29,14 @@ merge_CV_cover_letter <- function(input, ...) {
         quiet = TRUE)
     )
 
-    pdftools::pdf_combine(input = c("CV.pdf", "cover_letter.pdf"),
+    pdftools::pdf_combine(input = unlist(pdf_filenames),
                           output = 'CV_cover_letter.pdf')
 
     file.remove(unlist(pdf_filenames))
 
+
     rstudioapi::viewer(here::here("inst/rmarkdown/templates/cobaltCV/skeleton/CV_cover_letter.pdf"))
 
 }
+
+

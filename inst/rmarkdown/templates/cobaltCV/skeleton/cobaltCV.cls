@@ -64,6 +64,7 @@
 \newcommand*{\lastName}[1]{\def\@lastName{#1}}
 \newcommand*{\email}[1]{\def\@email{#1}}
 \newcommand*{\skills}[1]{\def\@skills{#1}}
+\newcommand*{\citizenship}[1]{\def\@citizenship{#1}}
 
 %Personal website variables
 \def\personalWebsite#1{\gdef \@personalWebsite{#1} \@personalWebsitetrue}
@@ -95,14 +96,24 @@
 \@linkedinLinkfalse
 
 
-\newcommand{\printSocial}[4]{
+\newcommand{\printSocial}[3]{
   \ifx#1\@empty\else
     \ifx#2\@empty\else
-      \href{https://#1}{\textcolor{#3}{#4\ #2}}  \\
-      \vspace{.6cm}
+      \href{https://#1}{\textcolor{#3}{#2}}
+     % \vspace{.6cm}
     \fi
   \fi
 }
+
+\newcommand{\printIcon}[4]{
+  \ifx#1\@empty\else
+    \ifx#2\@empty\else
+      \href{https://#1}{\textcolor{#3}{\fontsize{14}{14}\selectfont#4}}
+      %\vspace{.6cm}
+    \fi
+  \fi
+}
+
 
 \usetikzlibrary{fit}
 \usepackage{xstring}
@@ -114,7 +125,7 @@
   \StrSubstitute{\@skills}{,}{\space$\cdot$}
 }
 
-
+\usepackage{array} %required for right alignment in tabular columns
 
 %%repeat left band on every page with skills & socials
 %%https://tex.stackexchange.com/questions/270195/how-to-repeat-box-every-page
@@ -122,24 +133,32 @@
     contents={
       \begin{tikzpicture}[remember picture, overlay]
         \fill [bandcolor] (current page.north west) rectangle ++(\leftcolumnwidth+0.25cm,-2\textheight);
-        \node[font=\ttfamily\fontsize{10.5pt}{10.5pt}\selectfont, text width=\leftcolumnwidth, align = right]
+        \node[font=\fontsize{10.5pt}{10.5pt}\selectfont, text width=\leftcolumnwidth, align = right]
           (skills)
-           at ([xshift = 2.75cm, yshift=7.97cm]current page.west) %8.08
+           at ([xshift = 2.75cm, yshift=8.28cm]current page.west) %8.08
           {\parbox[t][0pt][t]{\linewidth}
-          {\raggedleft \setstretch{2} \ttfamily\fontsize{14pt}{14pt}\selectfont\bfseries\underline{Skills} \\ \ttfamily\fontsize{10.5pt}{10.5pt}\selectfont{\dotSubstitute}}};
-        \node[font=\ttfamily\fontsize{12pt}{12pt}\selectfont, text width=\leftcolumnwidth, align = right]
+          {\raggedleft \setstretch{2} \fontsize{14pt}{14pt}\selectfont\underline{Skills} \\ \fontsize{10.5pt}{10.5pt}\selectfont{\dotSubstitute}}};
+        \node[font=\ttfamily\fontsize{12pt}{12pt}\bfseries\selectfont, text width=\leftcolumnwidth, align = right]
           (socials)
            at ([xshift = 2.75cm, yshift=-6cm]current page.west)
            {
-            \ifnum\value{page}>1  \printSocial{\@email}{\@email}{simcolor}{\faEnvelope} \fi
-            \printSocial{\@personalWebsite}{\@personalWebsite}{homecolor}{\faHome}
-            \printSocial{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare}
-            \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin}
+           \setlength{\tabcolsep}{0pt}
+           \renewcommand{\arraystretch}{2}
+          \begin{tabular}%
+          {>{\raggedleft\arraybackslash}p{0.85\leftcolumnwidth}%
+           >{\raggedleft\arraybackslash}p{0.15\leftcolumnwidth}%
+          }
+            \ifnum\value{page}>1  \printSocial{\@email}{\@email}{simcolor} &  \printIcon{\@email}{\@email}{simcolor}{\faEnvelope} \\ \fi
+            \printSocial{\@personalWebsite}{\@personalWebsite}{aboutcolor} & \printIcon{\@personalWebsite}{\@personalWebsite}{aboutcolor}{\faHome} \\
+            \printSocial{\@githubLink}{\@githubName}{techcolor} & \printIcon{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare} \\
+            \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor} & \printIcon{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin} \\
+          \end{tabular}
             };
-        \node[font=\ttfamily\fontsize{9pt}{9pt}\selectfont, text width=\leftcolumnwidth, align = right]
+        \node[font=\fontsize{9pt}{9pt}\selectfont, text width=\leftcolumnwidth, align = right]
           (date)
-           at ([xshift = 2.75cm, yshift=-13cm]current page.west)
-           {\textcolor{aboutcolor}{\@date}};
+           at ([xshift = 2.75cm, yshift=-12.65cm]current page.west)
+           {{\@date} \\
+           {Citizenship: \@citizenship}};
       \end{tikzpicture}},
     opacity=1,
     scale=1,
@@ -162,9 +181,9 @@
      \raggedleft
        \setstretch{2}%
        \vspace*{1.25cm}
-       \textcolor{bandcolor}{\fontsize{25}{25}\selectfont\bfseries{\@firstName\ \@lastName}} \\
-       \textcolor{bandcolor}{\fontsize{10}{10}\selectfont\@position}\\ \vspace*{0.15cm}
-       \ttfamily\fontsize{11pt}{11pt}\selectfont\textcolor{simcolor}{\href{\@email}{\faEnvelope\ \@email}}
+       \textcolor{bandcolor}{\fontsize{25}{25}\selectfont\bfseries{\@firstName\ \@lastName}} \\ \vspace*{0.15cm}
+       \textcolor{bandcolor}{\fontsize{10}{10}\selectfont\@position}\\ \vspace*{0.3cm}
+       \ttfamily\fontsize{11pt}{11pt}\selectfont\textcolor{simcolor}{\href{\@email}{\@email\ \faEnvelope \hspace*{-0.2cm}}}
   }%
 }
 
@@ -188,7 +207,7 @@
 
 
 \geometry{
-  left=\leftcolumnwidth + 1cm,
+  left=\leftcolumnwidth + 1.2cm,
   right=1cm,
   top=1.5cm,
   bottom=1cm,
@@ -206,7 +225,7 @@
 
 
 \renewcommand{\section}[1]{%}
-\vspace{0.25cm}
+\vspace{0.65cm}
   \noindent \begin{tikzpicture}
     \node[font=\fontsize{14}{14}\selectfont\bfseries, inner sep=0pt, text width=\textwidth, align=left] (A) {\textbf{#1}};
     \draw[line width = 0.75pt, draw = bandcolor]([yshift=-0.25ex]A.south west) -- ([yshift=-0.25ex]A.south east) -- ++(0em,0em) node[inner sep=0pt,outer sep=0pt,font=\tiny, yshift = 0.28ex, text = bandcolor] {$\blacksquare$} -- ++(-\textwidth,0) -- cycle;
@@ -250,6 +269,7 @@
     \printValueIfNotEmpty{#7}
     \printValueIfNotEmpty{#8}
   \end{itemize}
+  \vspace*{0.12cm}
   \fi
 }
    \vspace*{0.5cm}

@@ -14,9 +14,9 @@ linkedinName: "Sebastian Sciarra"
 linkedinLink: "linkedin.com/in/sebsciarra"
 email: "seb\\@sciarra.io"
 skills: "R, SQL, Python, LaTeX, Bash, HTML, JavaScript, CSS, Machine learning, Data science, Data visualization, Knowledge translation"
+citizenship: "Canadian"
 header-includes: 
   - \renewcommand{\thefootnote}{\fnsymbol{footnote}}
-
 #leave knit YAML variable uncommented if you want to join the CV and cover letter in one PDF
 knit: cobaltCV::merge_CV_cover_letter
 ---

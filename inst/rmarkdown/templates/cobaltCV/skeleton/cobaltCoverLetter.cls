@@ -104,11 +104,20 @@
 
 
 
-\newcommand{\printSocial}[4]{
+\newcommand{\printSocial}[3]{
   \ifx#1\@empty\else
     \ifx#2\@empty\else
-      \href{https://#1}{\textcolor{#3}{#4\ #2}}  \\
-      \vspace{.4cm}
+      \href{https://#1}{\textcolor{#3}{#2}}
+     % \vspace{.6cm}
+    \fi
+  \fi
+}
+
+\newcommand{\printIcon}[4]{
+  \ifx#1\@empty\else
+    \ifx#2\@empty\else
+      \href{https://#1}{\textcolor{#3}{\fontsize{14}{14}\selectfont#4}}
+      %\vspace{.6cm}
     \fi
   \fi
 }
@@ -123,6 +132,7 @@
   \StrSubstitute{\@skills}{,}{\space$\cdot$}
 }
 
+\usepackage{array} %required for right alignment in tabular columns
 
 %%repeat left band on every page with skills & socials
 %%https://tex.stackexchange.com/questions/270195/how-to-repeat-box-every-page
@@ -130,18 +140,30 @@
     contents={
       \begin{tikzpicture}[remember picture, overlay]
         \fill [bandcolor] (current page.north west) rectangle ++(\leftcolumnwidth+0.25cm,-2\textheight);
-        \node[font=\fontfamily{phv}\fontsize{12pt}{12pt}\selectfont, text width=\leftcolumnwidth, align = right]
+        \node[font=\fontfamily{phv}\fontsize{10pt}{10pt}\selectfont, text width=\leftcolumnwidth, align = right]
           (name)
-           at ([xshift = 2.75cm, yshift=7.2cm]current page.west) %
+           at ([xshift = 2.75cm, yshift=6.2cm]current page.west) %
           %header
-          {{\fontsize{25pt}{25pt}\selectfont\bfseries\@firstName \\ \vspace*{0.4cm} \@lastName} \\ \vspace*{0.4cm}
-          \@position \\ \vspace*{0.3cm}
-          \rule{1cm}{1pt} \\ \vspace*{1.25cm}
+          {{\fontsize{25pt}{25pt}\selectfont\bfseries
+          \rule{1cm}{1pt} \\ \vspace*{0.35cm}
+          \@firstName \\ \vspace*{0.4cm}
+          \@lastName} \\ \vspace*{0.4cm}
+          \@position \\ \vspace*{0.65cm}
+          \rule{1cm}{1pt} \\ \vspace*{1.30cm}
           %contact info
-          \ttfamily\fontsize{11pt}{11pt}\selectfont\textcolor{simcolor}{\href{\@email}{\faEnvelope\ \@email}} \\  \vspace{.4cm}
-          \printSocial{\@personalWebsite}{\@personalWebsite}{homecolor}{\faHome}
-          \printSocial{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare}
-          \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin}};
+          \setlength{\tabcolsep}{0pt}
+           \renewcommand{\arraystretch}{2}
+           \ttfamily\fontsize{12pt}{12pt}\bfseries\selectfont
+          \begin{tabular}%
+          {>{\raggedleft\arraybackslash}p{0.85\leftcolumnwidth}%
+           >{\raggedleft\arraybackslash}p{0.15\leftcolumnwidth}%
+          }
+            \printSocial{\@email}{\@email}{simcolor} &  \printIcon{\@email}{\@email}{simcolor}{\faEnvelope} \\
+            \printSocial{\@personalWebsite}{\@personalWebsite}{aboutcolor} & \printIcon{\@personalWebsite}{\@personalWebsite}{aboutcolor}{\faHome} \\
+            \printSocial{\@githubLink}{\@githubName}{techcolor} & \printIcon{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare} \\
+            \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor} & \printIcon{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin} \\
+          \end{tabular}
+          };
       \end{tikzpicture}},
     opacity=1,
     scale=1,
@@ -166,24 +188,16 @@
 \lhead{% Left header
   \setstretch{1.5}
   \fontsize{9pt}{9pt}\selectfont
+  %{\fontsize{25pt}{25pt}\selectfont\textbf{Cover letter}} \\
   \rule{5cm}{1pt} \\
    \@date \\ [0.5cm]
   {\bfseries \@recruiterName} \\
    \@organization \\
   \@organizationStreet \\
    \@organizationCityPostal \\
-}%
+  }%
 }
 
-
-%\fancypagestyle{cobaltFooter}{%
-%  %\setlength{\headheight}{0cm}
-%  \fancyhf{}% Clear header/footer
-%  \renewcommand{\headrulewidth}{0pt}% Remove header rule
-%  \renewcommand{\footrulewidth}{0pt}% Remove footer rule
-%  \fancyfoot[R]{\thepage}% Page number in bottom right
-%  \fancyfoot[C]{\sscvcobalt}% SS \cdot CV in bottom middle
-%}
 
 
 %mandatory components that all LaTeX classes must specify
@@ -195,9 +209,9 @@
 
 
 \geometry{
-  left=\leftcolumnwidth + 1cm,
+  left=\leftcolumnwidth + 1.2cm,
   right=1cm,
-  top=2.5cm,
+  top=2.74cm,
   bottom=1cm,
   includehead = true,
   includefoot = true

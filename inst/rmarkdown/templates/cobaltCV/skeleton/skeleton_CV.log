@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.1)  18 MAY 2023 15:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.1)  19 MAY 2023 01:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -705,21 +705,30 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \mathdisplay@stack=\toks38
 LaTeX Info: Redefining \[ on input line 2938.
 LaTeX Info: Redefining \] on input line 2939.
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen284
+\ar@mcellbox=\box117
+\extrarowheight=\dimen285
+\NC@list=\toks39
+\extratabsurround=\skip70
+\backup@length=\skip71
+\ar@cellbox=\box118
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box117
-\fn@width=\dimen284
+\fn@notes=\box119
+\fn@width=\dimen286
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
-\ttl@box=\box118
-\beforetitleunit=\skip70
-\aftertitleunit=\skip71
-\ttl@plus=\dimen285
-\ttl@minus=\dimen286
-\ttl@toksa=\toks39
-\titlewidth=\dimen287
-\titlewidthlast=\dimen288
-\titlewidthfirst=\dimen289
+\ttl@box=\box120
+\beforetitleunit=\skip72
+\aftertitleunit=\skip73
+\ttl@plus=\dimen287
+\ttl@minus=\dimen288
+\ttl@toksa=\toks40
+\titlewidth=\dimen289
+\titlewidthlast=\dimen290
+\titlewidthfirst=\dimen291
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -741,63 +750,63 @@ LaTeX Warning: Command \underline  has changed.
                Check if current package is valid.
 
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box119
-\UL@hyphenbox=\box120
-\UL@skip=\skip72
-\UL@hook=\toks40
-\UL@height=\dimen290
+\UL@box=\box121
+\UL@hyphenbox=\box122
+\UL@skip=\skip74
+\UL@hook=\toks41
+\UL@height=\dimen292
 \UL@pe=\count335
-\UL@pixel=\dimen291
-\ULC@box=\box121
+\UL@pixel=\dimen293
+\ULC@box=\box123
 Package: ulem 2019/11/18
-\ULdepth=\dimen292
+\ULdepth=\dimen294
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip73
-\enit@outerparindent=\dimen293
-\enit@toks=\toks41
-\enit@inbox=\box122
+\labelindent=\skip75
+\enit@outerparindent=\dimen295
+\enit@toks=\toks42
+\enit@inbox=\box124
 \enit@count@id=\count336
 \enitdp@description=\count337
 ))
 LaTeX Font Info:    Trying to load font information for OT1+qhv on input line 3
-7.
+9.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/tex-gyre/ot1qhv.fd
 File: ot1qhv.fd 2009/09/25 v1.2 font definition file for OT1/qhv
 ) (./skeleton_CV.aux)
 \openout1 = `skeleton_CV.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
 (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count338
-\scratchdimen=\dimen294
-\scratchbox=\box123
+\scratchdimen=\dimen296
+\scratchbox=\box125
 \nofMPsegments=\count339
 \nofMParguments=\count340
-\everyMPshowfont=\toks42
+\everyMPshowfont=\toks43
 \MPscratchCnt=\count341
-\MPscratchDim=\dimen295
+\MPscratchDim=\dimen297
 \MPnumerator=\count342
 \makeMPintoPDFobject=\count343
-\everyMPtoPDFconversion=\toks43
+\everyMPtoPDFconversion=\toks44
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -814,14 +823,14 @@ e
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includefoot 
-* h-part:(L,W,R)=(178.95699pt, 406.88527pt, 28.45274pt)
+* h-part:(L,W,R)=(184.64746pt, 401.1948pt, 28.45274pt)
 * v-part:(T,H,B)=(42.67912pt, 723.83812pt, 28.45274pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=406.88527pt
+* \textwidth=401.1948pt
 * \textheight=693.83812pt
-* \oddsidemargin=106.687pt
-* \evensidemargin=106.687pt
+* \oddsidemargin=112.37747pt
+* \evensidemargin=112.37747pt
 * \topmargin=-66.59087pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -840,7 +849,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 37.
+Package hyperref Info: Link coloring OFF on input line 39.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -852,141 +861,143 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count344
 )
-LaTeX Info: Redefining \ref on input line 37.
-LaTeX Info: Redefining \pageref on input line 37.
-LaTeX Info: Redefining \nameref on input line 37.
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
 (./skeleton_CV.out) (./skeleton_CV.out)
 \@outlinefile=\write4
 \openout4 = `skeleton_CV.out'.
 
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree3 on i
-nput line 48.
+nput line 50.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomefree3.fd
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (3.48334pt too wide) in paragraph at lines 48--49
+Overfull \hbox (3.48335pt too wide) in paragraph at lines 50--51
 []
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+qhv on input line 5
-0.
+2.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/tex-gyre/ts1qhv.fd
 File: ts1qhv.fd 2009/09/25 v1.2 font definition file for TS1/qhv
 )
-Overfull \hbox (0.39563pt too wide) in paragraph at lines 54--54
+Overfull \hbox (4.37894pt too wide) in paragraph at lines 56--56
 \OT1/qhv/b/n/11 Honours BSc, Psy-chol-ogy, Neu-ro-science & Be-haviour 
  []
 
 
-Overfull \hbox (3.48334pt too wide) in paragraph at lines 57--58
+Overfull \hbox (3.48335pt too wide) in paragraph at lines 59--60
 []
  []
 
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree0 on i
-nput line 68.
+nput line 70.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomefree0.fd
 )
-Overfull \hbox (3.48334pt too wide) in paragraph at lines 68--69
+Overfull \hbox (3.48335pt too wide) in paragraph at lines 70--71
 []
  []
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 70.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 72.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 70.
+(Font)              size <5> substituted on input line 72.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 70.
+(Font)              size <5> substituted on input line 72.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 70.
+(Font)              size <5> substituted on input line 72.
 
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
-nput line 72.
+nput line 74.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd
 )
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 102.93372pt, for example:
-(fancyhdr)                \setlength{\headheight}{102.93372pt}.
+(fancyhdr)                Make it at least 111.46962pt, for example:
+(fancyhdr)                \setlength{\headheight}{111.46962pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-90.93372pt}.
+(fancyhdr)                \addtolength{\topmargin}{-99.46962pt}.
 
-
-LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 72.
-
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 72.
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 72.
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.5> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 72.
-
-LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 72.
-
-LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 72.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 74.
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 74.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 72.
+(Font)              size <10.95> substituted on input line 74.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 72.
+(Font)              size <10.95> substituted on input line 74.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 72.
+(Font)              size <10.95> substituted on input line 74.
 
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 74.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 74.
 LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on
- input line 72.
+ input line 74.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomebrands0.
 fd)
-LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <12> not 
+LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <14> not 
 available
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
-n input line 72.
+n input line 74.
 
-Underfull \hbox (badness 2698) has occurred while \output is active
- [][][]\U/fontawesomebrands0/regular/n/12 © \OT1/cmtt/m/n/12 sebsciarra[][]
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][]
  []
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
- [][][]\OT1/cmtt/m/n/9 May 2023[]
+ [][]\OT1/qhv/m/n/9 May 2023
+ []
+
+
+Underfull \hbox (badness 3884) has occurred while \output is active
+ []\OT1/qhv/m/n/9 Citizenship: Cana-dian
  []
 
 [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Overfull \hbox (3.48334pt too wide) in paragraph at lines 83--84
+Overfull \hbox (3.48335pt too wide) in paragraph at lines 85--86
 []
  []
 
 
-Underfull \hbox (badness 2698) has occurred while \output is active
- [][][]\U/fontawesomebrands0/regular/n/12 © \OT1/cmtt/m/n/12 sebsciarra[][]
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][]
  []
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
- [][][]\OT1/cmtt/m/n/9 May 2023[]
+ [][]\OT1/qhv/m/n/9 May 2023
+ []
+
+
+Underfull \hbox (badness 3884) has occurred while \output is active
+ []\OT1/qhv/m/n/9 Citizenship: Cana-dian
  []
 
 [2] (./skeleton_CV.aux)
@@ -998,13 +1009,13 @@ Package rerunfilecheck Info: File `skeleton_CV.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26832 strings out of 478268
- 509136 string characters out of 5846348
- 866451 words of memory out of 5000000
- 44568 multiletter control sequences out of 15000+600000
- 532017 words of font info for 117 fonts, out of 8000000 for 9000
+ 26903 strings out of 478268
+ 510233 string characters out of 5846348
+ 867601 words of memory out of 5000000
+ 44638 multiletter control sequences out of 15000+600000
+ 536366 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,18n,118p,703b,1610s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 115i,22n,118p,703b,1746s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
@@ -1022,15 +1033,14 @@ s/cmextra/cmbsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmtt12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmtt9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msam5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex-g
-yre/qhvb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex-gyre/qh
-vr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex-gyre/qhvri.pf
-b>
-Output written on skeleton_CV.pdf (2 pages, 163152 bytes).
+ts/symbols/msam5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex
+-gyre/qhvb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex-gyre/
+qhvr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex-gyre/qhvri.
+pfb>
+Output written on skeleton_CV.pdf (2 pages, 149976 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
+ 117 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  8 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -21,11 +21,9 @@ skills: "R, SQL, Python, LaTeX, Bash, HTML, JavaScript, CSS, Machine learning, D
 
 
 
-
-
 \noindent Dear recruiter, 
 
-\vspace*{1cm}
+\vspace*{0.5 cm}
 
 
 \lipsum[1-3]
