@@ -66,6 +66,7 @@
 \newcommand*{\lastName}[1]{\def\@lastName{#1}}
 \newcommand*{\email}[1]{\def\@email{#1}}
 \newcommand*{\skills}[1]{\def\@skills{#1}}
+\newcommand*{\citizenship}[1]{\def\@citizenship{#1}}
 
 %Personal website variables
 \def\personalWebsite#1{\gdef \@personalWebsite{#1} \@personalWebsitetrue}
@@ -164,6 +165,10 @@
             \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor} & \printIcon{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin} \\
           \end{tabular}
           };
+           \node[font=\fontsize{9pt}{9pt}\selectfont, text width=\leftcolumnwidth, align = right]
+          (date)
+           at ([xshift = 2.75cm, yshift=-12.65cm]current page.west)
+           {Citizenship: \@citizenship};
       \end{tikzpicture}},
     opacity=1,
     scale=1,

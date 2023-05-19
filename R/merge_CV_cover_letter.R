@@ -23,13 +23,14 @@ merge_CV_cover_letter <- function(input, ...) {
         quiet = TRUE),
 
       rmarkdown::render(
-        input = "skeleton_cover.Rmd",
+        input = here::here("inst/rmarkdown/templates/cobaltCoverLetter/skeleton/skeleton_cover.Rmd"),
         output_file = "cover_letter.pdf",
         envir = globalenv(),
         quiet = TRUE)
     )
 
-    pdftools::pdf_combine(input = unlist(pdf_filenames),
+    pdftools::pdf_combine(input = c("CV.pdf",
+                                    here::here("inst/rmarkdown/templates/cobaltCoverLetter/skeleton/cover_letter.pdf")),
                           output = 'CV_cover_letter.pdf')
 
     file.remove(unlist(pdf_filenames))

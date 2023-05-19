@@ -63,7 +63,9 @@ $if(organizationCityPostal)$
 \organizationCityPostal{$organizationCityPostal$}
 $endif$
 
-
+$if(citizenship)$
+\citizenship{$citizenship$}
+$endif$
 
 %load additional latex packages needed within document
 $for(header-includes)$
