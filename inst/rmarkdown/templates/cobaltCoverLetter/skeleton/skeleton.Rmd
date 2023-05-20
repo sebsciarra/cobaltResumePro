@@ -13,6 +13,7 @@ linkedinName: "Sebastian Sciarra"
 linkedinLink: "linkedin.com/in/sebsciarra"
 email: "seb\\@sciarra.io"
 recruiterName: "Recruiter Name"
+recruiterFormalName: "Mr./Mrs. Recruiter Name"
 organization: "Organization Name"
 organizationStreet: "200 Bay St."
 organizationCityPostal: "Toronto, ON M5J 2J2"
@@ -22,16 +23,17 @@ skills: "R, SQL, Python, LaTeX, Bash, HTML, JavaScript, CSS, Machine learning, D
 
 
 
-\noindent Dear recruiter, 
 
-\vspace*{0.5 cm}
+\noindent
+\lipsum[1]
+
+\noindent
+\lipsum[2]
+
+\noindent
+\lipsum[3]
 
 
-\lipsum[1-3]
 
-Sincerely,  
-
-\vspace*{1cm}
-Sebastian Sciarra
 
 

@@ -74,15 +74,30 @@ $endfor$
 
 %\setlength{\headsep}{3cm}
 \usetikzlibrary{fit}
+\usepackage{fontsize}
 
 \renewcommand{\rmdefault}{phv}
-\begin{document}
+\setlength{\parskip}{.375cm}
 
+
+\begin{document}
+  \changefontsize[9pt]{9pt}
   \thispagestyle{cobaltHeader}
-   \vspace*{2.5cm}
-  \setstretch{1.25}
+   \vspace*{2cm}
+  \setstretch{1.1}
+
+  \noindent Dear $recruiterFormalName$,
+  \vspace*{0.75cm}
 
   $body$
+
+  \noindent
+  Sincerely,
+  \vspace*{0.75cm}
+
+  \noindent
+  \textbf{$firstName$ $lastName$}
+
 
 
 

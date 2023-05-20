@@ -216,7 +216,7 @@
 \geometry{
   left=\leftcolumnwidth + 1.2cm,
   right=1cm,
-  top=2.74cm,
+  top=3.11cm,
   bottom=1cm,
   includehead = true,
   includefoot = true
