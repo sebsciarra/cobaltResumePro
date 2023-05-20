@@ -29,10 +29,12 @@ merge_resume_cover_letter <- function(...) {
   #identify which .Rmd file is the resume and which is the cover letter by determining which one is in the same folder as
   #the .cls and .tex files
   # Extracting everything up to the second forward slash
-  directories <-  stringr::str_extract(rmd_files, "^.*?/[^/]+/")
+  directories <-  ifelse(test = is.na(stringr::str_extract(rmd_files, "^.*?/[^/]+/")),
+                         yes = "./",
+                         no = stringr::str_extract(rmd_files, "^.*?/[^/]+/"))
 
   # Check the length of rmd_files
-  if (length(directories) != 2) {
+  if (length(directories) != 2 & sum(!is.na(directories)) != 2) {
     error_message <- "There must be only two subfolders: One for the résumé and
     another for the cover letter. Make sure a template folder has been created for the résumé
     and another for the cover letter."
@@ -40,7 +42,7 @@ merge_resume_cover_letter <- function(...) {
   }
 
   #the true element is the resume Rmarkdown file
-  path_files <- file.path(directories, "cobaltRésumé.cls", fsep = '')
+  path_files <- file.path(directories, "cobaltResume.cls", fsep = '')
   file_identifier_ind <- file.exists(path_files)
 
 
