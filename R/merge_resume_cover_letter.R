@@ -16,7 +16,8 @@
 merge_resume_cover_letter <- function(...) {
 
   #get paths to .Rmd files
-  rmd_files <- list.files(pattern = '.Rmd', recursive = TRUE, full.names = TRUE)
+  rmd_files <- list.files(path = here::here(),
+                          pattern = '.Rmd', recursive = TRUE, full.names = TRUE)
 
   # Check the length of rmd_files
   if (length(rmd_files) > 2) {
@@ -28,10 +29,8 @@ merge_resume_cover_letter <- function(...) {
 
   #identify which .Rmd file is the resume and which is the cover letter by determining which one is in the same folder as
   #the .cls and .tex files
-  # Extracting everything up to the second forward slash
-  directories <-  ifelse(test = is.na(stringr::str_extract(rmd_files, "^.*?/[^/]+/")),
-                         yes = "./",
-                         no = stringr::str_extract(rmd_files, "^.*?/[^/]+/"))
+  #folder paths that contain each .Rmd file
+  directories <-  dirname(rmd_files)
 
   # Check the length of rmd_files
   if (length(directories) != 2 & sum(!is.na(directories)) != 2) {
@@ -41,39 +40,42 @@ merge_resume_cover_letter <- function(...) {
     stop(error_message)
   }
 
+  #Create two paths with target file (cobaltResume.cls) and see which one is true.
   #the true element is the resume Rmarkdown file
-  path_files <- file.path(directories, "cobaltResume.cls", fsep = '')
+  rmd_files <- list.files(path = here::here(),
+                          pattern = '.Rmd', recursive = TRUE, full.names = TRUE)
+  directories <-  dirname(rmd_files)
+  path_files <- file.path(directories, "cobaltResume.cls", fsep = '/')
   file_identifier_ind <- file.exists(path_files)
 
+ ##CV and cover letter file paths
+ resume_rmd <- rmd_files[file_identifier_ind]
+ cover_letter_rmd <- rmd_files[!file_identifier_ind]
 
-  #CV and cover letter file paths
-  cv_rmd <- rmd_files[file_identifier_ind]
-  cover_letter_rmd <- rmd_files[!file_identifier_ind]
-
-  pdf_filenames = list(
-    rmarkdown::render(
-      input = cv_rmd,
-      output_file = "résumé.pdf",
-      envir = globalenv(),
-      quiet = TRUE),
-
-    rmarkdown::render(
-      input = cover_letter_rmd,
-      output_file = "cover_letter.pdf",
-      envir = globalenv(),
-      quiet = TRUE)
-  )
+ pdf_filenames = list(
+   rmarkdown::render(
+     input = resume_rmd,
+     output_file = "résumé.pdf",
+     envir = globalenv(),
+     quiet = F),
+   rmarkdown::render(
+     input = cover_letter_rmd,
+     output_file = "cover_letter.pdf",
+     envir = globalenv(),
+     quiet = T)
+ )
 
 
-  pdftools::pdf_combine(input = unlist(pdf_filenames),
-                        output = 'résumé_cover_letter.pdf')
+ pdftools::pdf_combine(input = unlist(pdf_filenames),
+                       output = 'résumé_cover_letter.pdf')
 
-  file.remove(unlist(pdf_filenames))
+ #file.remove(unlist(pdf_filenames))
 
-  #combined PDF path
-  resume_cover_letter_pdf_path <- list.files(pattern = 'résumé_cover_letter.pdf', recursive = TRUE, full.names = TRUE)
+ #combined PDF path
+ resume_cover_letter_pdf_path <- list.files(path = here::here(),
+                                            pattern = 'résumé_cover_letter.pdf', recursive = TRUE, full.names = TRUE)
 
-  rstudioapi::viewer(resume_cover_letter_pdf_path)
+ system(paste0("open ", resume_cover_letter_pdf_path))
 
 }
 

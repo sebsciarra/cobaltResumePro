@@ -18,12 +18,12 @@ citizenship: "Canadian"
 header-includes: 
   - \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 #leave knit YAML variable uncommented if you want to join the CV and cover letter in one PDF
-#knit: cobaltCV::merge_CV_cover_letter
+#knit: cobaltResume::merge_resume_cover_letter
 ---
 
 ```{r echo=F, message=F, warning=F, message = F}
 library(easypackages)
-packages <- c("devtools", "knitr", "bookdown", "pdftools", "rstudioapi", "cobaltCV", "stringr")
+packages <- c("devtools", "knitr", "bookdown", "pdftools", "rstudioapi", "cobaltResume", "stringr")
 libraries(packages)
 
 #allows R code chunks to print out LaTeX and for the LaTeX to be knit

@@ -15,5 +15,6 @@ Template: cobaltResume
 Imports: 
   stringr,
   pdftools, 
-  rstudioapi
+  rstudioapi, 
+  here
   
