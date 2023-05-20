@@ -23,7 +23,7 @@ knit: cobaltResume::merge_resume_cover_letter
 
 ```{r echo=F, message=F, warning=F, message = F}
 library(easypackages)
-packages <- c("devtools", "knitr", "bookdown", "pdftools", "rstudioapi", "cobaltResume", "stringr")
+packages <- c("devtools", "knitr", "bookdown", "pdftools", "rstudioapi", "stringr")
 libraries(packages)
 
 #allows R code chunks to print out LaTeX and for the LaTeX to be knit
