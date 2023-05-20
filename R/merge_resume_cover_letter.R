@@ -69,6 +69,7 @@ merge_resume_cover_letter <- function(...) {
                        output = 'resume_cover_letter.pdf')
 
 
+
  file.remove(unlist(pdf_filenames))
 
  #combined PDF path
