@@ -13,30 +13,65 @@
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 #' @export
-merge_CV_cover_letter <- function(input, ...) {
+merge_resume_cover_letter <- function(...) {
 
-    pdf_filenames = list(
-      rmarkdown::render(
-        input = input,
-        output_file = "CV.pdf",
-        envir = globalenv(),
-        quiet = TRUE),
+  #get paths to .Rmd files
+  rmd_files <- list.files(pattern = '.Rmd', recursive = TRUE, full.names = TRUE)
 
-      rmarkdown::render(
-        input = here::here("inst/rmarkdown/templates/cobaltCoverLetter/skeleton/skeleton.Rmd"),
-        output_file = "cover_letter.pdf",
-        envir = globalenv(),
-        quiet = TRUE)
-    )
-
-    pdftools::pdf_combine(input = c("CV.pdf",
-                                    here::here("inst/rmarkdown/templates/cobaltCoverLetter/skeleton/cover_letter.pdf")),
-                          output = 'CV_cover_letter.pdf')
-
-    file.remove(unlist(pdf_filenames))
+  # Check the length of rmd_files
+  if (length(rmd_files) > 2) {
+    error_message <- "There must be only two .Rmd files: One for the résumé and
+    another for the cover letter. Make sure an .Rmd files exists in each template. "
+    stop(error_message)
+  }
 
 
-    rstudioapi::viewer(here::here("inst/rmarkdown/templates/cobaltCV/skeleton/CV_cover_letter.pdf"))
+  #identify which .Rmd file is the resume and which is the cover letter by determining which one is in the same folder as
+  #the .cls and .tex files
+  # Extracting everything up to the second forward slash
+  directories <-  stringr::str_extract(rmd_files, "^.*?/[^/]+/")
+
+  # Check the length of rmd_files
+  if (length(directories) != 2) {
+    error_message <- "There must be only two subfolders: One for the résumé and
+    another for the cover letter. Make sure a template folder has been created for the résumé
+    and another for the cover letter."
+    stop(error_message)
+  }
+
+  #the true element is the resume Rmarkdown file
+  path_files <- file.path(directories, "cobaltRésumé.cls", fsep = '')
+  file_identifier_ind <- file.exists(path_files)
+
+
+  #CV and cover letter file paths
+  cv_rmd <- rmd_files[file_identifier_ind]
+  cover_letter_rmd <- rmd_files[!file_identifier_ind]
+
+  pdf_filenames = list(
+    rmarkdown::render(
+      input = cv_rmd,
+      output_file = "résumé.pdf",
+      envir = globalenv(),
+      quiet = TRUE),
+
+    rmarkdown::render(
+      input = cover_letter_rmd,
+      output_file = "cover_letter.pdf",
+      envir = globalenv(),
+      quiet = TRUE)
+  )
+
+
+  pdftools::pdf_combine(input = unlist(pdf_filenames),
+                        output = 'résumé_cover_letter.pdf')
+
+  file.remove(unlist(pdf_filenames))
+
+  #combined PDF path
+  resume_cover_letter_pdf_path <- list.files(pattern = 'résumé_cover_letter.pdf', recursive = TRUE, full.names = TRUE)
+
+  rstudioapi::viewer(resume_cover_letter_pdf_path)
 
 }
 

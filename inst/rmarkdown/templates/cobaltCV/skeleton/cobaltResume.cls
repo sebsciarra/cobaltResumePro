@@ -17,7 +17,7 @@
 %-------------------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{cobaltCV}[2023/05/08]
+\ProvidesClass{cobaltResume}[2023/05/08]
 
 %-------------------------------------------------------------------------------
 %                Class options
@@ -228,7 +228,7 @@
 \vspace{0.65cm}
   \noindent \begin{tikzpicture}
     \node[font=\fontsize{14}{14}\selectfont\bfseries, inner sep=0pt, text width=\textwidth, align=left] (A) {\textbf{#1}};
-    \draw[line width = 0.75pt, draw = bandcolor]([yshift=-0.25ex]A.south west) -- ([yshift=-0.25ex]A.south east) -- ++(0em,0em) node[inner sep=0pt,outer sep=0pt,font=\tiny, yshift = 0.28ex, text = bandcolor] {$\blacksquare$} -- ++(-\textwidth,0) -- cycle;
+    \draw[line width = 0.75pt, draw = bandcolor, text width = 0.335cm]([yshift=-0.25ex]A.south west) -- ([yshift=-0.25ex]A.south east) -- ++(0em,0em) node[inner sep=0pt,outer sep=0pt,font=\tiny, yshift = 0.35ex, text = bandcolor] {$\blacksquare$} -- ++(-\textwidth,0cm) -- cycle;
   \end{tikzpicture}
   \vspace*{-0.5cm}
 }
@@ -260,7 +260,8 @@
 
 
    \IfValueT{#4}{\if\relax\detokenize{#4}\relax\else
-  \begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt,parsep=0pt]
+  \begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt,parsep=0pt, leftmargin = 11.6pt,
+  label=\raisebox{0.04cm}{\fontsize{7pt}{7pt}$\blacksquare$}]
   \setstretch{1.25}
   \fontsize{10}{10}\selectfont
     \item #4
