@@ -18,7 +18,7 @@ citizenship: "Canadian"
 header-includes: 
   - \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 #leave knit YAML variable uncommented if you want to join the CV and cover letter in one PDF
-#knit: cobaltResume::merge_resume_cover_letter
+knit: cobaltResume::merge_resume_cover_letter
 ---
 
 ```{r echo=F, message=F, warning=F, message = F}

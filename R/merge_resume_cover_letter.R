@@ -55,9 +55,9 @@ merge_resume_cover_letter <- function(...) {
  pdf_filenames = list(
    rmarkdown::render(
      input = resume_rmd,
-     output_file = "résumé.pdf",
+     output_file = "resume.pdf",
      envir = globalenv(),
-     quiet = F),
+     quiet = T),
    rmarkdown::render(
      input = cover_letter_rmd,
      output_file = "cover_letter.pdf",
@@ -65,15 +65,14 @@ merge_resume_cover_letter <- function(...) {
      quiet = T)
  )
 
-
  pdftools::pdf_combine(input = unlist(pdf_filenames),
-                       output = 'résumé_cover_letter.pdf')
+                       output = 'combined.pdf')
 
- #file.remove(unlist(pdf_filenames))
+ file.remove(unlist(pdf_filenames))
 
  #combined PDF path
  resume_cover_letter_pdf_path <- list.files(path = here::here(),
-                                            pattern = 'résumé_cover_letter.pdf', recursive = TRUE, full.names = TRUE)
+                                            pattern = 'resume_cover_letter.pdf', recursive = TRUE, full.names = TRUE)
 
  system(paste0("open ", resume_cover_letter_pdf_path))
 

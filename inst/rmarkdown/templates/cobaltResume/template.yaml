@@ -1,4 +1,4 @@
-name: cobaltCV
+name: cobaltResume
 description: >
    Generates CVs and cover letters according to the  cobalt theme.
 create_dir: FALSE

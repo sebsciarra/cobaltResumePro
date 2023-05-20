@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.1)  20 MAY 2023 12:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.1)  20 MAY 2023 13:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**skeleton.tex
-(./skeleton.tex
+**resume.tex
+(./resume.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (./cobaltResume.cls
 Document Class: cobaltResume 2023/05/08
@@ -773,8 +773,8 @@ LaTeX Font Info:    Trying to load font information for OT1+qhv on input line 3
 9.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/tex-gyre/ot1qhv.fd
 File: ot1qhv.fd 2009/09/25 v1.2 font definition file for OT1/qhv
-) (./skeleton.aux)
-\openout1 = `skeleton.aux'.
+) (./resume.aux)
+\openout1 = `resume.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
 LaTeX Font Info:    ... okay on input line 39.
@@ -864,9 +864,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 39.
 LaTeX Info: Redefining \pageref on input line 39.
 LaTeX Info: Redefining \nameref on input line 39.
-(./skeleton.out) (./skeleton.out)
+(./resume.out) (./resume.out)
 \@outlinefile=\write4
-\openout4 = `skeleton.out'.
+\openout4 = `resume.out'.
 
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree3 on i
 nput line 50.
@@ -1001,22 +1001,22 @@ Underfull \hbox (badness 3884) has occurred while \output is active
  []\OT1/qhv/m/n/9 Citizenship: Cana-dian
  []
 
-[2] (./skeleton.aux)
+[2] (./resume.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
-Package rerunfilecheck Info: File `skeleton.out' has not changed.
+Package rerunfilecheck Info: File `resume.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  26904 strings out of 478268
- 510313 string characters out of 5846348
- 869677 words of memory out of 5000000
+ 510279 string characters out of 5846348
+ 869667 words of memory out of 5000000
  44639 multiletter control sequences out of 15000+600000
  538903 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,22n,118p,700b,1740s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 115i,22n,118p,698b,1740s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
@@ -1039,7 +1039,7 @@ fonts/symbols/msam7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
 tex-gyre/qhvb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex-gy
 re/qhvr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex-gyre/qhv
 ri.pfb>
-Output written on skeleton.pdf (2 pages, 158307 bytes).
+Output written on resume.pdf (2 pages, 158307 bytes).
 PDF statistics:
  123 PDF objects out of 1000 (max. 8388607)
  93 compressed objects within 1 object stream
