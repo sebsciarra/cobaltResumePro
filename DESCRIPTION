@@ -1,4 +1,4 @@
-Package: cobaltCV
+Package: cobaltResume
 Type: Package
 Title: Cobalt-Themed Résumés and Cover Letters 
 Version: 0.1.0
@@ -11,7 +11,7 @@ LazyData: true
 URL: https://github.com/sebsciarra/cobaltCV
 BugReports: https://github.com/sciarraseb/cobaltCV/issues
 RoxygenNote: 7.2.3
-Template: cobaltCV
+Template: cobaltResume
 Imports: 
   stringr,
   pdftools, 
