@@ -18,6 +18,7 @@ organization: "Organization Name"
 organizationStreet: "200 Bay St."
 organizationCityPostal: "Toronto, ON M5J 2J2"
 citizenship: "Canadian"
+emailClosing: "Sincerely,"
 skills: "R, SQL, Python, LaTeX, Bash, HTML, JavaScript, CSS, Machine learning, Data science, Data visualization, Knowledge translation"
 ---
 
