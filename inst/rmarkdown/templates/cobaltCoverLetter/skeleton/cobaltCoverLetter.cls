@@ -163,8 +163,7 @@
             \printSocial{\@personalWebsite}{\@personalWebsite}{aboutcolor} & \printIcon{\@personalWebsite}{\@personalWebsite}{aboutcolor}{\faHome} \\
             \printSocial{\@githubLink}{\@githubName}{techcolor} & \printIcon{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare} \\
             \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor} & \printIcon{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin} \\
-          \end{tabular}
-          };
+          \end{tabular}};
            \node[font=\fontsize{9pt}{9pt}\selectfont, text width=\leftcolumnwidth, align = right]
           (date)
            at ([xshift = 2.75cm, yshift=-12.65cm]current page.west)
@@ -178,10 +177,6 @@
 }
 
 
-\newcommand{\sscvcobalt}{\textcolor{bandcolor}{\@lastName\ $\boldsymbol{\cdot}$ Cover letter}}
-
-
-
 %% Define page style
 \fancypagestyle{cobaltHeader}{%
   \fancyhf{}% Clear header/footer
@@ -189,7 +184,6 @@
   \renewcommand{\headrulewidth}{0pt}% Remove header rule
   \renewcommand{\footrulewidth}{0pt}% Remove footer rule
    \fancyfoot[R]{\thepage}% Page number in bottom right
-  %\fancyfoot[C]{\sscvcobalt}% SS \cdot CV in bottom middle
 \lhead{% Left header
   \setstretch{1.5}
   \fontsize{9pt}{9pt}\selectfont
@@ -221,67 +215,6 @@
   includehead = true,
   includefoot = true
 }
-
-\columnratio{0.25}
-
-
-\usepackage{titlesec}
-\usepackage{amssymb}
-\usepackage{sectsty}
-\usepackage[normalem]{ulem}
-
-
-\renewcommand{\section}[1]{%}
-\vspace{0.25cm}
-  \noindent \begin{tikzpicture}
-    \node[font=\fontsize{14}{14}\selectfont\bfseries, inner sep=0pt, text width=\textwidth, align=left] (A) {\textbf{#1}};
-    \draw[line width = 0.75pt, draw = bandcolor]([yshift=-0.25ex]A.south west) -- ([yshift=-0.25ex]A.south east) -- ++(0em,0em) node[inner sep=0pt,outer sep=0pt,font=\tiny, yshift = 0.28ex, text = bandcolor] {$\blacksquare$} -- ++(-\textwidth,0) -- cycle;
-  \end{tikzpicture}
-  \vspace*{-0.5cm}
-}
-
-
-\newcommand{\printValueIfNotEmpty}[1]{%
-  \IfValueT{#1}{\if\relax\detokenize{#1}\relax\else\item #1\fi}%
-}
-
-\usepackage{enumitem}
-\usepackage{xparse}
-\NewDocumentEnvironment{CVentry}{m m m o o o o o}{%
-
-    \columnratio{0.7}
-    \begin{paracol}{2}
-        \par\setstretch{1.5}\noindent%
-        {\fontsize{11}{11}\selectfont\bfseries #1} \\%
-        {\fontsize{10}{10}\selectfont\textit{#2}}\par%
-
-        \switchcolumn
-
-        \raggedleft
-        {\color{bandcolor}\fontsize{9}{9}\bfseries #3}
-
-    \end{paracol}
-
-
-    \vspace*{0.1cm}
-
-
-   \IfValueT{#4}{\if\relax\detokenize{#4}\relax\else
-  \begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt,parsep=0pt]
-  \setstretch{1.25}
-  \fontsize{10}{10}\selectfont
-    \item #4
-    \printValueIfNotEmpty{#5}
-    \printValueIfNotEmpty{#6}
-    \printValueIfNotEmpty{#7}
-    \printValueIfNotEmpty{#8}
-  \end{itemize}
-  \fi
-}
-   \vspace*{0.5cm}
-  }%
-{}
-
 
 
 

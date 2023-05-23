@@ -23,7 +23,7 @@ knit: cobaltResume::merge_resume_cover_letter
 
 ```{r echo=F, message=F, warning=F, message = F}
 library(easypackages)
-packages <- c("devtools", "knitr", "bookdown", "pdftools", "rstudioapi", "stringr")
+packages <- c("cobaltResume")
 libraries(packages)
 
 #allows R code chunks to print out LaTeX and for the LaTeX to be knit
@@ -34,7 +34,7 @@ knitr::opts_chunk$set(results = "asis")
 # \faUniversity\ Education
 
 ```{r phd, echo=F}
-generate_CVentry(title = "PhD, Industrial-Organizational Psychology", 
+generate_resume_entry(title = "PhD, Industrial-Organizational Psychology", 
                  subtitle = "University of Guelph", 
                  date = "Sep. 2018--May 2023", 
                  first_point = "Thesis title: \\textbf{Is Timing Everything? The Effects of Measurement Timing on the \\newline Performance of Nonlinear Longitudinal Models}", 
@@ -43,13 +43,13 @@ generate_CVentry(title = "PhD, Industrial-Organizational Psychology",
 ```
 
 ```{r msc, echo=F}
-generate_CVentry(title = "MSc, Psychology", 
+generate_resume_entry(title = "MSc, Psychology", 
                  subtitle = "McMaster University",
                  date = "Sep. 2016--June 2018")
 ```
 
 ```{r bsc, echo=F}
-generate_CVentry(title = "Honours BSc, Psychology, Neuroscience \\& Behaviour", 
+generate_resume_entry(title = "Honours BSc, Psychology, Neuroscience \\& Behaviour", 
                  subtitle = "McMaster University", 
                  date = "Sep. 2012--June 2016")
 ```
@@ -60,7 +60,7 @@ generate_CVentry(title = "Honours BSc, Psychology, Neuroscience \\& Behaviour",
 
 
 ```{r ta-experience, echo=F}
-generate_CVentry(title = "Teaching Assistant", 
+generate_resume_entry(title = "Teaching Assistant", 
                  subtitle = "University of Guelph", 
                  date = "Sep. 2018--May 2023", 
                  first_point = "Created R scripts for assignments and taught labs for the following courses in measurement and statistics: \\begin{itemize}   \\fontsize{9}{9}\\selectfont
@@ -78,20 +78,20 @@ generate_CVentry(title = "Teaching Assistant",
 
 
 ```{r cobalt-cv, echo=F}
-generate_CVentry(title = "\\href{https://github.com/sebsciarra/cobaltCV}{cobaltCV}\\footnote{clickable hyperlink to the corresponding repository on my GitHub}", subtitle = "R Package", date = "May 2023", 
+generate_resume_entry(title = "\\href{https://github.com/sebsciarra/cobaltCV}{cobaltCV}\\footnote{clickable hyperlink to the corresponding repository on my GitHub}", subtitle = "R Package", date = "May 2023", 
                  first_point = "Created an R package for generating data-driven CVs and cover letters according to a customizeable template", 
                  second_point = "\\LaTeX code was created to specify a template and R functions were created to easily generate CV entries")
 ```
 
 
 ```{r personal-website, echo=F}
-generate_CVentry(title = "\\href{sebastiansciarra.com}{sebastiansciarra.com}*", subtitle = "Personal website", date = "Mar. 2023", 
+generate_resume_entry(title = "\\href{sebastiansciarra.com}{sebastiansciarra.com}*", subtitle = "Personal website", date = "Mar. 2023", 
                  first_point = "Used HTML, JavaScript, and CSS to create a personal website for writing blog posts",
                  second_point = 'Blog posts focus on statistics, machine learning, and coding by explaining technical details, providing demonstrations, and conducting simulation experiments')
 ```
 
 ```{r guelphdown, echo=F}
-generate_CVentry(title = "\\href{https://github.com/sebsciarra/guelphdown}{guelphdown}*\\footnotetext{clickable hyperlink to the corresponding repository on my GitHub}", 
+generate_resume_entry(title = "\\href{https://github.com/sebsciarra/guelphdown}{guelphdown}*\\footnotetext{clickable hyperlink to the corresponding repository on my GitHub}", 
                  subtitle = "R Package", 
                  date = "Mar. 2023", 
                  first_point = "Created an R package for generating theses according to the University of Guelph formatting requirements", 
@@ -101,20 +101,20 @@ generate_CVentry(title = "\\href{https://github.com/sebsciarra/guelphdown}{guelp
 
 
 ```{r nonlinSimsAnalysis, echo=F}
-generate_CVentry(title = "\\href{https://github.com/sebsciarra/nonlinSimsAnalysis}{nonlinSimsAnalysis}*", 
+generate_resume_entry(title = "\\href{https://github.com/sebsciarra/nonlinSimsAnalysis}{nonlinSimsAnalysis}*", 
                  subtitle = "R Package",
                  date = "March 2022", 
                  first_point = "Created an R package automating the cleaning, analysis, and visualization of large data sets for my doctoral dissertation (e.g., 40 000+ rows)", second_point = "additional info")
 ```
 
 ```{r nonlinSims, echo=F}
-generate_CVentry(title = "\\href{https://github.com/sebsciarra/nonlinSims}{nonlinSims}*", subtitle = "R Package", date = "Jan. 2022", 
+generate_resume_entry(title = "\\href{https://github.com/sebsciarra/nonlinSims}{nonlinSims}*", subtitle = "R Package", date = "Jan. 2022", 
                  first_point = "Created an R package for simulation experiments in my doctoral dissertation",
                  second_point = "Package allows the performance of structured latent growth curve models to be evaluated under several different conditions")
 ```
 
 ```{r sql-learning, echo=F}
-generate_CVentry(title = "\\href{https://github.com/sebsciarra/learning_SQL}{Learning SQL}*", subtitle = "Skill learning", date = "Mar. 2021", 
+generate_resume_entry(title = "\\href{https://github.com/sebsciarra/learning_SQL}{Learning SQL}*", subtitle = "Skill learning", date = "Mar. 2021", 
                  first_point = "Went through 16 of 18 chapters from Alan Beaulieu's \\href{https://www.amazon.ca/Learning-SQL-Generate-Manipulate-Retrieve/dp/1492057614/ref=sr_1_1?hvadid=324956203165&hvdev=c&hvlocphy=9000835&hvnetw=g&hvqmt=e&hvrand=9921433988929165270&hvtargid=kwd-312865785332&hydadcr=16084_10268182&keywords=learning+sql+by+alan+beaulieu&qid=1684158363&sr=8-1}{\\textcolor{blue}{Learning SQL}}", 
                  second_point = "Topics include filtering, querying multiple tables, sets, grouping and aggregates, subqueries, joins, transactions etc.")
 ```
@@ -123,7 +123,7 @@ generate_CVentry(title = "\\href{https://github.com/sebsciarra/learning_SQL}{Lea
 # \faCertificate\ Certifications
 
 ```{r datacamp-certifications, echo=F}
-generate_CVentry(title = "DataCamp courses", subtitle = "Skill learning", date = "June 2018--Aug. 2020", 
+generate_resume_entry(title = "DataCamp courses", subtitle = "Skill learning", date = "June 2018--Aug. 2020", 
                  first_point = "Completed 35 courses ranging from data visualization and writing functions to  machine learning topics such as tree-based models and support vector machines. For a full list of the courses, see the relevant section on my LinkedIn \\href{https://www.linkedin.com/in/sebsciarra/details/certifications/}{\\textcolor{blue}{here}}")
 ```
 

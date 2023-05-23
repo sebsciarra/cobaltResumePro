@@ -1,12 +1,12 @@
-%% Start of file `cobaltCV.cls'.
-% cobaltCV Class File
+%% Start of file `cobaltResume.cls'.
+% cobaltResumeClass File
 %
 % Author:
 % Sebastian Sciarra <seb@sciarra.io>
 % http://www.sebastiansciarra.com
 %
 % Notes:
-% 1) This class file defines the structure and layout of the template file (cobaltCV.tex, cobalt_resume.tex).
+% 1) This class file defines the structure and layout of the template file (cobaltResume.tex).
 %
 % Class license:
 % LPPL v1.3c (http://www.latex-project.org/lppl)
@@ -168,7 +168,7 @@
 }
 
 
-\newcommand{\sscvcobalt}{\textcolor{bandcolor}{\@lastName\ $\boldsymbol{\cdot}$ CV}}
+\newcommand{\cobaltLastName}{\textcolor{bandcolor}{\@lastName\ $\boldsymbol{\cdot}$ Résumé}}
 
 %% Define page style
 \fancypagestyle{cobaltHeader}{%
@@ -176,7 +176,7 @@
   \renewcommand{\headrulewidth}{0pt}% Remove header rule
   \renewcommand{\footrulewidth}{0pt}% Remove footer rule
    \fancyfoot[R]{\thepage}% Page number in bottom right
-  \fancyfoot[C]{\sscvcobalt}% SS \cdot CV in bottom middle
+  \fancyfoot[C]{\cobaltLastName}%
   \chead{% Centered header
      \raggedleft
        \setstretch{2}%
@@ -194,7 +194,7 @@
   \renewcommand{\headrulewidth}{0pt}% Remove header rule
   \renewcommand{\footrulewidth}{0pt}% Remove footer rule
   \fancyfoot[R]{\thepage}% Page number in bottom right
-  \fancyfoot[C]{\sscvcobalt}% SS \cdot CV in bottom middle
+  \fancyfoot[C]{\cobaltLastName}%
 }
 
 
@@ -240,7 +240,7 @@
 
 \usepackage{enumitem}
 \usepackage{xparse}
-\NewDocumentEnvironment{CVentry}{m m m o o o o o}{%
+\NewDocumentEnvironment{resumeEntry}{m m m o o o o o}{%
 
     \columnratio{0.7}
     \begin{paracol}{2}

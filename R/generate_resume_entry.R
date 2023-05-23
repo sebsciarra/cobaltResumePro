@@ -13,16 +13,16 @@
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 #' @export
-generate_CVentry <- function(title, subtitle = "", date,
+generate_resume_entry <- function(title, subtitle = "", date,
                              first_point = "", second_point = "", third_point = "", fourth_point = "") {
 
   #LaTeX code for CV entry
-  entry <- cat("\\begin{CVentry}{",
+  entry <- cat("\\begin{resumeEntry}{",
                title, "}{",
                subtitle, "}{",
                date, "}[",
                first_point, "][", second_point, "][", third_point, "][", fourth_point, "]",
-               "\\end{CVentry}", sep = '')
+               "\\end{resumeEntry}", sep = '')
 
 }
 
