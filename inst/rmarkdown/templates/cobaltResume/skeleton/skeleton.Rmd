@@ -20,7 +20,7 @@ citizenship: "Citizenship status" #e.g., work permit/study permit/Permanent resi
 header-includes: 
   - \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 #leave knit YAML variable uncommented if you want to join the CV and cover letter in one PDF
-#knit: cobaltResume::merge_resume_cover_letter
+knit: cobaltResume::merge_resume_cover_letter
 ---
 
 ```{r echo=F, message=F, warning=F, message = F}
@@ -37,12 +37,27 @@ knitr::opts_chunk$set(results = "asis")
 
 ```{r phd, echo=F}
 create_resume_entry(title = "PhD, Field", 
+                 subtitle = "University ", 
+                 date = "Start--End", 
+                 first_point = "Thesis title: \\textbf{Thesis title}", 
+                 second_point = "Brief summary about thesis", 
+                 third_point = "My thesis can be viewed  \\href{\\detokenize{link_to_thesis}}{\\textcolor{blue}{here}}")
+```
+
+```{r msc, echo=F}
+create_resume_entry(title = "MSc, Field", 
+                 subtitle = "University",
+                  date = "Start--End", 
+                 first_point = "Thesis title: \\textbf{Thesis title}", 
+                 second_point = "Brief summary about thesis", 
+                 third_point = "My thesis can be viewed  \\href{\\detokenize{link_to_thesis}}{\\textcolor{blue}{here}}")
+
+```
+
+```{r bsc, echo=F}
+create_resume_entry(title = "Degree, Field", 
                  subtitle = "University", 
-                 date = "Start Date--Completion Date", 
-                 first_point = "Thesis title: \\textbf{This is my thesis title}", 
-                 second_point = "General information about thesis",
-                 #make sure to use detokenize if link contains special characters such as underscores (_)
-                 third_point = "My thesis can be viewed \\href{\\detokenize{some_link}}{\\textcolor{blue}{here}}") 
+                date = "Start--End")
 ```
 
 
@@ -51,16 +66,9 @@ create_resume_entry(title = "PhD, Field",
 
 
 ```{r ta-experience, echo=F}
-create_resume_entry(title = "Teaching Assistant", 
-                 subtitle = "University of Guelph", 
-                 date = "Sep. 2018--May 2023", 
-                 first_point = "Created R scripts for assignments and taught labs for the following courses in measurement and statistics: \\begin{itemize}   \\fontsize{9}{9}\\selectfont
-                \\item PSYC 3290 (Conducting Statistical Analyses in Psychology)
-                \\item PSYC 3250 (Psychological Measurement) 
-                \\item PSYC 6060 (Research Design and Statistics)
-                \\item PSYC 6380 (Psychological Applications of Multivariate Analysis)
-            \\end{itemize}", 
-                second_point = "Taught a variety of topics in statistics (e.g., regression with continuous and categorical [i.e., ANOVA] variables, \\textit{p} values, \\textit{p} hacking, effect sizes, factor analysis, latent variable modelling, etc.)")
+create_resume_entry(title = "Position", 
+                 subtitle = "Organization", 
+                 date = "Start--End")
 ```
 
 
@@ -68,17 +76,19 @@ create_resume_entry(title = "Teaching Assistant",
 # \faCode\ Data Science Projects
 
 
-```{r cobalt-cv, echo=F}
-create_resume_entry(title = "\\href{https://github.com/sebsciarra/cobaltCV}{cobaltCV}\\footnote{clickable hyperlink to the corresponding repository on my GitHub}", subtitle = "R Package", date = "May 2023", 
-                 first_point = "Created an R package for generating data-driven CVs and cover letters according to a customizeable template", 
-                 second_point = "\\LaTeX code was created to specify a template and R functions were created to easily generate CV entries")
+```{r projects, echo=F}
+create_resume_entry(title = "\\href{https://github.com/sebsciarra/cobaltResume}{cobaltResume}\\footnote{clickable hyperlink to the corresponding repository on my GitHub}", subtitle = "R Package", date = "May 2023", 
+                 first_point = "Created an R package for generating résumés and cover letters within RStudio", 
+                 second_point = "\\LaTeX\\ code was used to specify a styling template that draws inspiration from the cobalt theme in the RStudio IDE ", 
+                 third_point = "R functions were created to easily generate résumé entries and merge résumés and cover letters into one PDF file")
 ```
 
 
 ```{r personal-website, echo=F}
 create_resume_entry(title = "\\href{sebastiansciarra.com}{sebastiansciarra.com}*", subtitle = "Personal website", date = "Mar. 2023", 
                  first_point = "Used HTML, JavaScript, and CSS to create a personal website for writing blog posts",
-                 second_point = 'Blog posts focus on statistics, machine learning, and coding by explaining technical details, providing demonstrations, and conducting simulation experiments')
+                 second_point = 'Blog posts focus on statistics, machine learning, and coding by explaining technical details, providing demonstrations, and conducting simulation experiments', 
+                 third_point = 'Blog posts use code from a variety of language to explain content. As an example, my post titled ``\\href{https://sebastiansciarra.com/coding_tricks/em_demo/}{\\textcolor{blue}{Coding and Visualizing the Expectation-Maximization Algorithm}}" used R, Python, and CSS code')
 ```
 
 ```{r guelphdown, echo=F}
@@ -86,7 +96,7 @@ create_resume_entry(title = "\\href{https://github.com/sebsciarra/guelphdown}{gu
                  subtitle = "R Package", 
                  date = "Mar. 2023", 
                  first_point = "Created an R package for generating theses according to the University of Guelph formatting requirements", 
-                  second_point = "\\LaTeX code was created to specify a template, which included different formattings for the preamble, body, refences, and appendices",
+                  second_point = "\\LaTeX\\ code was created to specify a template, which included different formattings for the preamble, body, refences, and appendices",
                  third_point = "An example of the formatting can be seen in my \\href{\\detokenize{https://atrium.lib.uoguelph.ca/xmlui/bitstream/handle/10214/27543/Sciarra_Sebastian_202304_PhD.pdf?sequence=1&isAllowed=y}}{\\textcolor{blue}{thesis}}")
 ```
 
@@ -95,7 +105,7 @@ create_resume_entry(title = "\\href{https://github.com/sebsciarra/guelphdown}{gu
 create_resume_entry(title = "\\href{https://github.com/sebsciarra/nonlinSimsAnalysis}{nonlinSimsAnalysis}*", 
                  subtitle = "R Package",
                  date = "March 2022", 
-                 first_point = "Created an R package automating the cleaning, analysis, and visualization of large data sets for my doctoral dissertation (e.g., 40 000+ rows)", second_point = "additional info")
+                 first_point = "Created an R package that contained functions for automating the cleaning, analysis, and visualization of large data sets for my doctoral dissertation (e.g., 40 000+ rows)")
 ```
 
 ```{r nonlinSims, echo=F}

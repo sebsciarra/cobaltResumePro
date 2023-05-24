@@ -242,7 +242,7 @@
 \usepackage{xparse}
 \NewDocumentEnvironment{resumeEntry}{m m m o o o o o}{%
 
-    \columnratio{0.7}
+    \columnratio{0.65}
     \begin{paracol}{2}
         \par\setstretch{1.5}\noindent%
         {\fontsize{11}{11}\selectfont\bfseries #1} \\%

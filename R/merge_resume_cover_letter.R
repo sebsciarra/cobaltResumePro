@@ -8,7 +8,6 @@ merge_resume_cover_letter <- function(...) {
   rmd_files <- list.files(path = here::here(),
                           pattern = '.Rmd', recursive = TRUE, full.names = TRUE)
 
-
   # Check the length of rmd_files
   if (length(rmd_files) > 2) {
     error_message <- "There must be only two .Rmd files: One for the résumé and
