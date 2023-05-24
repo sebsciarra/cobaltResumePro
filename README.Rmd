@@ -33,9 +33,10 @@ library(cobaltResume)
 Résumés can be created by using cobaltResume template for résumés.
 
 ```{r, echo=FALSE, out.width="50%", out.height="50%"}
-knitr::include_graphics("https://github.com/sebsciarra/cobaltResume/blob/main/docs/reference/figures/resume_template.png")
+knitr::include_graphics("docs/reference/figures/resume_template.png")
 ```
 
+ ![](https://github.com/sebsciarra/cobaltResume/blob/main/docs/reference/figures/resume_template.png)
 In the resulting .Rmd file, a résumé can be completed by using three features. First, information related to identification and skills can be included in the résumé by filling in the appropriate YAML header variables shown below.
 
 ```{yaml}
