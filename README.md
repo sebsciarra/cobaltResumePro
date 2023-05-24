@@ -3,53 +3,50 @@
 
 # cobaltResume
 
-<!-- badges: start -->
-<!-- badges: end -->
+This is a change
 
-The goal of cobaltResume is to …
+The goal of cobaltResume is to create professionally-looking résumés and
+cover letters.
 
 ## Installation
 
 You can install the development version of cobaltResume from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/) and load it into your session with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("sciarraseb/cobaltCV")
-```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
+devtools::install_github("sciarraseb/cobaltResume")
 library(cobaltResume)
-## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+## Creating a résumé
 
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+Résumés can be created by first creating an R Markdown file with the
+cobaltResume template.
+
+![](docs/reference/figures/resume_template.png)
+
+Résumés can be completed by using three features in resume template .
+First, information related to identification and skills can be included
+in the résumé by filling in the appropriate YAML header variables.
+
+``` yaml
+firstName: "firstName"
+lastName: "lastName"
+position: "Position" #job position being applied to 
+date: "date" 
+output: 
+  pdf_document:
+    template: "cobaltResume.tex"
+#hyperlinks (delete or leave blank blank if not necessary/do not exist)
+#escape any special characters with two backslashes (for example, see email variable)
+githubLink: "github.com/user" #
+githubName: "githubHandle"
+personalWebsite: "personalwebsite.com"
+linkedinName: "firstName lastName"
+linkedinLink: "linkedin.com/in/personal_link"
+email: "email\\@domain.com" 
+#skills + citizenship
+skills: "R, SQL, Python, LaTeX, Bash, HTML, JavaScript, CSS, Machine learning, Data science, Data visualization, Knowledge translation" #skills relevant to the job
+citizenship: "Citizenship status" #e.g., work permit/study permit/Permanent resident/citizen, etc.
 ```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.

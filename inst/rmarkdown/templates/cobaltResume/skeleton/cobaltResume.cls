@@ -99,7 +99,7 @@
 \newcommand{\printSocial}[3]{
   \ifx#1\@empty\else
     \ifx#2\@empty\else
-      \href{https://#1}{\textcolor{#3}{#2}}
+      \href{https://#1}{\textcolor{#3}{#2}} &
      % \vspace{.6cm}
     \fi
   \fi
@@ -148,10 +148,10 @@
           {>{\raggedleft\arraybackslash}p{0.85\leftcolumnwidth}%
            >{\raggedleft\arraybackslash}p{0.15\leftcolumnwidth}%
           }
-            \ifnum\value{page}>1  \printSocial{\@email}{\@email}{simcolor} &  \printIcon{\@email}{\@email}{simcolor}{\faEnvelope} \\ \fi
-            \printSocial{\@personalWebsite}{\@personalWebsite}{aboutcolor} & \printIcon{\@personalWebsite}{\@personalWebsite}{aboutcolor}{\faHome} \\
-            \printSocial{\@githubLink}{\@githubName}{techcolor} & \printIcon{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare} \\
-            \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor} & \printIcon{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin} \\
+            \ifnum\value{page}>1  \printSocial{\@email}{\@email}{simcolor}   \printIcon{\@email}{\@email}{simcolor}{\faEnvelope} \\ \fi
+            \printSocial{\@personalWebsite}{\@personalWebsite}{aboutcolor}  \printIcon{\@personalWebsite}{\@personalWebsite}{aboutcolor}{\faHome} \\
+            \printSocial{\@githubLink}{\@githubName}{techcolor}  \printIcon{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare} \\
+            \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor}  \printIcon{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin} \\
           \end{tabular}
             };
         \node[font=\fontsize{9pt}{9pt}\selectfont, text width=\leftcolumnwidth, align = right]

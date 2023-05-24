@@ -1,24 +1,26 @@
 ---
-firstName: "Sebastian"
-lastName: "Sciarra"
-position: "Data scientist"
-date: "May 2023"
+firstName: "firstName"
+lastName: "lastName"
+position: "Position" #job position being applied to 
+date: "date" 
 output: 
   pdf_document:
     template: "cobaltResume.tex"
-#hyperlinks
-githubLink: "github.com/sebsciarra"
-githubName: "sebsciarra"
-personalWebsite: "sebastiansciarra.com"
-linkedinName: "Sebastian Sciarra"
-linkedinLink: "linkedin.com/in/sebsciarra"
-email: "seb\\@sciarra.io"
-skills: "R, SQL, Python, LaTeX, Bash, HTML, JavaScript, CSS, Machine learning, Data science, Data visualization, Knowledge translation"
-citizenship: "Canadian"
+#hyperlinks (delete or leave blank blank if not necessary/do not exist)
+#escape any special characters with two backslashes (for example, see email variable)
+githubLink: "github.com/user" #
+githubName: "githubHandle"
+personalWebsite: "personalwebsite.com"
+linkedinName: "firstName lastName"
+linkedinLink: "linkedin.com/in/personal_link"
+email: "email\\@domain.com" 
+#skills + citizenship
+skills: "R, SQL, Python, LaTeX, Bash, HTML, JavaScript, CSS, Machine learning, Data science, Data visualization, Knowledge translation" #skills relevant to the job
+citizenship: "Citizenship status" #e.g., work permit/study permit/Permanent resident/citizen, etc.
 header-includes: 
   - \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 #leave knit YAML variable uncommented if you want to join the CV and cover letter in one PDF
-knit: cobaltResume::merge_resume_cover_letter
+#knit: cobaltResume::merge_resume_cover_letter
 ---
 
 ```{r echo=F, message=F, warning=F, message = F}
@@ -34,24 +36,14 @@ knitr::opts_chunk$set(results = "asis")
 # \faUniversity\ Education
 
 ```{r phd, echo=F}
-generate_resume_entry(title = "PhD, Industrial-Organizational Psychology", 
-                 subtitle = "University of Guelph", 
-                 date = "Sep. 2018--May 2023", 
-                 first_point = "Thesis title: \\textbf{Is Timing Everything? The Effects of Measurement Timing on the \\newline Performance of Nonlinear Longitudinal Models}", 
-                 second_point = "Conducted Monte Carlo simulation experiments using R on an Amazon Web Services (AWS) instance to evaluate the performance of structured latent growth curve models under several conditions", 
-                 third_point = "My thesis can be viewed  \\href{\\detokenize{https://atrium.lib.uoguelph.ca/xmlui/bitstream/handle/10214/27543/Sciarra_Sebastian_202304_PhD.pdf?sequence=1&isAllowed=y}}{\\textcolor{blue}{here}}")
-```
-
-```{r msc, echo=F}
-generate_resume_entry(title = "MSc, Psychology", 
-                 subtitle = "McMaster University",
-                 date = "Sep. 2016--June 2018")
-```
-
-```{r bsc, echo=F}
-generate_resume_entry(title = "Honours BSc, Psychology, Neuroscience \\& Behaviour", 
-                 subtitle = "McMaster University", 
-                 date = "Sep. 2012--June 2016")
+generate_resume_entry(title = "PhD, Field", 
+                 subtitle = "University", 
+                 date = "Start Date--Completion Date", 
+                 first_point = "Thesis title: \\textbf{This is my thesis title}", 
+                 second_point = "General information about thesis",
+                 #make sure to use detokenize if link contains special characters such as underscores (_)
+                 third_point = "My thesis can be viewed 
+                 #make \\href{\\detokenize{some_link}}{\\textcolor{blue}{here}}") 
 ```
 
 

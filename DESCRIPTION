@@ -8,8 +8,8 @@ Description: Generates résumés and cover letters according to cobalt theme in 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/sebsciarra/cobaltCV
-BugReports: https://github.com/sciarraseb/cobaltCV/issues
+URL: https://github.com/sebsciarra/cobaltResume
+BugReports: https://github.com/sciarraseb/cobaltResume/issues
 RoxygenNote: 7.2.3
 Template: cobaltResume
 Imports: 
