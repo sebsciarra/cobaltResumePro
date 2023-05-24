@@ -20,7 +20,7 @@ citizenship: "Citizenship status" #e.g., work permit/study permit/Permanent resi
 header-includes: 
   - \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 #leave knit YAML variable uncommented if you want to join the CV and cover letter in one PDF
-knit: cobaltResume::merge_resume_cover_letter
+#knit: cobaltResume::merge_resume_cover_letter
 ---
 
 ```{r echo=F, message=F, warning=F, message = F}
@@ -77,7 +77,7 @@ create_resume_entry(title = "Position",
 
 
 ```{r projects, echo=F}
-create_resume_entry(title = "\\href{https://github.com/sebsciarra/cobaltResume}{cobaltResume}\\footnote{clickable hyperlink to the corresponding repository on my GitHub}", subtitle = "R Package", date = "May 2023", 
+create_resume_entry(title = "\\href{https://github.com/sebsciarra/cobaltResume}{cobaltResume}\\footnote{\noindent clickable hyperlink to the corresponding repository on my GitHub}", subtitle = "R Package", date = "May 2023", 
                  first_point = "Created an R package for generating résumés and cover letters within RStudio", 
                  second_point = "\\LaTeX\\ code was used to specify a styling template that draws inspiration from the cobalt theme in the RStudio IDE ", 
                  third_point = "R functions were created to easily generate résumé entries and merge résumés and cover letters into one PDF file")
