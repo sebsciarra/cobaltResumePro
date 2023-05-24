@@ -22,7 +22,7 @@ library(cobaltResume)
 
 Résumés can be created by using cobaltResume template for résumés.
 
-<img src="docs/reference/figures/resume_template.png" width="50%" height="50%" />
+<img src="man/figures/resume_template.png" width="50%" height="50%" />
 
 ![](https://github.com/sebsciarra/cobaltResume/blob/main/docs/reference/figures/resume_template.png)
 In the resulting .Rmd file, a résumé can be completed by using three
@@ -57,7 +57,7 @@ icons](http://mirrors.ibiblio.org/CTAN/fonts/fontawesome5/doc/fontawesome5.pdf))
 For example, `\faSuitcase\ Employment` results in the header shown
 below.
 
-<img src="docs/reference/figures/example_header.png" width="25%" height="25%" />
+<img src="man/figures/example_header.png" width="25%" height="25%" />
 
 Third, résumé entries can be completed using `create_resume_entry()`.
 Two examples are provided below.
@@ -79,20 +79,20 @@ create_resume_entry(title = "\\href{sebastiansciarra.com}{sebastiansciarra.com}\
 Note that LaTeX code can be inserted and will be rendered. The above two
 examples produce the following two entries in the resulting PDF file:
 
-<img src="docs/reference/figures/education.png" width="65%" height="65%" /><img src="docs/reference/figures/personal_website.png" width="65%" height="65%" />
+<img src="man/figures/education.png" width="65%" height="65%" /><img src="man/figures/personal_website.png" width="65%" height="65%" />
 
 As an aside, there is an asterisk at the end of the personal website,
 because it is a clickable hyperlink to the corresponding GitHub
 repository. This not shows up as a footnote, as shown below.
 
-<img src="docs/reference/figures/hyperlink_footnote.png" width="65%" height="65%" />
+<img src="man/figures/hyperlink_footnote.png" width="65%" height="65%" />
 
 ## Creating a cover letter
 
 Cover letters can be created by using cobaltResume template for cover
 letters.
 
-<img src="docs/reference/figures/cover_letter.png" width="50%" height="50%" />
+<img src="man/figures/cover_letter.png" width="50%" height="50%" />
 
 In the resulting .Rmd file, a résumé can be completed by using three
 features. First, information related to identification and skills can be

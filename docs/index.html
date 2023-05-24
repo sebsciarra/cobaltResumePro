@@ -60,7 +60,7 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="cobaltresume">cobaltResume<a class="anchor" aria-label="anchor" href="#cobaltresume"></a>
 </h1></div>
-<p>The goal of <code>cobaltResume</code> is to create professionally-looking résumés and cover letters. Here is a résumé I created for myself <code>cobaltResume</code>: <a href="d=ocs/reference/resume.pdf">my resume</a>.</p>
+<p>The goal of <code>cobaltResume</code> is to create professionally-looking résumés and cover letters. Here is a résumé I created for myself <code>cobaltResume</code>: <a href="docs/reference/resume.pdf">my resume</a>.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -74,8 +74,8 @@
 <h2 id="creating-a-résumé">Creating a résumé<a class="anchor" aria-label="anchor" href="#creating-a-r%C3%A9sum%C3%A9"></a>
 </h2>
 <p>Résumés can be created by using cobaltResume template for résumés.</p>
-<p><img src="docs/reference/figures/resume_template.png" width="50%" height="50%"></p>
-<p>In the resulting .Rmd file, a résumé can be completed by using three features. First, information related to identification and skills can be included in the résumé by filling in the appropriate YAML header variables shown below.</p>
+<p><img src="reference/figures/resume_template.png" width="50%" height="50%"></p>
+<p><img src="https://github.com/sebsciarra/cobaltResume/blob/main/docs/reference/figures/resume_template.png"> In the resulting .Rmd file, a résumé can be completed by using three features. First, information related to identification and skills can be included in the résumé by filling in the appropriate YAML header variables shown below.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">firstName</span><span class="kw">:</span><span class="at"> </span><span class="st">"firstName"</span></span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">lastName</span><span class="kw">:</span><span class="at"> </span><span class="st">"lastName"</span></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">position</span><span class="kw">:</span><span class="at"> </span><span class="st">"Position"</span><span class="co"> #job position being applied to </span></span>
@@ -95,7 +95,7 @@
 <span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="fu">skills</span><span class="kw">:</span><span class="at"> </span><span class="st">"R, SQL, Python, LaTeX, Bash, HTML, JavaScript, CSS, Machine learning, Data science, Data visualization, Knowledge translation"</span><span class="co"> #skills relevant to the job</span></span>
 <span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="fu">citizenship</span><span class="kw">:</span><span class="at"> </span><span class="st">"Citizenship status"</span><span class="co"> #e.g., work permit/study permit/Permanent resident/citizen, etc.</span></span></code></pre></div>
 <p>Second, sections can be created in the <code>.Rmd</code> file and accessorized with fontawesome icons (for a full list, see <a href="http://mirrors.ibiblio.org/CTAN/fonts/fontawesome5/doc/fontawesome5.pdf" class="external-link">fontawesome icons</a>). For example, <code>\faSuitcase\ Employment</code> results in the header shown below.</p>
-<p><img src="docs/reference/figures/example_header.png" width="25%" height="25%"></p>
+<p><img src="reference/figures/example_header.png" width="25%" height="25%"></p>
 <p>Third, résumé entries can be completed using <code><a href="reference/create_resume_entry.html">create_resume_entry()</a></code>. Two examples are provided below.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/create_resume_entry.html">create_resume_entry</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"PhD, Industrial-Organizational Psychology"</span>, </span>
@@ -110,15 +110,15 @@
 <span>                 second_point <span class="op">=</span> <span class="st">'Blog posts focus on statistics, machine learning, and coding by explaining technical details, providing demonstrations, and conducting simulation experiments'</span>, </span>
 <span>                 third_point <span class="op">=</span> <span class="st">'Blog posts use code from a variety of language to explain content. As an example, my post titled ``\\href{https://sebastiansciarra.com/coding_tricks/em_demo/}{\\textcolor{blue}{Coding and Visualizing the Expectation-Maximization Algorithm}}" used R, Python, and CSS code'</span><span class="op">)</span></span></code></pre></div>
 <p>Note that LaTeX code can be inserted and will be rendered. The above two examples produce the following two entries in the resulting PDF file:</p>
-<p><img src="docs/reference/figures/education.png" width="65%" height="65%"><img src="docs/reference/figures/personal_website.png" width="65%" height="65%"></p>
+<p><img src="reference/figures/education.png" width="65%" height="65%"><img src="reference/figures/personal_website.png" width="65%" height="65%"></p>
 <p>As an aside, there is an asterisk at the end of the personal website, because it is a clickable hyperlink to the corresponding GitHub repository. This not shows up as a footnote, as shown below.</p>
-<p><img src="docs/reference/figures/hyperlink_footnote.png" width="65%" height="65%"></p>
+<p><img src="reference/figures/hyperlink_footnote.png" width="65%" height="65%"></p>
 </div>
 <div class="section level2">
 <h2 id="creating-a-cover-letter">Creating a cover letter<a class="anchor" aria-label="anchor" href="#creating-a-cover-letter"></a>
 </h2>
 <p>Cover letters can be created by using cobaltResume template for cover letters.</p>
-<p><img src="docs/reference/figures/cover_letter.png" width="50%" height="50%"></p>
+<p><img src="reference/figures/cover_letter.png" width="50%" height="50%"></p>
 <p>In the resulting .Rmd file, a résumé can be completed by using three features. First, information related to identification and skills can be included in the résumé by filling in the appropriate YAML header variables shown below.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">firstName</span><span class="kw">:</span><span class="at"> </span><span class="st">"firstName"</span></span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">lastName</span><span class="kw">:</span><span class="at"> </span><span class="st">"lastName"</span></span>

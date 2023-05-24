@@ -33,7 +33,7 @@ library(cobaltResume)
 Résumés can be created by using cobaltResume template for résumés.
 
 ```{r, echo=FALSE, out.width="50%", out.height="50%"}
-knitr::include_graphics("docs/reference/figures/resume_template.png")
+knitr::include_graphics("man/figures/resume_template.png")
 ```
 
  ![](https://github.com/sebsciarra/cobaltResume/blob/main/docs/reference/figures/resume_template.png)
@@ -65,7 +65,7 @@ citizenship: "Citizenship status" #e.g., work permit/study permit/Permanent resi
 Second, sections can be created in the `.Rmd` file and accessorized with fontawesome icons (for a full list, see [fontawesome icons](http://mirrors.ibiblio.org/CTAN/fonts/fontawesome5/doc/fontawesome5.pdf)). For example, `\faSuitcase\ Employment` results in the header shown below. 
 
 ```{r, echo=FALSE, out.width="25%", out.height="25%"}
-knitr::include_graphics("docs/reference/figures/example_header.png")
+knitr::include_graphics("man/figures/example_header.png")
 ```
 
 Third, résumé entries can be completed using `create_resume_entry()`. Two examples are provided below. 
@@ -87,15 +87,15 @@ create_resume_entry(title = "\\href{sebastiansciarra.com}{sebastiansciarra.com}\
 Note that LaTeX code can be inserted and will be rendered. The above two examples produce the following two entries in the resulting PDF file: 
 
 ```{r, echo=FALSE, out.width="65%", out.height="65%"}
-knitr::include_graphics("docs/reference/figures/education.png")
-knitr::include_graphics("docs/reference/figures/personal_website.png")
+knitr::include_graphics("man/figures/education.png")
+knitr::include_graphics("man/figures/personal_website.png")
 ```
 
 As an aside, there is an asterisk at the end of the personal website, because it is a clickable hyperlink to the corresponding GitHub repository. This not shows up as a footnote, as shown below. 
 
 
 ```{r, echo=FALSE, out.width="65%", out.height="65%"}
-knitr::include_graphics("docs/reference/figures/hyperlink_footnote.png")
+knitr::include_graphics("man/figures/hyperlink_footnote.png")
 ```
 
 ## Creating a cover letter
@@ -103,7 +103,7 @@ knitr::include_graphics("docs/reference/figures/hyperlink_footnote.png")
 Cover letters can be created by using cobaltResume template for cover letters.
 
 ```{r, echo=FALSE, out.width="50%", out.height="50%"}
-knitr::include_graphics("docs/reference/figures/cover_letter.png")
+knitr::include_graphics("man/figures/cover_letter.png")
 ```
 
 In the resulting .Rmd file, a résumé can be completed by using three features. First, information related to identification and skills can be included in the résumé by filling in the appropriate YAML header variables shown below.
