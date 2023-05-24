@@ -3,8 +3,6 @@
 
 # cobaltResume
 
-This is a change
-
 The goal of cobaltResume is to create professionally-looking résumés and
 cover letters.
 
@@ -21,10 +19,12 @@ library(cobaltResume)
 
 ## Creating a résumé
 
+This is a change
+
 Résumés can be created by first creating an R Markdown file with the
 cobaltResume template.
 
-![](docs/reference/figures/resume_template.png)
+![](https://raw.githubusercontent.com/sebsciarra/cobaltResume/master/docs/reference/figures/resume_template.png)
 
 Résumés can be completed by using three features in resume template .
 First, information related to identification and skills can be included
