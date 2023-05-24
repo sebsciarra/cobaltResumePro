@@ -16,7 +16,7 @@
 #' third_point = "My thesis can be viewed  \\href{\\detokenize{https://atrium.lib.uoguelph.ca/xmlui/bitstream/handle/10214/27543/Sciarra_Sebastian_202304_PhD.pdf?sequence=1&isAllowed=y}}{\\textcolor{blue}{here}}")
 #' @returns A character vector
 #' @export
-generate_resume_entry <- function(title, subtitle = "", date,
+create_resume_entry <- function(title, subtitle = "", date,
                              first_point = "", second_point = "", third_point = "", fourth_point = "") {
 
   #LaTeX code for CV entry
