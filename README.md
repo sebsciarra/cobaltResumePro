@@ -89,4 +89,23 @@ create_resume_entry(title = "\\href{sebastiansciarra.com}{sebastiansciarra.com}*
                  third_point = 'Blog posts use code from a variety of language to explain content. As an example, my post titled ``\\href{https://sebastiansciarra.com/coding_tricks/em_demo/}{\\textcolor{blue}{Coding and Visualizing the Expectation-Maximization Algorithm}}" used R, Python, and CSS code')
 ```
 
-Note that LaTeX code can be inserted and will be rendered.
+Note that LaTeX code can be inserted and will be rendered. The above two
+examples produce the following two entries in the resulting PDF file:
+
+<div class="figure">
+
+<img src="docs/reference/figures/education.png" alt="Creating a résumé from the cobaltResume template." width="65%" height="65%" />
+<p class="caption">
+Creating a résumé from the cobaltResume template.
+</p>
+
+</div>
+
+<div class="figure">
+
+<img src="docs/reference/figures/personal_website.png" alt="Creating a résumé from the cobaltResume template." width="65%" height="65%" />
+<p class="caption">
+Creating a résumé from the cobaltResume template.
+</p>
+
+</div>

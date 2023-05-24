@@ -80,4 +80,10 @@ create_resume_entry(title = "\\href{sebastiansciarra.com}{sebastiansciarra.com}*
                  third_point = 'Blog posts use code from a variety of language to explain content. As an example, my post titled ``\\href{https://sebastiansciarra.com/coding_tricks/em_demo/}{\\textcolor{blue}{Coding and Visualizing the Expectation-Maximization Algorithm}}" used R, Python, and CSS code')
 ```
 
-Note that LaTeX code can be inserted and will be rendered. 
+Note that LaTeX code can be inserted and will be rendered. The above two examples produce the following two entries in the resulting PDF file: 
+
+```{r, echo=FALSE, out.width="65%", out.height="65%", fig.cap="Creating a résumé from the cobaltResume template."}
+knitr::include_graphics("docs/reference/figures/education.png")
+knitr::include_graphics("docs/reference/figures/personal_website.png")
+```
+

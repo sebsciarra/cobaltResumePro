@@ -64,7 +64,7 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of cobaltResume from <a href="https://github.com/" class="external-link">GitHub</a> and load it into your session with:</p>
+<p>You can install the development version of cobaltResume GitHub and load it into your session with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"sciarraseb/cobaltResume"</span><span class="op">)</span></span>
@@ -73,21 +73,24 @@
 <div class="section level2">
 <h2 id="creating-a-résumé">Creating a résumé<a class="anchor" aria-label="anchor" href="#creating-a-r%C3%A9sum%C3%A9"></a>
 </h2>
-<p>This is a change</p>
-<p>Résumés can be created by first creating an R Markdown file with the cobaltResume template.</p>
-<p><img src="https://raw.githubusercontent.com/sebsciarra/cobaltResume/master/docs/reference/figures/resume_template.png">{width=50%, height = 50%}</p>
-<p>Résumés can be completed by using three features in resume template . First, information related to identification and skills can be included in the résumé by filling in the appropriate YAML header variables.</p>
+<p>Résumés can be constructed by first creating an R Markdown file from the cobaltResume template.</p>
+<div class="figure">
+<img src="docs/reference/figures/resume_template.png" alt="Creating a résumé from the cobaltResume template." width="50%" height="50%"><p class="caption">
+Creating a résumé from the cobaltResume template.
+</p>
+</div>
+<p>In the resulting .Rmd file, a résumé can be completed by using three features. First, information related to identification and skills can be included in the résumé by filling in the appropriate YAML header variables shown below.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">firstName</span><span class="kw">:</span><span class="at"> </span><span class="st">"firstName"</span></span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">lastName</span><span class="kw">:</span><span class="at"> </span><span class="st">"lastName"</span></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">position</span><span class="kw">:</span><span class="at"> </span><span class="st">"Position"</span><span class="co"> #job position being applied to </span></span>
 <span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"date"</span><span class="at"> </span></span>
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf_document</span><span class="kw">:</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="at">    </span><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="st">"cobaltResume.tex"</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="at">    </span><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="st">"cobaltResume.tex"</span><span class="co"> #template file (do not change)</span></span>
 <span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#hyperlinks (delete or leave blank blank if not necessary/do not exist)</span></span>
 <span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#escape any special characters with two backslashes (for example, see email variable)</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="fu">githubLink</span><span class="kw">:</span><span class="at"> </span><span class="st">"github.com/user"</span><span class="co"> #</span></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="fu">githubName</span><span class="kw">:</span><span class="at"> </span><span class="st">"githubHandle"</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="fu">githubLink</span><span class="kw">:</span><span class="at"> </span><span class="st">"github.com/user"</span><span class="co"> #link to GitHub</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="fu">githubName</span><span class="kw">:</span><span class="at"> </span><span class="st">"githubHandle"</span><span class="co"> #GitHub username</span></span>
 <span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="fu">personalWebsite</span><span class="kw">:</span><span class="at"> </span><span class="st">"personalwebsite.com"</span></span>
 <span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="fu">linkedinName</span><span class="kw">:</span><span class="at"> </span><span class="st">"firstName lastName"</span></span>
 <span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="fu">linkedinLink</span><span class="kw">:</span><span class="at"> </span><span class="st">"linkedin.com/in/personal_link"</span></span>
@@ -95,6 +98,36 @@
 <span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#skills + citizenship</span></span>
 <span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="fu">skills</span><span class="kw">:</span><span class="at"> </span><span class="st">"R, SQL, Python, LaTeX, Bash, HTML, JavaScript, CSS, Machine learning, Data science, Data visualization, Knowledge translation"</span><span class="co"> #skills relevant to the job</span></span>
 <span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="fu">citizenship</span><span class="kw">:</span><span class="at"> </span><span class="st">"Citizenship status"</span><span class="co"> #e.g., work permit/study permit/Permanent resident/citizen, etc.</span></span></code></pre></div>
+<p>Second, sections can be created in the .Rmd file and accessorized with fontawesome icons (for a full list, see <a href="http://mirrors.ibiblio.org/CTAN/fonts/fontawesome5/doc/fontawesome5.pdf" class="external-link">fontawesome icons</a>). For example, <code>\faSuitcase\ Employment</code> results in the header shown below.</p>
+<div class="figure">
+<img src="docs/reference/figures/example_header.png" alt="Creating a résumé from the cobaltResume template." width="25%" height="25%"><p class="caption">
+Creating a résumé from the cobaltResume template.
+</p>
+</div>
+<p>Third, résumé entries can be completed using <code><a href="reference/create_resume_entry.html">create_resume_entry()</a></code>. Two examples are provided below.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/create_resume_entry.html">create_resume_entry</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"PhD, Industrial-Organizational Psychology"</span>, </span>
+<span>                 subtitle <span class="op">=</span> <span class="st">"University of Guelph"</span>, </span>
+<span>                 date <span class="op">=</span> <span class="st">"Sep. 2018--May 2023"</span>, </span>
+<span>                 first_point <span class="op">=</span> <span class="st">"Thesis title: \\textbf{Is Timing Everything? The Effects of Measurement Timing on the \\newline Performance of Nonlinear Longitudinal Models}"</span>, </span>
+<span>                 second_point <span class="op">=</span> <span class="st">"Conducted Monte Carlo simulation experiments using R on an Amazon Web Services (AWS) instance to evaluate the performance of structured latent growth curve models under several conditions"</span>, </span>
+<span>                 third_point <span class="op">=</span> <span class="st">"My thesis can be viewed  \\href{\\detokenize{https://atrium.lib.uoguelph.ca/xmlui/bitstream/handle/10214/27543/Sciarra_Sebastian_202304_PhD.pdf?sequence=1&amp;isAllowed=y}}{\\textcolor{blue}{here}}"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/create_resume_entry.html">create_resume_entry</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"\\href{sebastiansciarra.com}{sebastiansciarra.com}*"</span>, subtitle <span class="op">=</span> <span class="st">"Personal website"</span>, date <span class="op">=</span> <span class="st">"Mar. 2023"</span>, </span>
+<span>                 first_point <span class="op">=</span> <span class="st">"Used HTML, JavaScript, and CSS to create a personal website for writing blog posts"</span>,</span>
+<span>                 second_point <span class="op">=</span> <span class="st">'Blog posts focus on statistics, machine learning, and coding by explaining technical details, providing demonstrations, and conducting simulation experiments'</span>, </span>
+<span>                 third_point <span class="op">=</span> <span class="st">'Blog posts use code from a variety of language to explain content. As an example, my post titled ``\\href{https://sebastiansciarra.com/coding_tricks/em_demo/}{\\textcolor{blue}{Coding and Visualizing the Expectation-Maximization Algorithm}}" used R, Python, and CSS code'</span><span class="op">)</span></span></code></pre></div>
+<p>Note that LaTeX code can be inserted and will be rendered. The above two examples produce the following two entries in the resulting PDF file:</p>
+<div class="figure">
+<img src="docs/reference/figures/education.png" alt="Creating a résumé from the cobaltResume template." width="65%" height="65%"><p class="caption">
+Creating a résumé from the cobaltResume template.
+</p>
+</div>
+<div class="figure">
+<img src="docs/reference/figures/personal_website.png" alt="Creating a résumé from the cobaltResume template." width="65%" height="65%"><p class="caption">
+Creating a résumé from the cobaltResume template.
+</p>
+</div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
