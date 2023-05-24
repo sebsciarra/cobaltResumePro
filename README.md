@@ -5,7 +5,7 @@
 
 The goal of `cobaltResume` is to create professionally-looking résumés
 and cover letters. Here is a résumé I created for myself `cobaltResume`:
-[my resume](docs/reference/resume.pdf).
+[my resume](d=ocs/reference/resume.pdf).
 
 ## Installation
 
