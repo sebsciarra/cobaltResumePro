@@ -22,7 +22,7 @@ library(cobaltResume)
 
 Résumés can be created by using cobaltResume template for résumés.
 
-<img src="docs/reference/figures/resume_template.png" width="50%" height="50%" />
+<img src="https://github.com/sebsciarra/cobaltResume/blob/main/docs/reference/figures/resume_template.png" width="50%" height="50%" />
 
 In the resulting .Rmd file, a résumé can be completed by using three
 features. First, information related to identification and skills can be
