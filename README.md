@@ -4,8 +4,9 @@
 # cobaltResume
 
 The goal of `cobaltResume` is to create professionally-looking résumés
-and cover letters. Here is an example of a PDF file created from
-`cobaltResume`:
+and cover letters. Here is a résumé I created for myself `cobaltResume`:
+[my
+resume](https://raw.githubusercontent.com/sebsciarra/cobaltResume/docs/reference/resume.pdf).
 
 ## Installation
 
