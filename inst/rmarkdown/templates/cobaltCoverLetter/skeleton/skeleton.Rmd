@@ -6,7 +6,7 @@ date: "date"
 output: 
   pdf_document:
     template: "cobaltCoverLetter.tex"
-hyperlinks (delete or leave blank blank if not necessary/do not exist)
+#hyperlinks (delete or leave blank blank if not necessary/do not exist)
 #escape any special characters with two backslashes (for example, see email variable)
 githubLink: "github.com/user" #link to GitHub
 githubName: "githubHandle" #GitHub username
