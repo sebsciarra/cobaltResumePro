@@ -30,9 +30,13 @@ library(cobaltResume)
 ## Creating a résumé
 This is a change 
 
-Résumés can be created by first creating an R Markdown file with the cobaltResume template. 
+Résumés can be created by first creating an R Markdown file with the cobaltResume template.
 
-  ![](https://raw.githubusercontent.com/sebsciarra/cobaltResume/master/docs/reference/figures/resume_template.png)
+![](https://raw.githubusercontent.com/sebsciarra/cobaltResume/master/docs/reference/figures/resume_template.png)
+```{r, echo=FALSE, out.width="50%", out.height="50%", fig.cap="Creating a résumé from the cobaltResume template."}
+knitr::include_graphics("docs/reference/figures/resume_template.png")
+```
+
 
 
 

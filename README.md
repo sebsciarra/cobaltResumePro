@@ -26,6 +26,15 @@ cobaltResume template.
 
 ![](https://raw.githubusercontent.com/sebsciarra/cobaltResume/master/docs/reference/figures/resume_template.png)
 
+<div class="figure">
+
+<img src="docs/reference/figures/resume_template.png" alt="Creating a résumé from the cobaltResume template." width="50%" height="50%" />
+<p class="caption">
+Creating a résumé from the cobaltResume template.
+</p>
+
+</div>
+
 Résumés can be completed by using three features in resume template .
 First, information related to identification and skills can be included
 in the résumé by filling in the appropriate YAML header variables.
