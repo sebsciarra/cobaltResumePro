@@ -1,0 +1,43 @@
+---
+firstName: "firstName"
+lastName: "lastName"
+position: "Position" #job position being applied to 
+date: "date" 
+output: 
+  pdf_document:
+    template: "cobaltCoverLetter.tex"
+#hyperlinks (delete or leave blank blank if not necessary/do not exist)
+#escape any special characters with two backslashes (for example, see email variable)
+githubLink: "github.com/user" #link to GitHub
+githubName: "githubHandle" #GitHub username
+personalWebsite: "personalwebsite.com"
+linkedinName: "firstName lastName"
+linkedinLink: "linkedin.com/in/personal_link"
+email: "email\\@domain.com" 
+#recruiter info 
+recruiterName: "Recruiter Name"
+organization: "Organization Name"
+organizationStreet: "200 Bay St."
+organizationCityPostal: "Toronto, ON M5J 2J2"
+#greeting/closing + citizenship
+greeting: "Dear Mr./Mrs. Recruiter Name"
+emailClosing: "Sincerely"
+citizenship: "Citizenship status" #e.g., work permit/study permit/Permanent resident/citizen, etc.
+---
+
+
+
+
+\noindent
+\lipsum[1]
+
+\noindent
+\lipsum[2]
+
+\noindent
+\lipsum[3]
+
+
+
+
+
