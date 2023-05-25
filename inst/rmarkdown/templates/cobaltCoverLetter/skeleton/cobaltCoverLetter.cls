@@ -45,6 +45,13 @@
 \RequirePackage{lipsum}
 \RequirePackage{calc}
 
+\usetikzlibrary{fit}
+\RequirePackage{xstring}
+
+
+\RequirePackage{amsmath}
+\RequirePackage{array} %required for right alignment in tabular columns
+\RequirePackage[]{footnote}  %removes indentation in footnotes
 
 
 \definecolor{bandcolor}{HTML}{002241}
@@ -55,7 +62,9 @@
 \definecolor{resourcescolor}{HTML}{52aafa}
 \definecolor{aboutcolor}{HTML}{d4bd04}
 
-
+%-------------------------------------------------------------------------------
+%                Commands and Environments
+%-------------------------------------------------------------------------------
 \newlength{\leftcolumnwidth}
 \setlength{\leftcolumnwidth}{0.35\textwidth}
 
@@ -104,7 +113,6 @@
 \newcommand*{\organizationCityPostal}[1]{\def\@organizationCityPostal{#1}}
 
 
-
 \newcommand{\printSocial}[3]{
   \ifx#1\@empty\else
     \ifx#2\@empty\else
@@ -123,18 +131,15 @@
   \fi
 }
 
-\usetikzlibrary{fit}
-\usepackage{xstring}
-
-
-\usepackage{amsmath}
 
 \newcommand{\dotSubstitute}{%
   \StrSubstitute{\@skills}{,}{\space$\cdot$}
 }
 
-\usepackage{array} %required for right alignment in tabular columns
 
+%-------------------------------------------------------------------------------
+%                Page layout
+%-------------------------------------------------------------------------------
 %%repeat left band on every page with skills & socials
 %%https://tex.stackexchange.com/questions/270195/how-to-repeat-box-every-page
 \backgroundsetup{
@@ -177,6 +182,7 @@
 }
 
 
+
 %% Define page style
 \fancypagestyle{cobaltHeader}{%
   \fancyhf{}% Clear header/footer
@@ -204,7 +210,6 @@
 \setlength{\textwidth}{17.5cm}
 \setlength{\textheight}{24cm}
 \setcounter{secnumdepth}{0}
-\usepackage[]{footnote}  %removes indentation in footnotes
 
 
 \geometry{
@@ -215,8 +220,6 @@
   includehead = true,
   includefoot = true
 }
-
-
 
 
 %default color in document

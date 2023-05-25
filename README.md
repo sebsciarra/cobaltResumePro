@@ -5,7 +5,8 @@
 
 The goal of `cobaltResume` is to create professionally-looking résumés
 and cover letters. Here is a résumé I created for myself `cobaltResume`:
-[my resume](man/resume_cover_letter.pdf).
+[my
+resume](https://github.com/sebsciarra/cobaltResume/blob/main/man/resume_cover_letter.pdf).
 
 ## Installation
 
@@ -23,8 +24,6 @@ library(cobaltResume)
 Résumés can be created by using cobaltResume template for résumés.
 
 <img src="man/figures/resume_template.png" width="50%" height="50%" />
-
-![](https://raw.githubusercontent.com/sebsciarra/cobaltResume/docs/reference/figures/resume_template.png)
 
 In the resulting .Rmd file, a résumé can be completed by using three
 features. First, information related to identification and skills can be

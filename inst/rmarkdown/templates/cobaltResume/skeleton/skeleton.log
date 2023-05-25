@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.1)  24 MAY 2023 19:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.1)  24 MAY 2023 21:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -641,8 +641,6 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count320
 \calc@Cskip=\skip65
 )
-\leftcolumnwidth=\skip66
-
 (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryfit.code.tex
 File: tikzlibraryfit.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -654,7 +652,7 @@ al/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex
 Package: xstring 2021/07/21 v1.84 String manipulations (CT)
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2021/10/15 v2.17l AMS math features
-\@mathmargin=\skip67
+\@mathmargin=\skip66
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
@@ -700,8 +698,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \totwidth@=\dimen282
 \lineht@=\dimen283
 \@envbody=\toks37
-\multlinegap=\skip68
-\multlinetaggap=\skip69
+\multlinegap=\skip67
+\multlinetaggap=\skip68
 \mathdisplay@stack=\toks38
 LaTeX Info: Redefining \[ on input line 2938.
 LaTeX Info: Redefining \] on input line 2939.
@@ -711,24 +709,20 @@ Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \ar@mcellbox=\box117
 \extrarowheight=\dimen285
 \NC@list=\toks39
-\extratabsurround=\skip70
-\backup@length=\skip71
+\extratabsurround=\skip69
+\backup@length=\skip70
 \ar@cellbox=\box118
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/mdwtools/footnote.sty
-Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box119
-\fn@width=\dimen286
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
-\ttl@box=\box120
-\beforetitleunit=\skip72
-\aftertitleunit=\skip73
-\ttl@plus=\dimen287
-\ttl@minus=\dimen288
+\ttl@box=\box119
+\beforetitleunit=\skip71
+\aftertitleunit=\skip72
+\ttl@plus=\dimen286
+\ttl@minus=\dimen287
 \ttl@toksa=\toks40
-\titlewidth=\dimen289
-\titlewidthlast=\dimen290
-\titlewidthfirst=\dimen291
+\titlewidth=\dimen288
+\titlewidthlast=\dimen289
+\titlewidthfirst=\dimen290
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -750,24 +744,30 @@ LaTeX Warning: Command \underline  has changed.
                Check if current package is valid.
 
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box121
-\UL@hyphenbox=\box122
-\UL@skip=\skip74
+\UL@box=\box120
+\UL@hyphenbox=\box121
+\UL@skip=\skip73
 \UL@hook=\toks41
-\UL@height=\dimen292
+\UL@height=\dimen291
 \UL@pe=\count335
-\UL@pixel=\dimen293
-\ULC@box=\box123
+\UL@pixel=\dimen292
+\ULC@box=\box122
 Package: ulem 2019/11/18
-\ULdepth=\dimen294
+\ULdepth=\dimen293
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip75
-\enit@outerparindent=\dimen295
+\labelindent=\skip74
+\enit@outerparindent=\dimen294
 \enit@toks=\toks42
-\enit@inbox=\box124
+\enit@inbox=\box123
 \enit@count@id=\count336
 \enitdp@description=\count337
+)
+\leftcolumnwidth=\skip75
+(/usr/local/texlive/2022/texmf-dist/tex/latex/mdwtools/footnote.sty
+Package: footnote 1997/01/28 1.13 Save footnotes around boxes
+\fn@notes=\box124
+\fn@width=\dimen295
 ))
 LaTeX Font Info:    Trying to load font information for OT1+qhv on input line 3
 9.
@@ -997,7 +997,7 @@ Package rerunfilecheck Info: File `skeleton.out' has not changed.
 Here is how much of TeX's memory you used:
  26905 strings out of 478268
  510357 string characters out of 5846348
- 870696 words of memory out of 5000000
+ 870697 words of memory out of 5000000
  44640 multiletter control sequences out of 15000+600000
  538903 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191

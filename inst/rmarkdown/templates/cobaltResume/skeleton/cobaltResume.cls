@@ -44,6 +44,17 @@
 \RequirePackage{setspace}
 \RequirePackage{lipsum}
 \RequirePackage{calc}
+\usetikzlibrary{fit}
+\RequirePackage{xstring}
+\RequirePackage{amsmath}
+\RequirePackage{array} %required for right alignment in tabular columns
+
+\RequirePackage{titlesec}
+\RequirePackage{amssymb}
+\RequirePackage{sectsty}
+\RequirePackage[normalem]{ulem}
+\RequirePackage{enumitem}
+\RequirePackage{xparse}
 
 
 \definecolor{bandcolor}{HTML}{002241}
@@ -54,6 +65,10 @@
 \definecolor{resourcescolor}{HTML}{52aafa}
 \definecolor{aboutcolor}{HTML}{d4bd04}
 
+
+%-------------------------------------------------------------------------------
+%                Commands and Environments
+%-------------------------------------------------------------------------------
 \newlength{\leftcolumnwidth}
 \setlength{\leftcolumnwidth}{0.35\textwidth}
 
@@ -115,18 +130,72 @@
 }
 
 
-\usetikzlibrary{fit}
-\usepackage{xstring}
-
-
-\usepackage{amsmath}
-
 \newcommand{\dotSubstitute}{%
   \StrSubstitute{\@skills}{,}{\space$\cdot$}
 }
 
-\usepackage{array} %required for right alignment in tabular columns
+\newcommand{\cobaltLastName}{\textcolor{bandcolor}{\@lastName\ $\boldsymbol{\cdot}$ Résumé}}
 
+
+\renewcommand{\section}[1]{%}
+\vspace{0.65cm}
+  \noindent \begin{tikzpicture}
+    \node[font=\fontsize{14}{14}\selectfont\bfseries, inner sep=0pt, text width=\textwidth, align=left] (A) {\textbf{#1}};
+    \draw[line width = 0.75pt, draw = bandcolor, text width = 0.335cm]([yshift=-0.25ex]A.south west) -- ([yshift=-0.25ex]A.south east) -- ++(0em,0em) node[inner sep=0pt,outer sep=0pt,font=\tiny, yshift = 0.35ex, text = bandcolor] {$\blacksquare$} -- ++(-\textwidth,0cm) -- cycle;
+  \end{tikzpicture}
+  \vspace*{-0.5cm}
+}
+
+
+\newcommand{\printValueIfNotEmpty}[1]{%
+  \IfValueT{#1}{\if\relax\detokenize{#1}\relax\else\item #1\fi}%
+}
+
+\columnratio{0.25}
+
+\NewDocumentEnvironment{resumeEntry}{m m m o o o o o}{%
+
+    \columnratio{0.65}
+    \begin{paracol}{2}
+        \par\setstretch{1.5}\noindent%
+        {\fontsize{11}{11}\selectfont\bfseries #1} \\%
+        {\fontsize{10}{10}\selectfont\textit{#2}}\par%
+
+        \switchcolumn
+
+        \raggedleft
+        {\color{bandcolor}\fontsize{9}{9}\bfseries #3}
+
+    \end{paracol}
+
+
+    \vspace*{0.1cm}
+
+
+   \IfValueT{#4}{\if\relax\detokenize{#4}\relax\else
+  \begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt,parsep=0pt, leftmargin = 11.6pt,
+  label=\raisebox{0.04cm}{\fontsize{7pt}{7pt}$\blacksquare$}]
+  \setstretch{1.25}
+  \fontsize{10}{10}\selectfont
+    \item #4
+    \printValueIfNotEmpty{#5}
+    \printValueIfNotEmpty{#6}
+    \printValueIfNotEmpty{#7}
+    \printValueIfNotEmpty{#8}
+  \end{itemize}
+  \vspace*{0.12cm}
+  \fi
+}
+   \vspace*{0.5cm}
+  }%
+{}
+
+
+
+
+%-------------------------------------------------------------------------------
+%                Page layout
+%-------------------------------------------------------------------------------
 %%repeat left band on every page with skills & socials
 %%https://tex.stackexchange.com/questions/270195/how-to-repeat-box-every-page
 \backgroundsetup{
@@ -168,7 +237,6 @@
 }
 
 
-\newcommand{\cobaltLastName}{\textcolor{bandcolor}{\@lastName\ $\boldsymbol{\cdot}$ Résumé}}
 
 %% Define page style
 \fancypagestyle{cobaltHeader}{%
@@ -215,67 +283,9 @@
   includefoot = true
 }
 
-\columnratio{0.25}
 
 
-\usepackage{titlesec}
-\usepackage{amssymb}
-\usepackage{sectsty}
-\usepackage[normalem]{ulem}
 
-
-\renewcommand{\section}[1]{%}
-\vspace{0.65cm}
-  \noindent \begin{tikzpicture}
-    \node[font=\fontsize{14}{14}\selectfont\bfseries, inner sep=0pt, text width=\textwidth, align=left] (A) {\textbf{#1}};
-    \draw[line width = 0.75pt, draw = bandcolor, text width = 0.335cm]([yshift=-0.25ex]A.south west) -- ([yshift=-0.25ex]A.south east) -- ++(0em,0em) node[inner sep=0pt,outer sep=0pt,font=\tiny, yshift = 0.35ex, text = bandcolor] {$\blacksquare$} -- ++(-\textwidth,0cm) -- cycle;
-  \end{tikzpicture}
-  \vspace*{-0.5cm}
-}
-
-
-\newcommand{\printValueIfNotEmpty}[1]{%
-  \IfValueT{#1}{\if\relax\detokenize{#1}\relax\else\item #1\fi}%
-}
-
-\usepackage{enumitem}
-\usepackage{xparse}
-\NewDocumentEnvironment{resumeEntry}{m m m o o o o o}{%
-
-    \columnratio{0.65}
-    \begin{paracol}{2}
-        \par\setstretch{1.5}\noindent%
-        {\fontsize{11}{11}\selectfont\bfseries #1} \\%
-        {\fontsize{10}{10}\selectfont\textit{#2}}\par%
-
-        \switchcolumn
-
-        \raggedleft
-        {\color{bandcolor}\fontsize{9}{9}\bfseries #3}
-
-    \end{paracol}
-
-
-    \vspace*{0.1cm}
-
-
-   \IfValueT{#4}{\if\relax\detokenize{#4}\relax\else
-  \begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt,parsep=0pt, leftmargin = 11.6pt,
-  label=\raisebox{0.04cm}{\fontsize{7pt}{7pt}$\blacksquare$}]
-  \setstretch{1.25}
-  \fontsize{10}{10}\selectfont
-    \item #4
-    \printValueIfNotEmpty{#5}
-    \printValueIfNotEmpty{#6}
-    \printValueIfNotEmpty{#7}
-    \printValueIfNotEmpty{#8}
-  \end{itemize}
-  \vspace*{0.12cm}
-  \fi
-}
-   \vspace*{0.5cm}
-  }%
-{}
 
 
 
