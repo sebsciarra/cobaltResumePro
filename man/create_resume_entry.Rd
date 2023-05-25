@@ -36,7 +36,7 @@ A character vector
 Generates résumé entries.
 }
 \examples{
-generate_resume_entry(title = "PhD, Industrial-Organizational Psychology",
+create_resume_entry(title = "PhD, Industrial-Organizational Psychology",
 subtitle = "University of Guelph",
 date = "Sep. 2018--May 2023",
 first_point = "Thesis title: \\\\textbf{Is Timing Everything? The Effects of Measurement Timing on the \\\\newline Performance of Nonlinear Longitudinal Models}",

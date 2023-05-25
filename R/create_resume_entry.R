@@ -8,7 +8,7 @@
 #' @param third_point Third point (if necessary)
 #' @param fourth_point Fourth point (if necessary)
 #' @examples
-#' generate_resume_entry(title = "PhD, Industrial-Organizational Psychology",
+#' create_resume_entry(title = "PhD, Industrial-Organizational Psychology",
 #' subtitle = "University of Guelph",
 #' date = "Sep. 2018--May 2023",
 #' first_point = "Thesis title: \\textbf{Is Timing Everything? The Effects of Measurement Timing on the \\newline Performance of Nonlinear Longitudinal Models}",
@@ -19,13 +19,12 @@
 create_resume_entry <- function(title, subtitle = "", date,
                              first_point = "", second_point = "", third_point = "", fourth_point = "") {
 
-  #LaTeX code for CV entry
-  entry <- cat("\\begin{resumeEntry}{",
+  #LaTeX code for resume entry
+  resume_entry <- cat("\\begin{resumeEntry}{",
                title, "}{",
                subtitle, "}{",
                date, "}[",
                first_point, "][", second_point, "][", third_point, "][", fourth_point, "]",
                "\\end{resumeEntry}", sep = '')
-
 }
 

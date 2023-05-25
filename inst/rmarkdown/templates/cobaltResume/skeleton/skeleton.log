@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.1)  24 MAY 2023 21:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.1)  25 MAY 2023 16:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -888,39 +888,39 @@ Overfull \hbox (5.54092pt too wide) in paragraph at lines 50--51
  []
 
 
-Overfull \hbox (5.54092pt too wide) in paragraph at lines 59--60
-[]
- []
-
-LaTeX Font Info:    Trying to load font information for U+fontawesomefree0 on i
-nput line 65.
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomefree0.fd
-)
 Overfull \hbox (5.54092pt too wide) in paragraph at lines 65--66
 []
  []
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 68.
+LaTeX Font Info:    Trying to load font information for U+fontawesomefree0 on i
+nput line 73.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomefree0.fd
+)
+Overfull \hbox (5.54092pt too wide) in paragraph at lines 73--74
+[]
+ []
+
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 76.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 68.
+(Font)              size <5> substituted on input line 76.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 68.
+(Font)              size <5> substituted on input line 76.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 68.
+(Font)              size <5> substituted on input line 76.
 
-LaTeX Font Info:    Trying to load font information for TS1+qhv on input line 6
-8.
+LaTeX Font Info:    Trying to load font information for TS1+qhv on input line 7
+6.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/tex-gyre/ts1qhv.fd
 File: ts1qhv.fd 2009/09/25 v1.2 font definition file for TS1/qhv
 )
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
-nput line 72.
+nput line 80.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd
 )
@@ -932,33 +932,33 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-99.46962pt}.
 
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 72.
-LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 72.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 80.
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 80.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 72.
+(Font)              size <10.95> substituted on input line 80.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 72.
+(Font)              size <10.95> substituted on input line 80.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 72.
+(Font)              size <10.95> substituted on input line 80.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 72.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 72.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 80.
 LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on
- input line 72.
+ input line 80.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome5/ufontawesomebrands0.
 fd)
 LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <14> not 
 available
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
-n input line 72.
+n input line 80.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  [][]
@@ -972,7 +972,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Overfull \hbox (5.54092pt too wide) in paragraph at lines 81--82
+Overfull \hbox (5.54092pt too wide) in paragraph at lines 101--102
 []
  []
 
@@ -986,7 +986,17 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  [][]\OT1/qhv/m/n/9 date
  []
 
-[2] (./skeleton.aux)
+[2]
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][]\OT1/qhv/m/n/9 date
+ []
+
+[3] (./skeleton.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -995,13 +1005,13 @@ Package rerunfilecheck Info: File `skeleton.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26905 strings out of 478268
- 510357 string characters out of 5846348
- 870697 words of memory out of 5000000
- 44640 multiletter control sequences out of 15000+600000
+ 26910 strings out of 478268
+ 510447 string characters out of 5846348
+ 866791 words of memory out of 5000000
+ 44644 multiletter control sequences out of 15000+600000
  538903 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,22n,118p,757b,1740s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 115i,22n,118p,731b,1746s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
@@ -1024,10 +1034,10 @@ fonts/symbols/msam7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
 tex-gyre/qhvb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex-gy
 re/qhvr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/tex-gyre/qhv
 ri.pfb>
-Output written on skeleton.pdf (2 pages, 158056 bytes).
+Output written on skeleton.pdf (3 pages, 159526 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
+ 138 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
+ 9 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
