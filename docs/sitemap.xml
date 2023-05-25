@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://sebsciarra.github.io/cobaltResume/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://sebsciarra.github.io/cobaltResume/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://sebsciarra.github.io/cobaltResume/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://sebsciarra.github.io/cobaltResume/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://sebsciarra.github.io/cobaltResume/index.html</loc>
   </url>
   <url>
-    <loc>/reference/create_resume_entry.html</loc>
+    <loc>https://sebsciarra.github.io/cobaltResume/reference/create_resume_entry.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://sebsciarra.github.io/cobaltResume/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/merge_resume_cover_letter.html</loc>
+    <loc>https://sebsciarra.github.io/cobaltResume/reference/merge_resume_cover_letter.html</loc>
   </url>
 </urlset>
