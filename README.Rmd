@@ -2,8 +2,6 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -13,11 +11,19 @@ knitr::opts_chunk$set(
 )
 ```
 
-# cobaltResume
+# cobaltResume <img src="inst/rstudio/templates/project/cobalt_hex.png" align="right" width=200 />
 
-The goal of `cobaltResume` is to create professionally-looking résumés and cover letters. Here is a résumé I created for myself  `cobaltResume`: [my resume](https://github.com/sebsciarra/cobaltResume/blob/main/man/resume_cover_letter.pdf). 
+The goal of `cobaltResume` is to create professionally-looking résumés and cover letters in RStudio. LaTeX code has been written in the `cobaltResume.cls`, `cobaltCoverLetter.cls`, `cobaltResume.tex`, and `cobaltCoverLetter.tex` files to format the résumé and cover letter files.  I have written my own résumé and cover letter using `cobaltResume`, which can be viewed [my resume](https://github.com/sebsciarra/cobaltResume/blob/main/man/resume_cover_letter.pdf). Note that the cover letter is populated with placeholder content.  In the sections that follow, I will explain the following four components to using `cobaltResume`: 
 
-## Installation
+1) Installation 
+2) Project creation
+3) Creating a résumé
+4) Creating a cover letter
+5) Merging the résumé and cover letter into one PDF file
+
+The goal of `cobaltResume` is to create professionally-looking résumés and cover letters. Here is a résumé and cover letter I created for myself using  `cobaltResume`: 
+
+## 1) Installation
 
 You can install the development version of cobaltResume GitHub and load it into your session with:
 
@@ -27,16 +33,28 @@ devtools::install_github("sebsciarra/cobaltResume")
 library(cobaltResume)
 ```
 
-## Creating a résumé
+## 2) Project creation
 
-Résumés can be created by using cobaltResume template for résumés.
+To create a `cobaltResume` template, click on **File** > **New Project** > **New Directory**. Then select 
+**Résumé and cover letter project using cobaltResume** from the dropdown menu as shown below.
 
 ```{r, echo=FALSE, out.width="50%", out.height="50%"}
-knitr::include_graphics("man/figures/resume_template.png")
+knitr::include_graphics("man/figures/resume_project.png")
+```
+
+THen, give your project a name and specify where you'd like
+the files to appear. In the screenshot below, the project
+name is `my_resume_cover_letter`  will appear as a new folder on the Desktop.
+
+```{r, echo=FALSE, out.width="50%", out.height="50%"}
+knitr::include_graphics("man/figures/project_name.png")
 ```
 
 
-In the resulting .Rmd file, a résumé can be completed by using three features. First, information related to identification and skills can be included in the résumé by filling in the appropriate YAML header variables shown below.
+
+## 3) Creating a résumé
+
+In the `resume.Rmd` file, a résumé can be completed by using three features. First, information related to identification and skills can be included in the résumé by filling in the appropriate YAML header variables shown below.
 
 ```{yaml}
 firstName: "firstName"
@@ -60,8 +78,7 @@ citizenship: "Citizenship status" #e.g., work permit/study permit/Permanent resi
 ```
 
 
-
-Second, sections can be created in the `.Rmd` file and accessorized with fontawesome icons (for a full list, see [fontawesome icons](http://mirrors.ibiblio.org/CTAN/fonts/fontawesome5/doc/fontawesome5.pdf)). For example, `\faSuitcase\ Employment` results in the header shown below. 
+Second, sections can be created in the `resume.Rmd` file and accessorized with fontawesome icons (for a full list, see [fontawesome icons](http://mirrors.ibiblio.org/CTAN/fonts/fontawesome5/doc/fontawesome5.pdf)). For example, `\faSuitcase\ Employment` results in the header shown below. 
 
 ```{r, echo=FALSE, out.width="25%", out.height="25%"}
 knitr::include_graphics("man/figures/example_header.png")
@@ -97,15 +114,10 @@ As an aside, there is an asterisk at the end of the personal website, because it
 knitr::include_graphics("man/figures/hyperlink_footnote.png")
 ```
 
-## Creating a cover letter
+## 4) Creating a cover letter
 
-Cover letters can be created by using cobaltResume template for cover letters.
 
-```{r, echo=FALSE, out.width="50%", out.height="50%"}
-knitr::include_graphics("man/figures/cover_letter.png")
-```
-
-In the resulting .Rmd file, a résumé can be completed by using three features. First, information related to identification and skills can be included in the résumé by filling in the appropriate YAML header variables shown below.
+In the `cover_letter.Rmd` file, a résumé can be completed by using three features. First, information related to identification and skills can be included in the résumé by filling in the appropriate YAML header variables shown below.
 
 ```{yaml}
 firstName: "firstName"
@@ -135,10 +147,10 @@ citizenship: "Citizenship status" #e.g., work permit/study permit/Permanent resi
 ```
 
 
-## Merging the résumé and cover letter into one PDF
+## 5) Merging the résumé and cover letter into one PDF
 
-To merge the résumé and cover letter into one PDF, make sure that each file has been created from the appropriate template and created within an R project. Thus, there should be two folders: one for the résumé and one for the cover letter. Once the résumé and cover letter `.Rmd` files have been created, they can be merged by specifying the `knit` YAML variable in the résumé `.Rmd` file such that 
-
+To merge the résumé and cover letter into one PDF, make sure that each `.Rmd` file exists in its own folder (as is the case when the project is first created).  With the résumé and cover letter `.Rmd` files in their own folders, they can be merged by specifying the `knit` YAML variable in either the `résumé .Rmd` and/or the `cover_letter.Rmd` file(s) such that 
+ 
 ```{yaml}
 knit: cobaltResume::merge_resume_cover_letter
 ```

@@ -67,6 +67,7 @@
 ~%2FDesktop%2Fblog_posts%2FcobaltResume%2FDESCRIPTION="FBD967CC"
 ~%2FDesktop%2Fblog_posts%2FcobaltResume%2FLICENSE.md="9C75450C"
 ~%2FDesktop%2Fblog_posts%2FcobaltResume%2FNAMESPACE="7C4B948B"
+~%2FDesktop%2Fblog_posts%2FcobaltResume%2FR%2Fcreate_cobalt_project.R="CE7E654D"
 ~%2FDesktop%2Fblog_posts%2FcobaltResume%2FR%2Fcreate_resume_entry.R="BFC0102A"
 ~%2FDesktop%2Fblog_posts%2FcobaltResume%2FR%2Fgenerate_CVentry.R="553260E9"
 ~%2FDesktop%2Fblog_posts%2FcobaltResume%2FR%2Fgenerate_resume_entry.R="E30DFF7F"
@@ -88,4 +89,5 @@
 ~%2FDesktop%2Fblog_posts%2FcobaltResume%2Finst%2Frmarkdown%2Ftemplates%2FcobaltResume%2Fskeleton%2FcobaltResume.tex="7C42FB18"
 ~%2FDesktop%2Fblog_posts%2FcobaltResume%2Finst%2Frmarkdown%2Ftemplates%2FcobaltResume%2Fskeleton%2Fresume.log="C9A6FCD3"
 ~%2FDesktop%2Fblog_posts%2FcobaltResume%2Finst%2Frmarkdown%2Ftemplates%2FcobaltResume%2Fskeleton%2Fskeleton.Rmd="7E4FCB71"
+~%2FDesktop%2Fblog_posts%2FcobaltResume%2Finst%2Frstudio%2Ftemplates%2Fproject%2Fskeleton.dcf="2D126E21"
 ~%2FDesktop%2Fblog_posts%2FcobaltResume%2Fman%2Fgenerate_resume_entry.Rd="34C42B3C"
