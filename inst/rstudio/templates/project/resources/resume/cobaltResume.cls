@@ -55,6 +55,8 @@
 \RequirePackage[normalem]{ulem}
 \RequirePackage{enumitem}
 \RequirePackage{xparse}
+\RequirePackage{needspace}
+\RequirePackage{xpatch}
 
 
 \definecolor{bandcolor}{HTML}{002241}
@@ -145,6 +147,9 @@
   \end{tikzpicture}
   \vspace*{-0.5cm}
 }
+%section header only prints on same page if 4\baselineskip can be fit on same page
+\xpretocmd{\section}{\needspace{4\baselineskip}}{}{}
+
 
 
 \newcommand{\printValueIfNotEmpty}[1]{%
