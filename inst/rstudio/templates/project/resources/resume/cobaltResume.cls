@@ -197,7 +197,11 @@
   \vspace*{0.12cm}
   \fi
 }
-   \vspace*{0.5cm}
+      %only add vertical space if not at end of page
+  \ifdim\pagetotal=\pagegoal
+  \else
+    \vspace*{0.5cm}
+  \fi
   }%
 {}
 
