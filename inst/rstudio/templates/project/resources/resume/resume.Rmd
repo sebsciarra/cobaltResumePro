@@ -16,6 +16,8 @@ linkedinLink: "linkedin.com/in/personal_link"
 email: "email\\@domain.com" 
 #skills + citizenship
 skills: "R, SQL, Python, LaTeX, Bash, HTML, JavaScript, CSS, Machine learning, Data science, Data visualization, Knowledge translation" #skills relevant to the job
+shortDescription: "Passionate about coding, machine learning, and statistics and completed my PhD dissertation at the intersection of these fields to address a practical problem in Industrial-Organizational psychology. Writes about machine learning at \\href{sebastiansciarra.com}{\\textcolor{blue}{sebastiansciarra.com}}."
+
 citizenship: "Citizenship status" #e.g., work permit/study permit/Permanent resident/citizen, etc.
 header-includes: 
   - \renewcommand{\thefootnote}{\fnsymbol{footnote}}

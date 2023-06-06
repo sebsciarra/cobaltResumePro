@@ -74,6 +74,11 @@
 \newlength{\leftcolumnwidth}
 \setlength{\leftcolumnwidth}{0.35\textwidth}
 
+\newlength{\leftHeaderColumnWidth}
+\setlength{\leftHeaderColumnWidth}{0.37\textwidth}
+
+\newlength{\rightHeaderColumnWidth}
+\setlength{\rightHeaderColumnWidth}{0.565\textwidth}
 
 \renewcommand*{\date}[1]{\def\@date{#1}}
 \newcommand*{\position}[1]{\def\@position{#1}}
@@ -82,6 +87,7 @@
 \newcommand*{\email}[1]{\def\@email{#1}}
 \newcommand*{\skills}[1]{\def\@skills{#1}}
 \newcommand*{\citizenship}[1]{\def\@citizenship{#1}}
+\newcommand*{\shortDescription}[1]{\def\@shortDescription{#1}}
 
 %Personal website variables
 \def\personalWebsite#1{\gdef \@personalWebsite{#1} \@personalWebsitetrue}
@@ -191,11 +197,7 @@
   \vspace*{0.12cm}
   \fi
 }
-     %only add vertical space if not at end of page
-  \ifdim\pagetotal=\pagegoal
-\else
    \vspace*{0.5cm}
-\fi
   }%
 {}
 
@@ -245,7 +247,35 @@
     vshift=0pt,
 }
 
+\usepackage{longfbox}
+\newcommand\makesquare[1]{%
+  \setlength\unitlength{1pt}%
+  \begin{picture}(0,0)% make it occupy no space
+    \color{bandcolor}%
+    \put(0,#1){$\blacksquare$}%
+  \end{picture}%
+}
 
+
+\newcommand{\fancybox}[1]{%
+  \begin{longfbox}[
+    width = \leftHeaderColumnWidth,
+    render-insert-after=\makesquare{0cm},
+    %border-style = none,
+    height = 2.5cm,
+    border-color = bandcolor,
+    padding-left = 0.25cm,
+    padding-right = 0.1cm,
+    border-left-width = 0.1cm,
+    border-right-width = 0cm,
+    border-top-width = 0cm,
+    border-bottom-width = 0cm
+  ]
+
+    {\it #1}
+    %
+  \end{longfbox}%
+}
 
 %% Define page style
 \fancypagestyle{cobaltHeader}{%
@@ -255,14 +285,25 @@
    \fancyfoot[R]{\thepage}% Page number in bottom right
   \fancyfoot[C]{\cobaltLastName}%
   \chead{% Centered header
-     \raggedleft
+   \setlength{\tabcolsep}{0pt}
+    \begin{tabular}{@{} p{\leftHeaderColumnWidth} p{\rightHeaderColumnWidth} @{}}
+      \vspace*{1.25cm}
+      \setstretch{1.5}%
+\fancybox{\@shortDescription}
+      &
+      % Content for the right column
+       \raggedleft
        \setstretch{2}%
        \vspace*{1.25cm}
        \textcolor{bandcolor}{\fontsize{25}{25}\selectfont\bfseries{\@firstName\ \@lastName}} \\ \vspace*{0.15cm}
        \textcolor{bandcolor}{\fontsize{10}{10}\selectfont\@position}\\ \vspace*{0.3cm}
-       \ttfamily\fontsize{11pt}{11pt}\selectfont\textcolor{simcolor}{\href{\@email}{\@email\ \faEnvelope \hspace*{-0.2cm}}}
+       \ttfamily\fontsize{11pt}{11pt}\selectfont\textcolor{simcolor}{\href{\@email}{\@email\ \faEnvelope \hspace*{0.01cm}}}
+    \end{tabular}
   }%
 }
+
+
+
 
 
 \fancypagestyle{cobaltFooter}{%
@@ -273,6 +314,8 @@
   \fancyfoot[R]{\thepage}% Page number in bottom right
   \fancyfoot[C]{\cobaltLastName}%
 }
+
+
 
 
 %mandatory components that all LaTeX classes must specify

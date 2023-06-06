@@ -50,6 +50,9 @@ $if(citizenship)$
 \citizenship{$citizenship$}
 $endif$
 
+$if(shortDescription)$
+\shortDescription{$shortDescription$}
+$endif$
 
 %load additional latex packages needed within document
 $for(header-includes)$
@@ -62,7 +65,6 @@ $endfor$
 
 \renewcommand{\rmdefault}{phv}
 \begin{document}
-   \frenchspacing %single spaces before start of senteneces
 
 
 
