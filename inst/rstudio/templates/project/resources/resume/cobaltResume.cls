@@ -275,7 +275,7 @@
     border-top-width = 0cm,
     border-bottom-width = 0cm
   ]
-
+    \frenchspacing %remove large word spacing
     {\it #1}
     %
   \end{longfbox}%
