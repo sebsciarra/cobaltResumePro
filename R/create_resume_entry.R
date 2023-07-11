@@ -7,6 +7,7 @@
 #' @param second_point Second point (if necessary)
 #' @param third_point Third point (if necessary)
 #' @param fourth_point Fourth point (if necessary)
+#' @param fifth_point Fourth point (if necessary)
 #' @examples
 #' create_resume_entry(title = "PhD, Industrial-Organizational Psychology",
 #' subtitle = "University of Guelph",
@@ -17,14 +18,14 @@
 #' @returns A character vector
 #' @export
 create_resume_entry <- function(title, subtitle = "", date,
-                             first_point = "", second_point = "", third_point = "", fourth_point = "") {
+                             first_point = "", second_point = "", third_point = "", fourth_point = "", fifth_point = "") {
 
   #LaTeX code for resume entry
   resume_entry <- cat("\\begin{resumeEntry}{",
                title, "}{",
                subtitle, "}{",
                date, "}[",
-               first_point, "][", second_point, "][", third_point, "][", fourth_point, "]",
+               first_point, "][", second_point, "][", third_point, "][", fourth_point, "][", fifth_point, "]",
                "\\end{resumeEntry}", sep = '')
 }
 

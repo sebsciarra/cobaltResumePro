@@ -43,7 +43,10 @@ create_resume_entry(title = "PhD, Field",
                  date = "Start--End", 
                  first_point = "Thesis title: \\textbf{Thesis title}", 
                  second_point = "Brief summary about thesis", 
-                 third_point = "My thesis can be viewed  \\href{\\detokenize{link_to_thesis}}{\\textcolor{blue}{here}}")
+                 third_point = "My thesis can be viewed  \\href{\\detokenize{link_to_thesis}}{\\textcolor{blue}{here}}", 
+                 fourth_point = "Fourth point", 
+                 fifth_point = "Fifth point"
+                  )
 ```
 
 ```{r msc, echo=F}

@@ -11,7 +11,8 @@ create_resume_entry(
   first_point = "",
   second_point = "",
   third_point = "",
-  fourth_point = ""
+  fourth_point = "",
+  fifth_point = ""
 )
 }
 \arguments{
@@ -28,6 +29,8 @@ create_resume_entry(
 \item{third_point}{Third point (if necessary)}
 
 \item{fourth_point}{Fourth point (if necessary)}
+
+\item{fifth_point}{Fourth point (if necessary)}
 }
 \value{
 A character vector

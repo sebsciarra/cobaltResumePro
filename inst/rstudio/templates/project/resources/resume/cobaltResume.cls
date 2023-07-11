@@ -164,7 +164,7 @@
 
 \columnratio{0.25}
 
-\NewDocumentEnvironment{resumeEntry}{m m m o o o o o}{%
+\NewDocumentEnvironment{resumeEntry}{m m m o o o o o o}{%
 
     \columnratio{0.65}
     \begin{paracol}{2}
@@ -193,6 +193,7 @@
     \printValueIfNotEmpty{#6}
     \printValueIfNotEmpty{#7}
     \printValueIfNotEmpty{#8}
+    \printValueIfNotEmpty{#9}
   \end{itemize}
   \vspace*{0.12cm}
   \fi
