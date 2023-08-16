@@ -1,4 +1,4 @@
-#' This package will create a function called create_cobalt_project()
+#' Creates a directory of folders for the project.
 #'
 #' @param path Path of current working directory.
 #' @export
