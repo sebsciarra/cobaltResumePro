@@ -1,4 +1,4 @@
-Binding: create_cobaltUp_project
+Binding: create_cobalt_project
 Title: Résumé and cover letter project with cobaltResume
 OpenFiles: resume.Rmd
-Icon: resume2_0_hex.png
+Icon: cobalt_hex.png

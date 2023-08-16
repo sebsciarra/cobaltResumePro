@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_resume_entry.R
 \name{create_resume_entry}
 \alias{create_resume_entry}
-\title{Generates resume entries.}
+\title{Generates résumé entries.}
 \usage{
 create_resume_entry(
   title,
@@ -16,7 +16,7 @@ create_resume_entry(
 )
 }
 \arguments{
-\item{title}{Title of the resume entry.}
+\item{title}{Title of the résumé entry.}
 
 \item{subtitle}{Additional information related to the title.}
 
@@ -33,16 +33,16 @@ create_resume_entry(
 \item{fifth_point}{Fourth point (if necessary)}
 }
 \value{
-A character vector containin LaTeX code
+A character vector
 }
 \description{
-Generates resume entries.
+Generates résumé entries.
 }
 \examples{
-create_resume_entry(title = "\\\\href{https://github.com/sebsciarra/smltheory}{smltheory}",
-                    subtitle = "Python package", date = "Aug. 2023",
-                    first_point = "Package contains nine modules and 30 functions",
-                    second_point = "Functions within package simulate data sets and demonstrate propositions
-                                     of supervised machine learning propositions (e.g., bias-variance tradeoff,
-                                     excess risk decomposition)")
+create_resume_entry(title = "PhD, Industrial-Organizational Psychology",
+subtitle = "University of Guelph",
+date = "Sep. 2018--May 2023",
+first_point = "Thesis title: \\\\textbf{Is Timing Everything? The Effects of Measurement Timing on the \\\\newline Performance of Nonlinear Longitudinal Models}",
+second_point = "Conducted Monte Carlo simulation experiments using R on an Amazon Web Services (AWS) instance to evaluate the performance of structured latent growth curve models under several conditions",
+third_point = "My thesis can be viewed  \\\\href{\\\\detokenize{https://atrium.lib.uoguelph.ca/xmlui/bitstream/handle/10214/27543/Sciarra_Sebastian_202304_PhD.pdf?sequence=1&isAllowed=y}}{\\\\textcolor{blue}{here}}")
 }
