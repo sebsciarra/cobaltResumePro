@@ -2,7 +2,7 @@
 #'
 #' @param path Path of current working directory.
 #' @export
-create_cobalt_pro_project <- function(path = getwd()) {
+create_cobalt_project <- function(path = getwd()) {
 
   # from https://github.com/rstudio/bookdown/blob/master/R/skeleton.R
   # ensure directory exists
