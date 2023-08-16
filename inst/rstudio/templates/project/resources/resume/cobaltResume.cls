@@ -57,10 +57,6 @@
 \RequirePackage{xparse}
 \RequirePackage{needspace}
 \RequirePackage{xpatch}
-\RequirePackage{textcomp}
-\renewcommand{\textapprox}{\raisebox{0.5ex}{\texttildelow}}
-\RequirePackage{zref-totpages}
-\RequirePackage{forloop}
 
 
 \definecolor{bandcolor}{HTML}{002241}
@@ -75,18 +71,11 @@
 %-------------------------------------------------------------------------------
 %                Commands and Environments
 %-------------------------------------------------------------------------------
-\newlength{\rightboxwidth}
-\setlength{\rightboxwidth}{0.28\textwidth}
-\setlength{\parindent}{0pt} %no paragraph indenting
+\newlength{\leftcolumnwidth}
+\setlength{\leftcolumnwidth}{0.35\textwidth}
 
 \newlength{\leftHeaderColumnWidth}
 \setlength{\leftHeaderColumnWidth}{0.37\textwidth}
-
-\newlength{\leftcolumnwidth}
-\setlength{\leftcolumnwidth}{0.23\textwidth}
-\newlength{\rightcolumnwidth}
-\setlength{\rightcolumnwidth}{0.77\textwidth}
-
 
 \newlength{\rightHeaderColumnWidth}
 \setlength{\rightHeaderColumnWidth}{0.565\textwidth}
@@ -133,7 +122,7 @@
 \newcommand{\printSocial}[3]{
   \ifx#1\@empty\else
     \ifx#2\@empty\else
-      \href{https://#1}{\textcolor{#3}{#2}}
+      \href{https://#1}{\textcolor{#3}{#2}} &
      % \vspace{.6cm}
     \fi
   \fi
@@ -142,7 +131,7 @@
 \newcommand{\printIcon}[4]{
   \ifx#1\@empty\else
     \ifx#2\@empty\else
-      \href{https://#1}{\textcolor{#3}{\fontsize{9}{9}\selectfont#4}} &
+      \href{https://#1}{\textcolor{#3}{\fontsize{14}{14}\selectfont#4}}
       %\vspace{.6cm}
     \fi
   \fi
@@ -153,21 +142,17 @@
   \StrSubstitute{\@skills}{,}{\space$\cdot$}
 }
 
-\newcommand{\cobaltLastName}{\textcolor{bandcolor}{\@lastName\ $\boldsymbol{\cdot}$ Resume}}
+\newcommand{\cobaltLastName}{\textcolor{bandcolor}{\@lastName\ $\boldsymbol{\cdot}$ Résumé}}
 
 
-\renewcommand{\section}[1]{%
+\renewcommand{\section}[1]{%}
+\vspace{0.65cm}
   \noindent \begin{tikzpicture}
-   % Calculate the width based on current column's width
-    \pgfmathsetmacro\sectionwidth{0.983\columnwidth}
-    \node[font=\fontsize{10}{10}\selectfont\bfseries, inner sep=0pt, text width=\sectionwidth, align=left] (A) {\textbf{#1}};
-    \draw[line width = 0.75pt, draw = bandcolor, text width = 0.335cm]([yshift=-0.25ex]A.south west) -- ([yshift=-0.25ex]A.south east) -- +(0em,0em);       %node[inner sep=0pt,outer sep=0pt,font=\tiny, yshift = 0.35ex, text = bandcolor] {$\blacksquare$} -- ++(-0.2\textwidth,0cm) -- cycle;
+    \node[font=\fontsize{14}{14}\selectfont\bfseries, inner sep=0pt, text width=\textwidth, align=left] (A) {\textbf{#1}};
+    \draw[line width = 0.75pt, draw = bandcolor, text width = 0.335cm]([yshift=-0.25ex]A.south west) -- ([yshift=-0.25ex]A.south east) -- ++(0em,0em) node[inner sep=0pt,outer sep=0pt,font=\tiny, yshift = 0.35ex, text = bandcolor] {$\blacksquare$} -- ++(-\textwidth,0cm) -- cycle;
   \end{tikzpicture}
+  \vspace*{-0.5cm}
 }
-
-
-
-
 %section header only prints on same page if 4\baselineskip can be fit on same page
 \xpretocmd{\section}{\needspace{4\baselineskip}}{}{}
 
@@ -177,30 +162,32 @@
   \IfValueT{#1}{\if\relax\detokenize{#1}\relax\else\item #1\fi}%
 }
 
+\columnratio{0.25}
 
 \NewDocumentEnvironment{resumeEntry}{m m m o o o o o o}{%
-  \needspace{4\baselineskip}% Check for available space
-   \begin{tabular}{@{}%
-    >{\raggedright\arraybackslash}p{0.9\rightcolumnwidth}%
-    >{\raggedleft\arraybackslash}m{0.3175\rightcolumnwidth}%
-    @{}%
-    } \setstretch{1.1}
-      {\fontsize{9}{9}\selectfont\bfseries #1} \newline
-      {\fontsize{8}{8}\selectfont\textit{#2}}\par%
-      &
-      {\color{bandcolor}\fontsize{8}{8}\bfseries #3} \\
 
-  \end{tabular}
+    \columnratio{0.65}
+    \begin{paracol}{2}
+        \par\setstretch{1.5}\noindent%
+        {\fontsize{11}{11}\selectfont\bfseries #1} \\%
+        {\fontsize{10}{10}\selectfont\textit{#2}}\par%
+
+        \switchcolumn
+
+        \raggedleft
+        {\color{bandcolor}\fontsize{9}{9}\bfseries #3}
+
+    \end{paracol}
 
 
-     \vspace*{-0.35cm}
+    \vspace*{0.1cm}
 
 
    \IfValueT{#4}{\if\relax\detokenize{#4}\relax\else
-  \begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt,parsep=0pt, leftmargin = 9pt, rightmargin = 9pt,
-  label=\raisebox{0.04cm}{\fontsize{3pt}{3pt}$\blacksquare$}]
+  \begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt,parsep=0pt, leftmargin = 11.6pt,
+  label=\raisebox{0.04cm}{\fontsize{7pt}{7pt}$\blacksquare$}]
   \setstretch{1.25}
-  \fontsize{8}{8}\selectfont
+  \fontsize{10}{10}\selectfont
     \item #4
     \printValueIfNotEmpty{#5}
     \printValueIfNotEmpty{#6}
@@ -208,20 +195,17 @@
     \printValueIfNotEmpty{#8}
     \printValueIfNotEmpty{#9}
   \end{itemize}
+  \vspace*{0.12cm}
   \fi
 }
       %only add vertical space if not at end of page
   \ifdim\pagetotal=\pagegoal
   \else
-    \vspace*{0.25cm}
+    \vspace*{0.5cm}
   \fi
   }%
 {}
 
-
-%placeholder environment that makes later text searching easier
-\NewDocumentEnvironment{educationEntry}{%
-}{}
 
 
 
@@ -231,68 +215,42 @@
 %%repeat left band on every page with skills & socials
 %%https://tex.stackexchange.com/questions/270195/how-to-repeat-box-every-page
 \backgroundsetup{
-    scale=1,
-    color=black,
-    opacity=1,
-    angle=0,
-    position=current page.east,
-    vshift= 12.9cm, % Correct for the top margin
     contents={
-     \ifnum\value{page}=1
-        \begin{tikzpicture}[remember picture, overlay]
-            \fill [bandcolor] (-5.21,0) rectangle ++(\rightboxwidth,-0.104\textheight); % Adjust dimensions as needed
-              \node[font=\ttfamily\fontsize{9pt}{9pt}\bfseries\selectfont, text width=\rightboxwidth, align = left]
-              (socials)
-               at ([xshift = 7.7cm, yshift=\topmargin + 0.5cm ]current page.north)
-               {
-               \setlength{\tabcolsep}{3pt}
-               \renewcommand{\arraystretch}{1.5}
-              \begin{tabular}%
-              {>{\raggedleft\arraybackslash}p{0.05\rightboxwidth}%
-               >{\raggedright\arraybackslash}p{0.95\rightboxwidth}%
-              }
-              \printIcon{\@email}{\@email}{simcolor}{\faEnvelope} \printSocial{\@email}{\@email}{simcolor} \\
-              \printIcon{\@personalWebsite}{\@personalWebsite}{aboutcolor}{\faHome}   \printSocial{\@personalWebsite}{\@personalWebsite}{aboutcolor}  \\
-              \printIcon{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare}   \printSocial{\@githubLink}{\@githubName}{techcolor} \\
-              \printIcon{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin}  \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor}\\
-            \end{tabular}
-              };
-        \end{tikzpicture}
-        \fi
       \begin{tikzpicture}[remember picture, overlay]
-         \node[font=\fontsize{8pt}{8pt}\color{bandcolor}\selectfont, text width=\leftcolumnwidth, align = left]
-        (date)
-          at ([xshift = 2.75cm, yshift=-12.65cm]current page.west)
-          {{\@date} \\
-          {Citizenship: \@citizenship{}}};
-       \end{tikzpicture}
-    }
+        \fill [bandcolor] (current page.north west) rectangle ++(\leftcolumnwidth+0.25cm,-2\textheight);
+        \node[font=\fontsize{10.5pt}{10.5pt}\selectfont, text width=\leftcolumnwidth, align = right]
+          (skills)
+           at ([xshift = 2.75cm, yshift=8.28cm]current page.west) %8.08
+          {\parbox[t][0pt][t]{\linewidth}
+          {\raggedleft \setstretch{2} \fontsize{14pt}{14pt}\selectfont\underline{Skills} \\ \fontsize{10.5pt}{10.5pt}\selectfont{\dotSubstitute}}};
+        \node[font=\ttfamily\fontsize{12pt}{12pt}\bfseries\selectfont, text width=\leftcolumnwidth, align = right]
+          (socials)
+           at ([xshift = 2.75cm, yshift=-6cm]current page.west)
+           {
+           \setlength{\tabcolsep}{0pt}
+           \renewcommand{\arraystretch}{2}
+          \begin{tabular}%
+          {>{\raggedleft\arraybackslash}p{0.85\leftcolumnwidth}%
+           >{\raggedleft\arraybackslash}p{0.15\leftcolumnwidth}%
+          }
+            \ifnum\value{page}>1  \printSocial{\@email}{\@email}{simcolor}   \printIcon{\@email}{\@email}{simcolor}{\faEnvelope} \\ \fi
+            \printSocial{\@personalWebsite}{\@personalWebsite}{aboutcolor}  \printIcon{\@personalWebsite}{\@personalWebsite}{aboutcolor}{\faHome} \\
+            \printSocial{\@githubLink}{\@githubName}{techcolor}  \printIcon{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare} \\
+            \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor}  \printIcon{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin} \\
+          \end{tabular}
+            };
+        \node[font=\fontsize{9pt}{9pt}\selectfont, text width=\leftcolumnwidth, align = right]
+          (date)
+           at ([xshift = 2.75cm, yshift=-12.65cm]current page.west)
+           {{\@date} \\
+           {Citizenship: \@citizenship}};
+      \end{tikzpicture}},
+    opacity=1,
+    scale=1,
+    angle=0,
+    position={0,0},
+    vshift=0pt,
 }
-        %\node[font=\fontsize{10.5pt}{10.5pt}\selectfont, text width=\leftcolumnwidth, align = right]
-        %  (skills)
-        %   at ([xshift = 2.75cm, yshift=8.28cm]current page.west) %8.08
-        %  {\parbox[t][0pt][t]{\linewidth}
-        %  {\raggedleft \setstretch{2} \fontsize{14pt}{14pt}\selectfont\underline{Skills} \\ \fontsize{10.5pt}{10.5pt}\selectfont{\dotSubstitute}}};
-        %\node[font=\ttfamily\fontsize{12pt}{12pt}\bfseries\selectfont, text width=\leftcolumnwidth, align = right]
-        %  (socials)
-        %   at ([xshift = 2.75cm, yshift=-6cm]current page.west)
-        %   {
-        %   \setlength{\tabcolsep}{0pt}
-        %   \renewcommand{\arraystretch}{2}
-        %  \begin{tabular}%
-        %  {>{\raggedleft\arraybackslash}p{0.85\leftcolumnwidth}%
-        %   >{\raggedleft\arraybackslash}p{0.15\leftcolumnwidth}%
-        %  }
-        %    \ifnum\value{page}>1  \printSocial{\@email}{\@email}{simcolor}   \printIcon{\@email}{\@email}{simcolor}{\faEnvelope} \\ \fi
-        %    \printSocial{\@personalWebsite}{\@personalWebsite}{aboutcolor}  \printIcon{\@personalWebsite}{\@personalWebsite}{aboutcolor}{\faHome} \\
-        %    \printSocial{\@githubLink}{\@githubName}{techcolor}  \printIcon{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare} \\
-        %    \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor}  \printIcon{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin} \\
-        %  \end{tabular}
-        %    };
-
-
-
-
 
 \usepackage{longfbox}
 \newcommand\makesquare[1]{%
@@ -304,6 +262,25 @@
 }
 
 
+\newcommand{\fancybox}[1]{%
+  \begin{longfbox}[
+    width = \leftHeaderColumnWidth,
+    render-insert-after=\makesquare{0cm},
+    %border-style = none,
+    height = 2.5cm,
+    border-color = bandcolor,
+    padding-left = 0.25cm,
+    padding-right = 0.1cm,
+    border-left-width = 0.1cm,
+    border-right-width = 0cm,
+    border-top-width = 0cm,
+    border-bottom-width = 0cm
+  ]
+    \frenchspacing %remove large word spacing
+    {\it #1}
+    %
+  \end{longfbox}%
+}
 
 %% Define page style
 \fancypagestyle{cobaltHeader}{%
@@ -314,20 +291,23 @@
   \fancyfoot[C]{\cobaltLastName}%
   \chead{% Centered header
    \setlength{\tabcolsep}{0pt}
-    %\begin{tabular}{@{} p{\leftHeaderColumnWidth} p{\rightHeaderColumnWidth} @{}}
-      %\vspace*{1.25cm}
+    \begin{tabular}{@{} p{\leftHeaderColumnWidth} p{\rightHeaderColumnWidth} @{}}
+      \vspace*{1.25cm}
       \setstretch{1.5}%
-
-      % Content for the left column
-       \raggedright
+\fancybox{\@shortDescription}
+      &
+      % Content for the right column
+       \raggedleft
        \setstretch{2}%
-       \vspace*{1.35cm}
+       \vspace*{1.25cm}
        \textcolor{bandcolor}{\fontsize{25}{25}\selectfont\bfseries{\@firstName\ \@lastName}} \\ \vspace*{0.15cm}
        \textcolor{bandcolor}{\fontsize{10}{10}\selectfont\@position}\\ \vspace*{0.3cm}
-       %\ttfamily\fontsize{11pt}{11pt}\selectfont\textcolor{simcolor}{\href{\@email}{\@email\ \faEnvelope \hspace*{0.01cm}}}
-    %\end{tabular}
+       \ttfamily\fontsize{11pt}{11pt}\selectfont\textcolor{simcolor}{\href{\@email}{\@email\ \faEnvelope \hspace*{0.01cm}}}
+    \end{tabular}
   }%
 }
+
+
 
 
 
@@ -352,9 +332,9 @@
 
 
 \geometry{
-  left=1cm,
+  left=\leftcolumnwidth + 1.2cm,
   right=1cm,
-  top=1cm,
+  top=1.5cm,
   bottom=1cm,
   includehead = false,
   includefoot = true

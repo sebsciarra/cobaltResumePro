@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_cobalt_project.R
 \name{create_cobalt_project}
 \alias{create_cobalt_project}
-\title{This package will create a function called create_cobalt_project()}
+\title{Creates a directory of folders for the project.}
 \usage{
 create_cobalt_project(path = getwd())
 }
@@ -10,5 +10,5 @@ create_cobalt_project(path = getwd())
 \item{path}{Path of current working directory.}
 }
 \description{
-This package will create a function called create_cobalt_project()
+Creates a directory of folders for the project.
 }

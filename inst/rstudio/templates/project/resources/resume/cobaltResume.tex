@@ -1,7 +1,5 @@
 
 \documentclass{cobaltResume}
-\usepackage{catchfilebetweentags} % For extracting code between tags
-\usepackage{tabularx}
 
 % Check whether YAML variables are defined and then create a LaTeX command that prints them
 $if(githubName)$
@@ -65,51 +63,16 @@ $endfor$
 %\setlength{\headsep}{3cm}
 \usetikzlibrary{fit}
 
-
 \renewcommand{\rmdefault}{phv}
 \begin{document}
 
+
+
   \thispagestyle{cobaltHeader}
   \pagestyle{cobaltFooter}
-  \vspace*{3cm}
+  \vspace*{2.8cm}
 
-\columnratio{0.23}
- \begin{paracol}{2}
-    \setlength{\columnseprule}{0.75pt}
-     \setlength{\columnsep}{2em}
-      \vspace*{-0.49cm}
-
-    \raggedright
-    \par\setstretch{1.25}\noindent
-    %repeat content in left column on each page
-    \newcounter{x}
-     \IfFileExists{metadata.tex}{
-      \forloop{x}{0}{\value{x} < \ztotpages}{
-      % Execute metadata contents
-        \ExecuteMetaData[metadata.tex]{education}
-        \vspace{0.5cm}
-        \ExecuteMetaData[metadata.tex]{selected-white-papers}
-        \pagebreak
-      }
-     }
-
-    \switchcolumn
-
-    \raggedright
-
-      \fontsize{9}{9}\selectfont
-      \IfFileExists{metadata.tex}{
-        \ExecuteMetaData[metadata.tex]{profile}
-        \ExecuteMetaData[metadata.tex]{skills}
-        \ExecuteMetaData[metadata.tex]{employment-experience}
-        \ExecuteMetaData[metadata.tex]{data-science-experience}
-      }
-
-\end{paracol}
-
-
-
-
+  \setstretch{1.5}
 
   $body$
 
