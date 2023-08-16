@@ -66,7 +66,7 @@
 %                Commands and Environments
 %-------------------------------------------------------------------------------
 \newlength{\leftcolumnwidth}
-\setlength{\leftcolumnwidth}{0.35\textwidth}
+\setlength{\leftcolumnwidth}{0.363\textwidth}
 
 
 \renewcommand*{\date}[1]{\def\@date{#1}}
@@ -74,7 +74,6 @@
 \newcommand*{\firstName}[1]{\def\@firstName{#1}}
 \newcommand*{\lastName}[1]{\def\@lastName{#1}}
 \newcommand*{\email}[1]{\def\@email{#1}}
-\newcommand*{\skills}[1]{\def\@skills{#1}}
 \newcommand*{\citizenship}[1]{\def\@citizenship{#1}}
 
 %Personal website variables

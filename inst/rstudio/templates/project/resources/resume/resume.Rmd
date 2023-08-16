@@ -1,136 +1,245 @@
 ---
-firstName: "firstName"
-lastName: "lastName"
-position: "Position" #job position being applied to 
-date: "date" 
+firstName: "Sebastian"
+lastName: "Sciarra, PhD"
+position: "Data Scientist" #job position being applied to 
+date: "August 2023" 
 output: 
   pdf_document:
     template: "cobaltResume.tex"
+    keep_tex: true
 #hyperlinks (delete or leave blank blank if not necessary/do not exist)
 #escape any special characters with two backslashes (for example, see email variable)
-githubLink: "github.com/user" #
-githubName: "githubHandle"
-personalWebsite: "personalwebsite.com"
-linkedinName: "firstName lastName"
-linkedinLink: "linkedin.com/in/personal_link"
-email: "email\\@domain.com" 
-#skills + citizenship
-skills: "R, SQL, Python, LaTeX, Bash, HTML, JavaScript, CSS, Machine learning, Data science, Data visualization, Knowledge translation" #skills relevant to the job
-shortDescription: "Passionate about coding, machine learning, and statistics and completed my PhD dissertation at the intersection of these fields to address a practical problem in Industrial-Organizational psychology. Writes about machine learning at \\href{sebastiansciarra.com}{\\textcolor{blue}{sebastiansciarra.com}}."
-
-citizenship: "Citizenship status" #e.g., work permit/study permit/Permanent resident/citizen, etc.
-header-includes: 
-  - \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+githubLink: "github.com/sebsciarra" #
+githubName: "sebsciarra"
+personalWebsite: "sebastiansciarra.com"
+linkedinName: "Sebastian Sciarra"
+linkedinLink: "linkedin.com/in/sebsciarra"
+email: "seb\\@sciarra.io" 
+citizenship: "Canadian" #e.g., work permit/study %>% permit/Permanent resident/citizen, etc.
 #leave knit YAML variable uncommented if you want to join the CV and cover letter in one PDF
-#knit: cobaltResume::merge_resume_cover_letter
+knit: cobaltResume2.0::knit_resume(merge_resume_cover_letter = T)
 ---
 
 ```{r echo=F, message=F, warning=F, message = F}
 library(easypackages)
-packages <- c("cobaltResume")
+packages <- c("cobaltResume2.0", "devtools")
 libraries(packages)
 
 #allows R code chunks to print out LaTeX and for the LaTeX to be knit
 knitr::opts_chunk$set(results = "asis")
+load_all()
+
+dir()
+
+resume_png_path <- list.files(path = here::here(), pattern = 'resume2.0_screen.png', recursive = TRUE, full.names = TRUE)
+
+
+sticker(resume_png_path, package="cobaltResumePro",  s_x=1, s_y=0.78, s_width=.38, s_height = .34, 
+        p_color = "#52aafa", h_fill = "#002241", p_size = 50, p_fontface = "bold", dpi = 1000, 
+        h_color =  "white", url = "github.com/sebsciarra/cobaltResumePro",
+        u_color = "white", u_size = 13, u_x = 0.18, u_y = 1.45, filename="resume_pro.png")
+
+
 ```
+
+```{r echo=F, eval=F}
+library(tidyverse)
+
+file.remove("metadata.tex")
+tex_content <- readChar(con = "resume.tex", nchars = file.info("resume.tex")$size)
+
+#pattern_section_remove <- "\\\\hypertarget\\{[^}]+\\}\\{\\%\\s+\\\\section\\{\\\\texorpdfstring\\{[^}]+\\}\\{[^}]+\\}\\}\\\\label\\{[^}]+\\}\\}"
+
+#1) Select entire sections
+#set dotall=T so that newline characters and any white spaces are matched 
+pattern_total_section <- regex(pattern = "\\\\hypertarget.*?(?=(\\\\hypertarget|\\\\end\\{document))", dotall = TRUE)
+section_total <- unlist(str_extract_all(string = tex_content, pattern = pattern_total_section))
+
+#2) Extract section names from content in \hypertarget{}
+pattern_name <- "\\\\hypertarget\\{\\s*(.*?)\\s*\\}"
+section_names <- str_match(string = section_total, pattern = pattern_name)[ ,2]
+
+#3) Remove entire sections from .tex file 
+tex_content <- str_remove_all(string = tex_content, pattern = pattern_total_section)
+
+#4) Remove \hypertarget and \label{}} from section totals 
+##only remove \\hypertarget{} before \\section
+pattern_hypertarget <- "\\\\hypertarget\\{.*?\\}\\{\\%\\s+(?=\\\\section\\{\\\\texorpdfstring\\{[^}]+\\}\\{[^}]+\\}\\}\\\\label\\{[^}]+\\})"
+section_total <- str_remove_all(string = section_total, pattern = pattern_hypertarget)
+
+##only remove \\label after a section 
+pattern_label <- "(?!\\\\section\\{\\\\texorpdfstring\\{[^}]+\\}\\{[^}]+\\}\\}\\\\label\\{[^}]+\\})\\\\label\\{.*?\\}\\}"
+section_total <- str_remove_all(string = section_total, pattern = pattern_label)
+
+
+#5)Create metadata tags (insert <%*section_name> + pattern_section + <*section_name> into metadata.tex)
+metadata_tags <- paste(paste0("%<*",section_names, ">"),  
+                       section_total, 
+                       paste0("%</", section_names, ">"), sep = '\n')
+
+#make sure metadata.tex file is blank
+write_lines(x = metadata_tags, file = 'metadata.tex')
+write_lines(x = tex_content, file = 'resume.tex')
+
+library(tools)
+texi2pdf(file = "resume.tex")
+```
+
+
+# \faUser\ Profile 
+
+
+```{r echo=F}
+create_profile_entry(profile_summary = "Passionate about coding, machine learning, and statistics. Completed my PhD \\href{\\detokenize{https://atrium.lib.uoguelph.ca/server/api/core/bitstreams/8ed1891d-58ca-457b-b0d4-33a015fb2db9/content}}{\\textcolor{blue}{dissertation}} at the intersection of these fields to address a practical problem in Industrial-Organizational psychology and received the 2022/2023 Canadian Psychological Association Certificate of Academic Excellence for this work. In my dissertation, I coded and ran Monte Carlo simulations on an AWS instance to evaluate the performance of nonlinear longitudinal models. Writes white papers on machine learning topics at\ \\href{https://sebastiansciarra.com}{\\textcolor{blue}{sebastiansciarra.com}}. \\newline")
+```
+
+# \faCogs\ Skills 
+
+```{r echo=F}
+create_skills_entry(coding_languages = c("Python", "R", "SQL", "\\LaTeX", "Javascript", "HTML", "CSS"), 
+                    ides_platforms = c("PyCharm", "RStudio", "AWS", "Git", "MySQL"), 
+                    technical_skills = c("Data visualization (ggplot2, plotnine)", 
+                                         "Data cleaning (tidyverse, pandas, numpy)", 
+                                         "Machine learning (e.g., regularized regression, decision trees, random forests, mixture models)", 
+                                         "Statistics (e.g., latent variable models, factor analysis, multilevel modelling)"))
+```
+
+
 
 
 # \faUniversity\ Education
 
 ```{r phd, echo=F}
-create_resume_entry(title = "PhD, Field", 
-                 subtitle = "University ", 
-                 date = "Start--End", 
-                 first_point = "Thesis title: \\textbf{Thesis title}", 
-                 second_point = "Brief summary about thesis", 
-                 third_point = "My thesis can be viewed  \\href{\\detokenize{link_to_thesis}}{\\textcolor{blue}{here}}", 
-                 fourth_point = "Fourth point", 
-                 fifth_point = "Fifth point"
-                  )
+create_education_entry(degree_type = 'PhD', degree_name = 'Industrial-Organizational Psychology', 
+                       institution = 'University of Guelph', start_date = 'Sep. 2018', end_date = 'May 2023')
+
+create_education_entry(degree_type = 'MSc', degree_name = 'Cognitive Psychology', 
+                       institution = 'McMaster University', start_date = 'Sep. 2016', end_date = 'June 2018')
+
+create_education_entry(degree_type = 'Honours BSc', degree_name = 'Psychology, Neuroscience \\& Behaviour', 
+                       institution = 'McMaster University', start_date = 'Sep. 2012', end_date = 'June 2016')
 ```
 
-```{r msc, echo=F}
-create_resume_entry(title = "MSc, Field", 
-                 subtitle = "University",
-                  date = "Start--End", 
-                 first_point = "Thesis title: \\textbf{Thesis title}", 
-                 second_point = "Brief summary about thesis", 
-                 third_point = "My thesis can be viewed  \\href{\\detokenize{link_to_thesis}}{\\textcolor{blue}{here}}")
+# \faCoffee\ Selected white papers
 
+```{r echo=F}
+links = c("https://sebastiansciarra.com/technical_content/understanding_ml/",
+          "https://sebastiansciarra.com/technical_content/em/", 
+          "https://sebastiansciarra.com/technical_content/mle/")
+
+titles = c("The Game of Supervised Machine Learning: Understanding the Setup, Players, and Rules",
+          "The Expectation-Maximization Algorithm: A Method for Modelling Mixtures of Distributions", 
+          "Probability, Likelihood, and Maximum Likelihood Estimation")
+
+dates = c("10 August 2023", 
+          "28 April 2023", 
+          "19 March 2023")
+
+create_white_paper_entry(links = links, titles = titles, dates = dates)
 ```
 
-```{r bsc, echo=F}
-create_resume_entry(title = "Degree, Field", 
-                 subtitle = "University", 
-                date = "Start--End")
-```
 
-
-
-# \faSuitcase\ Employment 
-
+# \faSuitcase\ Employment \ experience 
 
 ```{r ta-experience, echo=F}
-create_resume_entry(title = "Position", 
-                 subtitle = "Organization", 
-                 date = "Start--End")
+create_resume_entry(title = "Teaching Assistant", 
+                 subtitle = "University of Guelph", 
+                 date = "Sep. 2018--May 2023", 
+                 first_point = "Created R scripts for assignments and taught labs for the following courses in measurement and statistics: \\begin{itemize}   \\fontsize{8}{8}\\selectfont
+                \\item PSYC 3290 (Conducting Statistical Analyses in Psychology)
+                \\item PSYC 3250 (Psychological Measurement) 
+                \\item PSYC 6060 (Research Design and Statistics)
+                \\item PSYC 6380 (Psychological Applications of Multivariate Analysis)
+            \\end{itemize}", 
+                second_point = "Taught a variety of topics in methdods and statistics (e.g., regression with continuous and categorical [i.e., ANOVA] variables, \\textit{p} values, \\textit{p} hacking, hierarchical linear modelling, factor analysis, latent variable modelling, etc.)")
+```
+
+
+```{r gra, echo=F}
+create_resume_entry(title = "Graduate Research Assistant", 
+                 subtitle = "University of Guelph (Part-Time)", 
+                 date = "Sep. 2020--Apr. 2021", 
+                 first_point = "Used R to clean data, compute descriptive statistics, and run regression analyses (with categorical and/or continuous variables) for organizational data on turnover, downsizing, and growth")
+```
+
+```{r consulting-experience-geosyntex, echo=F}
+create_resume_entry(title = "Consultant", 
+                 subtitle = "Geosyntec (Part-Time)", 
+                 date = "Sep. 2020--Dec. 2020", 
+                 first_point = "Worked with a team of graduate students to improve the interview procedure", 
+                second_point = "Developed customized recommendations to structure the interview procedure so that adverse hiring outcomes were reduced and skills were more rigorously evaluated")
+```
+
+```{r consulting-experience-schema, echo=F}
+create_resume_entry(title = "Consultant", 
+                 subtitle = "Schema App (Part-Time)", 
+                 date = "Jan. 2020--Apr. 2020", 
+                 first_point = "Worked with a team of graduate students to improve the onboarding of new employees", 
+                second_point = "Synthesized customized recommendations by using literatures on realistic job previews, goal setting, and mentoring")
 ```
 
 
 
-# \faCode\ Data Science Projects
 
 
-```{r projects, echo=F}
-create_resume_entry(title = "\\href{https://github.com/sebsciarra/cobaltResume}{cobaltResume}\\footnote{\noindent clickable hyperlink to the corresponding repository on my GitHub}", subtitle = "R Package", date = "May 2023", 
-                 first_point = "Created an R package for generating résumés and cover letters within RStudio", 
-                 second_point = "\\LaTeX\\ code was used to specify a styling template that draws inspiration from the cobalt theme in the RStudio IDE ", 
-                 third_point = "R functions were created to easily generate résumé entries and merge résumés and cover letters into one PDF file")
+# \faCode\ Data science \ experience
+
+
+```{r smltheory, echo=F, eval=T}
+create_resume_entry(title = "\\href{https://github.com/sebsciarra/smltheory}{smltheory}", subtitle = "Python package", date = "Aug. 2023", 
+                 first_point = "Package contains nine modules and 30 functions", 
+                 second_point = "Functions within package simulate data sets and demonstrate propositions of supervised machine
+                 learning propositions (e.g., bias-variance tradeoff, excess risk decomposition)") 
 ```
 
 
-```{r personal-website, echo=F}
-create_resume_entry(title = "\\href{sebastiansciarra.com}{sebastiansciarra.com}*", subtitle = "Personal website", date = "Mar. 2023", 
-                 first_point = "Used HTML, JavaScript, and CSS to create a personal website for writing blog posts",
-                 second_point = 'Blog posts focus on statistics, machine learning, and coding by explaining technical details, providing demonstrations, and conducting simulation experiments', 
-                 third_point = 'Blog posts use code from a variety of language to explain content. As an example, my post titled ``\\href{https://sebastiansciarra.com/coding_tricks/em_demo/}{\\textcolor{blue}{Coding and Visualizing the Expectation-Maximization Algorithm}}" used R, Python, and CSS code')
+```{r cobalt-resume, echo=F, eval=T}
+create_resume_entry(title = "\\href{https://github.com/sebsciarra/cobaltResume}{cobaltResume}", subtitle = "R Package", date = "May 2023", 
+                 first_point = "Automates generation of resumes and cover letters within RStudio", 
+                 second_point = "A template and class file were created (\\textapprox 700 lines of \\LaTeX code) to specify a styling template that draws inspiration from the cobalt theme in the RStudio IDE", 
+                 third_point = "R functions were created to easily generate resume entries and merge resume and cover letters into one PDF file")
 ```
 
-```{r guelphdown, echo=F}
-create_resume_entry(title = "\\href{https://github.com/sebsciarra/guelphdown}{guelphdown}*\\footnotetext{clickable hyperlink to the corresponding repository on my GitHub}", 
+```{r personal-website, echo=F, eval=T}
+create_resume_entry(title = "\\href{https://sebastiansciarra.com}{sebastiansciarra.com}", subtitle = "Personal website", date = "Mar. 2023", 
+                 first_point = "Used HTML, JavaScript, and CSS to create a personal website for writing white papers",
+                 second_point = 'White papers focus on statistics, machine learning, and coding by explaining technical details, providing demonstrations, and conducting simulation experiments', 
+                 third_point = 'White papers use code from a variety of languages to explain content. As an example, my post titled ``\\href{https://sebastiansciarra.com/coding_tricks/em_demo/}{\\textcolor{blue}{Coding and Visualizing the Expectation-Maximization Algorithm}}" used R, Python, and CSS code')
+```
+
+```{r guelphdown, echo=F, eval=T}
+create_resume_entry(title = "\\href{https://github.com/sebsciarra/guelphdown}{guelphdown}", 
                  subtitle = "R Package", 
                  date = "Mar. 2023", 
-                 first_point = "Created an R package for generating theses according to the University of Guelph formatting requirements", 
-                  second_point = "\\LaTeX\\ code was created to specify a template, which included different formattings for the preamble, body, refences, and appendices",
-                 third_point = "An example of the formatting can be seen in my \\href{\\detokenize{https://atrium.lib.uoguelph.ca/xmlui/bitstream/handle/10214/27543/Sciarra_Sebastian_202304_PhD.pdf?sequence=1&isAllowed=y}}{\\textcolor{blue}{thesis}}")
+                 first_point = "Created an R package that automates the generation of theses according to the University of Guelph formatting requirements", 
+                  second_point = "A template and class file were created (\\textapprox 1400 lines of \\LaTeX code) to specify formattings for the preamble, body, references, and appendices",
+                 third_point = "An example of the formatting can be seen in my \ \\href{\\detokenize{https://atrium.lib.uoguelph.ca/server/api/core/bitstreams/8ed1891d-58ca-457b-b0d4-33a015fb2db9/content}}{\\textcolor{blue}{thesis}}")
+
 ```
 
 
-```{r nonlinSimsAnalysis, echo=F}
-create_resume_entry(title = "\\href{https://github.com/sebsciarra/nonlinSimsAnalysis}{nonlinSimsAnalysis}*", 
+```{r nonlinSimsAnalysis, echo=F,eval=T}
+create_resume_entry(title = "\\href{https://github.com/sebsciarra/nonlinSimsAnalysis}{nonlinSimsAnalysis}", 
                  subtitle = "R Package",
-                 date = "March 2022", 
-                 first_point = "Created an R package that contained functions for automating the cleaning, analysis, and visualization of large data sets for my doctoral dissertation (e.g., 40 000+ rows)")
+                 date = "Mar. 2022", 
+                 first_point = "Package contains 105 functions",
+                 second_point = "Functions automate the cleaning, analysis, and visualization of large data sets (e.g., 40 000+ rows) for my doctoral dissertation", 
+                 third_point = "The creation of several different types of tables and figures were automated by this package")
 ```
 
-```{r nonlinSims, echo=F}
-create_resume_entry(title = "\\href{https://github.com/sebsciarra/nonlinSims}{nonlinSims}*", subtitle = "R Package", date = "Jan. 2022", 
-                 first_point = "Created an R package for simulation experiments in my doctoral dissertation",
-                 second_point = "Package allows the performance of structured latent growth curve models to be evaluated under several different conditions")
+```{r nonlinSims, echo=F, eval=T}
+create_resume_entry(title = "\\href{https://github.com/sebsciarra/nonlinSims}{nonlinSims}", subtitle = "R Package", date = "Jan. 2022", 
+                 first_point = "Package contains 30 functions",
+                 second_point = "Functions run the simulation experiments of my doctoral dissertation",
+                 third_point = "The peformance of nonlinear longitudinal models are evaluated (e.g., structured latent growth curve models) are evaluated under several conditions")
 ```
 
-```{r sql-learning, echo=F}
-create_resume_entry(title = "\\href{https://github.com/sebsciarra/learning_SQL}{Learning SQL}*", subtitle = "Skill learning", date = "Mar. 2021", 
+```{r sql-learning, echo=F, eval=T}
+create_resume_entry(title = "\\href{https://github.com/sebsciarra/learning_SQL}{Learning SQL}", subtitle = "Project", date = "Mar. 2021", 
                  first_point = "Went through 16 of 18 chapters from Alan Beaulieu's \\href{https://www.amazon.ca/Learning-SQL-Generate-Manipulate-Retrieve/dp/1492057614/ref=sr_1_1?hvadid=324956203165&hvdev=c&hvlocphy=9000835&hvnetw=g&hvqmt=e&hvrand=9921433988929165270&hvtargid=kwd-312865785332&hydadcr=16084_10268182&keywords=learning+sql+by+alan+beaulieu&qid=1684158363&sr=8-1}{\\textcolor{blue}{Learning SQL}}", 
                  second_point = "Topics include filtering, querying multiple tables, sets, grouping and aggregates, subqueries, joins, transactions etc.")
 ```
 
 
-# \faCertificate\ Certifications
-
-```{r datacamp-certifications, echo=F}
-create_resume_entry(title = "DataCamp courses", subtitle = "Skill learning", date = "June 2018--Aug. 2020", 
-                 first_point = "Completed 35 courses ranging from data visualization and writing functions to  machine learning topics such as tree-based models and support vector machines. For a full list of the courses, see the relevant section on my LinkedIn \\href{https://www.linkedin.com/in/sebsciarra/details/certifications/}{\\textcolor{blue}{here}}")
-```
 
 
