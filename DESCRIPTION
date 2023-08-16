@@ -14,4 +14,7 @@ Imports:
   stringr,
   pdftools, 
   rstudioapi, 
-  here
+  here, 
+  readr, 
+  rmarkdown, 
+  R.utils
