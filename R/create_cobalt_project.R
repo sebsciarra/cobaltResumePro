@@ -1,6 +1,6 @@
 #' This package will create a function called create_cobalt_project()
 #'
-#'
+#' @param path Path of current working directory.
 #' @export
 create_cobalt_project <- function(path = getwd()) {
 
@@ -19,6 +19,6 @@ create_cobalt_project <- function(path = getwd()) {
 cobalt_file <- function(...) {
 
   # from https://github.com/rstudio/bookdown/blob/master/R/utils.R
-  system.file(..., package = 'cobaltResume', mustWork = TRUE)
+  system.file(..., package = 'cobaltResumePro', mustWork = TRUE)
 }
 

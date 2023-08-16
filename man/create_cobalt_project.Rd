@@ -6,6 +6,9 @@
 \usage{
 create_cobalt_project(path = getwd())
 }
+\arguments{
+\item{path}{Path of current working directory.}
+}
 \description{
 This package will create a function called create_cobalt_project()
 }
