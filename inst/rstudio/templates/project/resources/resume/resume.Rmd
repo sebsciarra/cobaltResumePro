@@ -34,10 +34,10 @@ dir()
 resume_png_path <- list.files(path = here::here(), pattern = 'resume2.0_screen.png', recursive = TRUE, full.names = TRUE)
 
 
-sticker(resume_png_path, package="cobaltResume2.0",  s_x=1, s_y=0.78, s_width=.38, s_height = .34, 
+sticker(resume_png_path, package="cobaltResumePro",  s_x=1, s_y=0.78, s_width=.38, s_height = .34, 
         p_color = "#52aafa", h_fill = "#002241", p_size = 225, p_fontface = "bold", dpi = 5000, 
-        h_color =  "white", url = "github.com/sebsciarra/cobaltResume2.0",
-        u_color = "white", u_size = 70, u_x = 0.18, u_y = 1.45, filename="resume2_0.png")
+        h_color =  "white", url = "github.com/sebsciarra/cobaltResumePro",
+        u_color = "white", u_size = 70, u_x = 0.18, u_y = 1.45, filename="resume_pro.png")
 
 
 ```
