@@ -259,6 +259,27 @@
               };
         \end{tikzpicture}
         \fi
+      \ifnum\value{page}>1
+        \begin{tikzpicture}[remember picture, overlay]
+          \fill [bandcolor] (-20.075,-20.5) rectangle ++(\rightboxwidth,-0.104\textheight); % Adjust dimensions as needed
+              \node[font=\ttfamily\fontsize{9pt}{9pt}\bfseries\selectfont, text width=\rightboxwidth, align = left]
+              (socials)
+               at ([xshift =-7.1cm, yshift=5.1cm]current page.south)
+               {
+               \setlength{\tabcolsep}{3pt}
+               \renewcommand{\arraystretch}{1.5}
+              \begin{tabular}%
+              {>{\raggedleft\arraybackslash}p{0.05\rightboxwidth}%
+               >{\raggedright\arraybackslash}p{0.95\rightboxwidth}%
+              }
+              \printIcon{\@email}{\@email}{simcolor}{\faEnvelope} \printSocial{\@email}{\@email}{simcolor} \\
+              \printIcon{\@personalWebsite}{\@personalWebsite}{aboutcolor}{\faHome}   \printSocial{\@personalWebsite}{\@personalWebsite}{aboutcolor}  \\
+              \printIcon{\@githubLink}{\@githubName}{techcolor}{\faGithubSquare}   \printSocial{\@githubLink}{\@githubName}{techcolor} \\
+              \printIcon{\@linkedinLink}{\@linkedinName}{resourcescolor}{\faLinkedin}  \printSocial{\@linkedinLink}{\@linkedinName}{resourcescolor}\\
+            \end{tabular}
+              };
+        \end{tikzpicture}
+        \fi
       \begin{tikzpicture}[remember picture, overlay]
          \node[font=\fontsize{8pt}{8pt}\color{bandcolor}\selectfont, text width=\leftcolumnwidth, align = left]
         (date)

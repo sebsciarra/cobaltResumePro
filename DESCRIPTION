@@ -7,7 +7,8 @@ Maintainer: <seb@sciarra.io>
 Description: Generates resumes and cover letters according to cobalt theme in RStudio.  
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
+URL: https://github.com/sebsciarra/cobaltResumePro
+BugReports: https://github.com/sebsciarra/cobaltResumePro/issues
 RoxygenNote: 7.2.3
 Template: cobaltResumePro
 Imports: 

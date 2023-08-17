@@ -17,28 +17,24 @@ linkedinLink: "linkedin.com/in/sebsciarra"
 email: "seb\\@sciarra.io" 
 citizenship: "Canadian" #e.g., work permit/study %>% permit/Permanent resident/citizen, etc.
 #leave knit YAML variable uncommented if you want to join the CV and cover letter in one PDF
-knit: cobaltResume2.0::knit_resume(merge_resume_cover_letter = T)
+knit: cobaltResumePro::knit_resume(merge_resume_cover_letter = F)
 ---
 
 ```{r echo=F, message=F, warning=F, message = F}
 library(easypackages)
-packages <- c("cobaltResume2.0", "devtools")
+packages <- c("cobaltResumePro", "devtools")
 libraries(packages)
 
 #allows R code chunks to print out LaTeX and for the LaTeX to be knit
 knitr::opts_chunk$set(results = "asis")
-load_all()
-
-dir()
-
-resume_png_path <- list.files(path = here::here(), pattern = 'resume2.0_screen.png', recursive = TRUE, full.names = TRUE)
-
-
-sticker(resume_png_path, package="cobaltResumePro",  s_x=1, s_y=0.78, s_width=.38, s_height = .34, 
-        p_color = "#52aafa", h_fill = "#002241", p_size = 50, p_fontface = "bold", dpi = 1000, 
-        h_color =  "white", url = "github.com/sebsciarra/cobaltResumePro",
-        u_color = "white", u_size = 13, u_x = 0.18, u_y = 1.45, filename="resume_pro.png")
-
+#resume_png_path <- list.files(path = here::here(), pattern = 'resume2.0_screen.png', recursive = TRUE, full.names = TRUE)
+#
+#
+#sticker(resume_png_path, package="cobaltResumePro",  s_x=1, s_y=0.78, s_width=.38, s_height = .34, 
+#        p_color = "#52aafa", h_fill = "#002241", p_size = 50, p_fontface = "bold", dpi = 1000, 
+#        h_color =  "white", url = "github.com/sebsciarra/cobaltResumePro",
+#        u_color = "white", u_size = 13, u_x = 0.18, u_y = 1.45, filename="resume_pro.png")
+#
 
 ```
 

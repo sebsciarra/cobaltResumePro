@@ -1,11 +1,13 @@
 
-# cobaltResume <img src="inst/rstudio/templates/project/cobalt_hex.png" align="right" width=200 />
+# cobaltResume <img src="man/figures/resume_pro.png" align="right" width=200 />
 
-The goal of `cobaltResume` is to create professionally-looking résumés
-and cover letters in RStudio. LaTeX code has been written in the
+The `cobaltResumePro` is an update on the `cobaltResumePro` package and
+was designed to create resumes with a more streamlined design (the
+design for th. is to create professionally-looking resumes and cover
+letters in RStudio. LaTeX code has been written in the
 `cobaltResume.cls`, `cobaltCoverLetter.cls`, `cobaltResume.tex`, and
-`cobaltCoverLetter.tex` files to format the résumé and cover letter
-files. I have written my own résumé and cover letter using
+`cobaltCoverLetter.tex` files to format the resume and cover letter
+files. I have written my own resume and cover letter using
 `cobaltResume`, which can be viewed [my
 resume](https://github.com/sebsciarra/cobaltResume/blob/main/man/resume_cover_letter.pdf).
 Note that the cover letter is populated with placeholder content. In the
