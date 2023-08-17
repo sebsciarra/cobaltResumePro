@@ -9,7 +9,7 @@ design (the design for the cover letters remained the same in the
 `cobaltCoverLetter.tex` files to format the resume and cover letter
 files. I have written my own resume and cover letter using
 `cobaltResume`, which can be viewed [my
-resume](https://github.com/sebsciarra/cobaltResume/blob/main/man/resume_cover_letter.pdf).
+resume](https://github.com/sebsciarra/cobaltResumePro/blob/main/man/resume_cover_letter.pdf).
 Note that the cover letter is populated with placeholder content. In the
 five sections that follow, I will explain the following components to
 using `cobaltResumePro`:

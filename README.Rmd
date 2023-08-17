@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 
 # cobaltResume <img src="man/figures/resume_pro.png" align="right" width=200 />
 
-The `cobaltResumePro` is an update on the `cobaltResumePro` package and was designed to create resumes with a more streamlined and professional design (the design for the cover letters remained the same in the `cobaltResumePro` package).  LaTeX code has been written in the `cobaltResume.cls`, `cobaltCoverLetter.cls`, `cobaltResume.tex`, and `cobaltCoverLetter.tex` files to format the resume and cover letter files.  I have written my own resume and cover letter using `cobaltResume`, which can be viewed [my resume](https://github.com/sebsciarra/cobaltResume/blob/main/man/resume_cover_letter.pdf). Note that the cover letter is populated with placeholder content.  In the five sections that follow, I will explain the following components to using `cobaltResumePro`: 
+The `cobaltResumePro` is an update on the `cobaltResumePro` package and was designed to create resumes with a more streamlined and professional design (the design for the cover letters remained the same in the `cobaltResumePro` package).  LaTeX code has been written in the `cobaltResume.cls`, `cobaltCoverLetter.cls`, `cobaltResume.tex`, and `cobaltCoverLetter.tex` files to format the resume and cover letter files.  I have written my own resume and cover letter using `cobaltResume`, which can be viewed [my resume](https://github.com/sebsciarra/cobaltResumePro/blob/main/man/resume_cover_letter.pdf). Note that the cover letter is populated with placeholder content.  In the five sections that follow, I will explain the following components to using `cobaltResumePro`: 
 
 1) Installation 
 2) Project creation
