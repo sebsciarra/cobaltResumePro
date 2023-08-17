@@ -2,7 +2,7 @@
     "sortOrder": [
         {
             "columnIndex": 3,
-            "ascending": false
+            "ascending": true
         },
         {
             "columnIndex": 4,
@@ -13,5 +13,5 @@
             "ascending": true
         }
     ],
-    "path": "~/Desktop/Projects/cobaltResumePro/inst/rstudio/templates/project/resources/resume"
+    "path": "~/Desktop/Projects/cobaltResumePro"
 }

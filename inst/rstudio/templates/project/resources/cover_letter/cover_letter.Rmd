@@ -1,28 +1,28 @@
 ---
-firstName: "firstName"
-lastName: "lastName"
-position: "Position" #job position being applied to 
-date: "date" 
+firstName: "Sebastian"
+lastName: "Sciarra"
+position: "Data scientist" #job position being applied to 
+date: "16 August 2023" 
 output: 
   pdf_document:
     template: "cobaltCoverLetter.tex"
 #hyperlinks (delete or leave blank blank if not necessary/do not exist)
 #escape any special characters with two backslashes (for example, see email variable)
-githubLink: "github.com/user" #link to GitHub
-githubName: "githubHandle" #GitHub username
-personalWebsite: "personalwebsite.com"
-linkedinName: "firstName lastName"
-linkedinLink: "linkedin.com/in/personal_link"
-email: "email\\@domain.com" 
+githubLink: "github.com/sebsciarra" #link to GitHub
+githubName: "github.com/sebsciarra" #GitHub username
+personalWebsite: "sebastiansciarra.com"
+linkedinName: "Sebastian Sciarra"
+linkedinLink: "linkedin.com/in/sebsciarra"
+email: "seb\\@sciarra.io" 
 #recruiter info 
 recruiterName: "Recruiter Name"
 organization: "Organization Name"
-organizationStreet: "200 Bay St."
+organizationStreet: "244 Bay St."
 organizationCityPostal: "Toronto, ON M5J 2J2"
 #greeting/closing + citizenship
 greeting: "Dear Mr./Mrs. Recruiter Name"
 emailClosing: "Sincerely"
-citizenship: "Citizenship status" #e.g., work permit/study permit/Permanent resident/citizen, etc.
+citizenship: "Canadian" #e.g., work permit/study permit/Permanent resident/citizen, etc.
 ---
 
 

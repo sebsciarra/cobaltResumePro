@@ -17,7 +17,7 @@ linkedinLink: "linkedin.com/in/sebsciarra"
 email: "seb\\@sciarra.io" 
 citizenship: "Canadian" #e.g., work permit/study %>% permit/Permanent resident/citizen, etc.
 #leave knit YAML variable uncommented if you want to join the CV and cover letter in one PDF
-knit: cobaltResumePro::knit_resume(merge_resume_cover_letter = F)
+knit: cobaltResumePro::knit_resume(merge_resume_cover_letter = T)
 ---
 
 ```{r echo=F, message=F, warning=F, message = F}
@@ -27,59 +27,8 @@ libraries(packages)
 
 #allows R code chunks to print out LaTeX and for the LaTeX to be knit
 knitr::opts_chunk$set(results = "asis")
-#resume_png_path <- list.files(path = here::here(), pattern = 'resume2.0_screen.png', recursive = TRUE, full.names = TRUE)
-#
-#
-#sticker(resume_png_path, package="cobaltResumePro",  s_x=1, s_y=0.78, s_width=.38, s_height = .34, 
-#        p_color = "#52aafa", h_fill = "#002241", p_size = 50, p_fontface = "bold", dpi = 1000, 
-#        h_color =  "white", url = "github.com/sebsciarra/cobaltResumePro",
-#        u_color = "white", u_size = 13, u_x = 0.18, u_y = 1.45, filename="resume_pro.png")
-#
-
 ```
 
-```{r echo=F, eval=F}
-library(tidyverse)
-
-file.remove("metadata.tex")
-tex_content <- readChar(con = "resume.tex", nchars = file.info("resume.tex")$size)
-
-#pattern_section_remove <- "\\\\hypertarget\\{[^}]+\\}\\{\\%\\s+\\\\section\\{\\\\texorpdfstring\\{[^}]+\\}\\{[^}]+\\}\\}\\\\label\\{[^}]+\\}\\}"
-
-#1) Select entire sections
-#set dotall=T so that newline characters and any white spaces are matched 
-pattern_total_section <- regex(pattern = "\\\\hypertarget.*?(?=(\\\\hypertarget|\\\\end\\{document))", dotall = TRUE)
-section_total <- unlist(str_extract_all(string = tex_content, pattern = pattern_total_section))
-
-#2) Extract section names from content in \hypertarget{}
-pattern_name <- "\\\\hypertarget\\{\\s*(.*?)\\s*\\}"
-section_names <- str_match(string = section_total, pattern = pattern_name)[ ,2]
-
-#3) Remove entire sections from .tex file 
-tex_content <- str_remove_all(string = tex_content, pattern = pattern_total_section)
-
-#4) Remove \hypertarget and \label{}} from section totals 
-##only remove \\hypertarget{} before \\section
-pattern_hypertarget <- "\\\\hypertarget\\{.*?\\}\\{\\%\\s+(?=\\\\section\\{\\\\texorpdfstring\\{[^}]+\\}\\{[^}]+\\}\\}\\\\label\\{[^}]+\\})"
-section_total <- str_remove_all(string = section_total, pattern = pattern_hypertarget)
-
-##only remove \\label after a section 
-pattern_label <- "(?!\\\\section\\{\\\\texorpdfstring\\{[^}]+\\}\\{[^}]+\\}\\}\\\\label\\{[^}]+\\})\\\\label\\{.*?\\}\\}"
-section_total <- str_remove_all(string = section_total, pattern = pattern_label)
-
-
-#5)Create metadata tags (insert <%*section_name> + pattern_section + <*section_name> into metadata.tex)
-metadata_tags <- paste(paste0("%<*",section_names, ">"),  
-                       section_total, 
-                       paste0("%</", section_names, ">"), sep = '\n')
-
-#make sure metadata.tex file is blank
-write_lines(x = metadata_tags, file = 'metadata.tex')
-write_lines(x = tex_content, file = 'resume.tex')
-
-library(tools)
-texi2pdf(file = "resume.tex")
-```
 
 
 # \faUser\ Profile 
@@ -158,24 +107,6 @@ create_resume_entry(title = "Graduate Research Assistant",
                  first_point = "Used R to clean data, compute descriptive statistics, and run regression analyses (with categorical and/or continuous variables) for organizational data on turnover, downsizing, and growth")
 ```
 
-```{r consulting-experience-geosyntex, echo=F}
-create_resume_entry(title = "Consultant", 
-                 subtitle = "Geosyntec (Part-Time)", 
-                 date = "Sep. 2020--Dec. 2020", 
-                 first_point = "Worked with a team of graduate students to improve the interview procedure", 
-                second_point = "Developed customized recommendations to structure the interview procedure so that adverse hiring outcomes were reduced and skills were more rigorously evaluated")
-```
-
-```{r consulting-experience-schema, echo=F}
-create_resume_entry(title = "Consultant", 
-                 subtitle = "Schema App (Part-Time)", 
-                 date = "Jan. 2020--Apr. 2020", 
-                 first_point = "Worked with a team of graduate students to improve the onboarding of new employees", 
-                second_point = "Synthesized customized recommendations by using literatures on realistic job previews, goal setting, and mentoring")
-```
-
-
-
 
 
 # \faCode\ Data science \ experience
@@ -188,6 +119,12 @@ create_resume_entry(title = "\\href{https://github.com/sebsciarra/smltheory}{sml
                  learning propositions (e.g., bias-variance tradeoff, excess risk decomposition)") 
 ```
 
+```{r cobalt-resume-pro, echo=F, eval=T}
+create_resume_entry(title = "\\href{https://github.com/sebsciarra/cobaltResumePro}{cobaltResumePro}", subtitle = "R Package", date = "Aug. 2023", 
+                 first_point = "Updated version of my cobaltResume package that generates resumes according to a more streamlined and professional design", 
+                 second_point = "A template and class file were created (\\textapprox 900 lines of \\LaTeX code) to specify a styling template that draws inspiration from the cobalt theme in the RStudio IDE", 
+                 third_point = "R functions were created to easily generate resume entries and merge resume and cover letters into one PDF file")
+```
 
 ```{r cobalt-resume, echo=F, eval=T}
 create_resume_entry(title = "\\href{https://github.com/sebsciarra/cobaltResume}{cobaltResume}", subtitle = "R Package", date = "May 2023", 
