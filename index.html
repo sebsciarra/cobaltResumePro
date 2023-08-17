@@ -43,7 +43,14 @@
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
 </form>
 
-      <ul class="navbar-nav"></ul>
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/sebsciarra/cobaltResumePro/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 
     
@@ -51,38 +58,37 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="cobaltresume-">cobaltResume <img src="inst/rstudio/templates/project/cobalt_hex.png" align="right" width="200"><a class="anchor" aria-label="anchor" href="#cobaltresume-"></a>
+<div class="page-header"><h1 id="cobaltresume-">cobaltResume <img src="reference/figures/resume_pro.png" align="right" width="200"><a class="anchor" aria-label="anchor" href="#cobaltresume-"></a>
 </h1></div>
-<p>The goal of <code>cobaltResume</code> is to create professionally-looking résumés and cover letters in RStudio. LaTeX code has been written in the <code>cobaltResume.cls</code>, <code>cobaltCoverLetter.cls</code>, <code>cobaltResume.tex</code>, and <code>cobaltCoverLetter.tex</code> files to format the résumé and cover letter files. I have written my own résumé and cover letter using <code>cobaltResume</code>, which can be viewed <a href="https://github.com/sebsciarra/cobaltResume/blob/main/man/resume_cover_letter.pdf" class="external-link">my resume</a>. Note that the cover letter is populated with placeholder content. In the sections that follow, I will explain the following four components to using <code>cobaltResume</code>:</p>
+<p>The <code>cobaltResumePro</code> is an update on the <code>cobaltResumePro</code> package and was designed to create resumes with a more streamlined and professional design (the design for the cover letters remained the same in the <code>cobaltResumePro</code> package). LaTeX code has been written in the <code>cobaltResume.cls</code>, <code>cobaltCoverLetter.cls</code>, <code>cobaltResume.tex</code>, and <code>cobaltCoverLetter.tex</code> files to format the resume and cover letter files. I have written my own resume and cover letter using <code>cobaltResume</code>, which can be viewed <a href="https://github.com/sebsciarra/cobaltResume/blob/main/man/resume_cover_letter.pdf" class="external-link">my resume</a>. Note that the cover letter is populated with placeholder content. In the five sections that follow, I will explain the following components to using <code>cobaltResumePro</code>:</p>
 <ol style="list-style-type: decimal">
 <li>Installation</li>
 <li>Project creation</li>
-<li>Creating a résumé</li>
+<li>Creating a resume</li>
 <li>Creating a cover letter</li>
-<li>Merging the résumé and cover letter into one PDF file</li>
+<li>Merging the resume and cover letter into one PDF file</li>
 </ol>
-<p>The goal of <code>cobaltResume</code> is to create professionally-looking résumés and cover letters. Here is a résumé and cover letter I created for myself using <code>cobaltResume</code>:</p>
 <div class="section level2">
 <h2 id="id_1-installation">1) Installation<a class="anchor" aria-label="anchor" href="#id_1-installation"></a>
 </h2>
 <p>You can install the development version of cobaltResume GitHub and load it into your session with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#install.packages("devtools")</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"sebsciarra/cobaltResume"</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">cobaltResume</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"sebsciarra/cobaltResumePro"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sebsciarra/cobaltResumePro" class="external-link">cobaltResumePro</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="id_2-project-creation">2) Project creation<a class="anchor" aria-label="anchor" href="#id_2-project-creation"></a>
 </h2>
-<p>To create a <code>cobaltResume</code> template, click on <strong>File</strong> &gt; <strong>New Project</strong> &gt; <strong>New Directory</strong>. Then select <strong>Résumé and cover letter project using cobaltResume</strong> from the dropdown menu as shown below.</p>
+<p>To create a <code>cobaltResumePro</code> template, click on <strong>File</strong> &gt; <strong>New Project</strong> &gt; <strong>New Directory</strong>. Then select <strong>Resume and cover letter project using cobaltResumePro</strong> from the drop-down menu as shown below.</p>
 <p><img src="reference/figures/resume_project.png" width="50%" height="50%"></p>
-<p>THen, give your project a name and specify where you’d like the files to appear. In the screenshot below, the project name is <code>my_resume_cover_letter</code> will appear as a new folder on the Desktop.</p>
+<p>Then, give your project a name and specify where you’d like the files to appear. In the screenshot below, the project name is <code>my_resume_cover_letter</code> will appear as a new folder on the Desktop.</p>
 <p><img src="reference/figures/project_name.png" width="50%" height="50%"></p>
 </div>
 <div class="section level2">
-<h2 id="id_3-creating-a-résumé">3) Creating a résumé<a class="anchor" aria-label="anchor" href="#id_3-creating-a-r%C3%A9sum%C3%A9"></a>
+<h2 id="id_3-creating-a-resume">3) Creating a resume<a class="anchor" aria-label="anchor" href="#id_3-creating-a-resume"></a>
 </h2>
-<p>In the <code>resume.Rmd</code> file, a résumé can be completed by using three features. First, information related to identification and skills can be included in the résumé by filling in the appropriate YAML header variables shown below.</p>
+<p>In the <code>resume.Rmd</code> file, a resume can be completed by using three features. First, information related to identification and skills can be included in the resume by filling in the appropriate YAML header variables shown below. Importantly, make sure that <code>keep_tex: true</code>, or else the PDF for the resume will not be created.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">firstName</span><span class="kw">:</span><span class="at"> </span><span class="st">"firstName"</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lastName</span><span class="kw">:</span><span class="at"> </span><span class="st">"lastName"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">position</span><span class="kw">:</span><span class="at"> </span><span class="st">"Position"</span><span class="co"> #job position being applied to </span></span>
@@ -90,41 +96,50 @@
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf_document</span><span class="kw">:</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="st">"cobaltResume.tex"</span><span class="co"> #template file (do not change)</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#hyperlinks (delete or leave blank blank if not necessary/do not exist)</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#escape any special characters with two backslashes (for example, see email variable)</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">githubLink</span><span class="kw">:</span><span class="at"> </span><span class="st">"github.com/user"</span><span class="co"> #link to GitHub</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">githubName</span><span class="kw">:</span><span class="at"> </span><span class="st">"githubHandle"</span><span class="co"> #GitHub username</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">personalWebsite</span><span class="kw">:</span><span class="at"> </span><span class="st">"personalwebsite.com"</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">linkedinName</span><span class="kw">:</span><span class="at"> </span><span class="st">"firstName lastName"</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">linkedinLink</span><span class="kw">:</span><span class="at"> </span><span class="st">"linkedin.com/in/personal_link"</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">email</span><span class="kw">:</span><span class="at"> </span><span class="st">"email</span><span class="sc">\\</span><span class="st">@domain.com"</span><span class="at"> </span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#skills + citizenship</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">skills</span><span class="kw">:</span><span class="at"> </span><span class="st">"R, SQL, Python, LaTeX, Bash, HTML, JavaScript, CSS, Machine learning, Data science, Data visualization, Knowledge translation"</span><span class="co"> #skills relevant to the job</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_tex</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#hyperlinks (delete or leave blank blank if not necessary/do not exist)</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#escape any special characters with two backslashes (for example, see email variable)</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">githubLink</span><span class="kw">:</span><span class="at"> </span><span class="st">"github.com/user"</span><span class="co"> #link to GitHub</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">githubName</span><span class="kw">:</span><span class="at"> </span><span class="st">"githubHandle"</span><span class="co"> #GitHub username</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">personalWebsite</span><span class="kw">:</span><span class="at"> </span><span class="st">"personalwebsite.com"</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">linkedinName</span><span class="kw">:</span><span class="at"> </span><span class="st">"firstName lastName"</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">linkedinLink</span><span class="kw">:</span><span class="at"> </span><span class="st">"linkedin.com/in/personal_link"</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">email</span><span class="kw">:</span><span class="at"> </span><span class="st">"email</span><span class="sc">\\</span><span class="st">@domain.com"</span><span class="at"> </span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#skills + citizenship</span></span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">citizenship</span><span class="kw">:</span><span class="at"> </span><span class="st">"Citizenship status"</span><span class="co"> #e.g., work permit/study permit/Permanent resident/citizen, etc.</span></span></code></pre></div>
-<p>Second, sections can be created in the <code>resume.Rmd</code> file and accessorized with fontawesome icons (for a full list, see <a href="http://mirrors.ibiblio.org/CTAN/fonts/fontawesome5/doc/fontawesome5.pdf" class="external-link">fontawesome icons</a>). For example, <code>\faSuitcase\ Employment</code> results in the header shown below.</p>
+<p>Second, sections accessorized with fontawesome5 icons (for a full list, see <a href="http://mirrors.ibiblio.org/CTAN/fonts/fontawesome5/doc/fontawesome5.pdf" class="external-link">fontawesome5 icons</a>). For example, <code>\faSuitcase\ Employment</code> results in the header shown below. Importantly, DO NOT change the section names.</p>
 <p><img src="reference/figures/example_header.png" width="25%" height="25%"></p>
-<p>Third, résumé entries can be completed using <code><a href="reference/create_resume_entry.html">create_resume_entry()</a></code>. Two examples are provided below.</p>
+<p>Third, resume entries can be completed for each section using the corresponding R function. For each section, the following R function should be used:</p>
+<ol style="list-style-type: decimal">
+<li>Profile: <code><a href="reference/create_profile_entry.html">create_profile_entry()</a></code>
+</li>
+<li>Skills: <code><a href="reference/create_skills_entry.html">create_skills_entry()</a></code>
+</li>
+<li>Education: <code><a href="reference/create_education_entry.html">create_education_entry()</a></code>
+</li>
+<li>Selected white papers: <code><a href="reference/create_white_paper_entry.html">create_white_paper_entry()</a></code>
+</li>
+<li>Employment experience: <code><a href="reference/create_resume_entry.html">create_resume_entry()</a></code>
+</li>
+<li>Data science experience: <code><a href="reference/create_resume_entry.html">create_resume_entry()</a></code>
+</li>
+</ol>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/create_resume_entry.html">create_resume_entry</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"PhD, Industrial-Organizational Psychology"</span>, </span>
-<span>                 subtitle <span class="op">=</span> <span class="st">"University of Guelph"</span>, </span>
-<span>                 date <span class="op">=</span> <span class="st">"Sep. 2018--May 2023"</span>, </span>
-<span>                 first_point <span class="op">=</span> <span class="st">"Thesis title: \\textbf{Is Timing Everything? The Effects of Measurement Timing on the \\newline Performance of Nonlinear Longitudinal Models}"</span>, </span>
-<span>                 second_point <span class="op">=</span> <span class="st">"Conducted Monte Carlo simulation experiments using R on an Amazon Web Services (AWS) instance to evaluate the performance of structured latent growth curve models under several conditions"</span>, </span>
-<span>                 third_point <span class="op">=</span> <span class="st">"My thesis can be viewed  \\href{\\detokenize{https://atrium.lib.uoguelph.ca/xmlui/bitstream/handle/10214/27543/Sciarra_Sebastian_202304_PhD.pdf?sequence=1&amp;isAllowed=y}}{\\textcolor{blue}{here}}"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/create_profile_entry.html">create_profile_entry</a></span><span class="op">(</span>profile_summary <span class="op">=</span> <span class="st">"Passionate about coding, machine learning, and statistics. Completed my PhD \\href{\\detokenize{https://atrium.lib.uoguelph.ca/server/api/core/bitstreams/8ed1891d-58ca-457b-b0d4-33a015fb2db9/content}}{\\textcolor{blue}{dissertation}} at the intersection of these fields to address a practical problem in Industrial-Organizational psychology and received the 2022/2023 Canadian Psychological Association Certificate of Academic Excellence for this work. In my dissertation, I coded and ran Monte Carlo simulations on an AWS instance to evaluate the performance of nonlinear longitudinal models. Writes white papers on machine learning topics at\ \\href{https://sebastiansciarra.com}{\\textcolor{blue}{sebastiansciarra.com}}. \\newline"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="reference/create_resume_entry.html">create_resume_entry</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"\\href{sebastiansciarra.com}{sebastiansciarra.com}\\footnote{clickable hyperlink to the corresponding repository on my GitHub}"</span>, subtitle <span class="op">=</span> <span class="st">"Personal website"</span>, date <span class="op">=</span> <span class="st">"Mar. 2023"</span>, </span>
-<span>                 first_point <span class="op">=</span> <span class="st">"Used HTML, JavaScript, and CSS to create a personal website for writing blog posts"</span>,</span>
-<span>                 second_point <span class="op">=</span> <span class="st">'Blog posts focus on statistics, machine learning, and coding by explaining technical details, providing demonstrations, and conducting simulation experiments'</span>, </span>
-<span>                 third_point <span class="op">=</span> <span class="st">'Blog posts use code from a variety of language to explain content. As an example, my post titled ``\\href{https://sebastiansciarra.com/coding_tricks/em_demo/}{\\textcolor{blue}{Coding and Visualizing the Expectation-Maximization Algorithm}}" used R, Python, and CSS code'</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="reference/create_skills_entry.html">create_skills_entry</a></span><span class="op">(</span>coding_languages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Python"</span>, <span class="st">"R"</span>, <span class="st">"SQL"</span>, <span class="st">"\\LaTeX"</span>, <span class="st">"Javascript"</span>, <span class="st">"HTML"</span>, <span class="st">"CSS"</span><span class="op">)</span>, </span>
+<span>                    ides_platforms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PyCharm"</span>, <span class="st">"RStudio"</span>, <span class="st">"AWS"</span>, <span class="st">"Git"</span>, <span class="st">"MySQL"</span><span class="op">)</span>, </span>
+<span>                    technical_skills <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Data visualization (ggplot2, plotnine)"</span>, </span>
+<span>                                         <span class="st">"Data cleaning (tidyverse, pandas, numpy)"</span>, </span>
+<span>                                         <span class="st">"Machine learning (e.g., regularized regression, decision trees, random forests, mixture models)"</span>, </span>
+<span>                                         <span class="st">"Statistics (e.g., latent variable models, factor analysis, multilevel modelling)"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Note that LaTeX code can be inserted and will be rendered. The above two examples produce the following two entries in the resulting PDF file:</p>
-<p><img src="reference/figures/education.png" width="65%" height="65%"><img src="reference/figures/personal_website.png" width="65%" height="65%"></p>
-<p>As an aside, there is an asterisk at the end of the personal website, because it is a clickable hyperlink to the corresponding GitHub repository. This not shows up as a footnote, as shown below.</p>
-<p><img src="reference/figures/hyperlink_footnote.png" width="65%" height="65%"></p>
+<p><img src="reference/figures/profile.png" width="65%" height="65%"><img src="reference/figures/skills.png" width="65%" height="65%"></p>
 </div>
 <div class="section level2">
 <h2 id="id_4-creating-a-cover-letter">4) Creating a cover letter<a class="anchor" aria-label="anchor" href="#id_4-creating-a-cover-letter"></a>
 </h2>
-<p>In the <code>cover_letter.Rmd</code> file, a résumé can be completed by using three features. First, information related to identification and skills can be included in the résumé by filling in the appropriate YAML header variables shown below.</p>
+<p>In the <code>cover_letter.Rmd</code> file, a cover letter can be completed by using three features. First, information related to identification and skills can be included in the résumé by filling in the appropriate YAML header variables shown below.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">firstName</span><span class="kw">:</span><span class="at"> </span><span class="st">"firstName"</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lastName</span><span class="kw">:</span><span class="at"> </span><span class="st">"lastName"</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">position</span><span class="kw">:</span><span class="at"> </span><span class="st">"Position"</span><span class="co"> #job position being applied to </span></span>
@@ -132,7 +147,7 @@
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf_document</span><span class="kw">:</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="st">"cobaltCoverLetter.tex"</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">hyperlinks (delete or leave blank blank if not necessary/do not exist)</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#hyperlinks (delete or leave blank blank if not necessary/do not exist)</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#escape any special characters with two backslashes (for example, see email variable)</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">githubLink</span><span class="kw">:</span><span class="at"> </span><span class="st">"github.com/user"</span><span class="co"> #link to GitHub</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">githubName</span><span class="kw">:</span><span class="at"> </span><span class="st">"githubHandle"</span><span class="co"> #GitHub username</span></span>
@@ -151,13 +166,21 @@
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="fu">citizenship</span><span class="kw">:</span><span class="at"> </span><span class="st">"Citizenship status"</span><span class="co"> #e.g., work permit/study permit/Permanent resident/citizen, etc.</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="id_5-merging-the-résumé-and-cover-letter-into-one-pdf">5) Merging the résumé and cover letter into one PDF<a class="anchor" aria-label="anchor" href="#id_5-merging-the-r%C3%A9sum%C3%A9-and-cover-letter-into-one-pdf"></a>
+<h2 id="id_5-merging-the-resume-and-cover-letter-into-one-pdf">5) Merging the resume and cover letter into one PDF<a class="anchor" aria-label="anchor" href="#id_5-merging-the-resume-and-cover-letter-into-one-pdf"></a>
 </h2>
-<p>To merge the résumé and cover letter into one PDF, make sure that each <code>.Rmd</code> file exists in its own folder (as is the case when the project is first created). With the résumé and cover letter <code>.Rmd</code> files in their own folders, they can be merged by specifying the <code>knit</code> YAML variable in either the <code>résumé .Rmd</code> and/or the <code>cover_letter.Rmd</code> file(s) such that</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">knit</span><span class="kw">:</span><span class="at"> cobaltResume::merge_resume_cover_letter</span></span></code></pre></div>
+<p>To merge the resume and cover letter into one PDF, make sure that each <code>.Rmd</code> file exists in its own folder (as is the case when the project is first created). With the resume and cover letter <code>.Rmd</code> files in their own folders, they can be merged by specifying the <code>knit</code> YAML variable in either the <code>résumé .Rmd</code> and/or the <code>cover_letter.Rmd</code> file(s) such that</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">knit</span><span class="kw">:</span><span class="at"> cobaltResumePro::knit_resume(merge_resume_cover_letter = T)</span></span></code></pre></div>
 </div>
 </div>
-  </main><aside class="col-md-3"><div class="license">
+  </main><aside class="col-md-3"><div class="links">
+<h2 data-toc-skip>Links</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/sebsciarra/cobaltResumePro/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/sebsciarra/cobaltResumePro/issues" class="external-link">Report a bug</a></li>
+</ul>
+</div>
+
+<div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
