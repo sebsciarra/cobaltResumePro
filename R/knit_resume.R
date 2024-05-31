@@ -44,6 +44,7 @@ knit_resume <- function(..., merge_resume_cover_letter = F) {
   cover_letter_rmd <- rmd_files[!file_identifier_ind]
 
   remove_metadata_tex()
+
   ##note that I want to work with the .tex file produced by rmarkdown::render()
   pdf_filenames = list(
     rmarkdown::render(
@@ -97,36 +98,39 @@ rerender_resume_tex <- function(resume_tex_path, resume_pdf_path){
 
   #1) Select entire sections
   #set dotall=T so that newline characters and any white spaces are matched
-  pattern_total_section <- stringr::regex(pattern = "\\\\hypertarget.*?(?=(\\\\hypertarget|\\\\end\\{document))", dotall = TRUE)
+  #allows R code chunks to print out LaTeX and for the LaTeX to be knit
+  pattern_total_section <- stringr::regex(pattern = "(\\\\section\\{\\\\texorpdfstring.*?(?=(\\\\section\\{\\\\texorpdfstring|\\\\end\\{document\\})))",
+                                          dotall = TRUE)
   section_total <- unlist(stringr::str_extract_all(string = tex_content, pattern = pattern_total_section))
 
   #2) Extract section names from content in \hypertarget{}
-  pattern_name <- "\\\\hypertarget\\{\\s*(.*?)\\s*\\}"
-  section_names <- stringr::str_match(string = section_total, pattern = pattern_name)[ ,2]
+  pattern_name <- "\\\\section\\{\\\\texorpdfstring\\{[\\s\\S]*?\\}.*?~(.*?)\\}\\s*\\}"
+
+  # extract section names and convert to lower case
+  section_names <- tolower(stringr::str_match(string = section_total, pattern = pattern_name)[ ,2])
+
+  # remove tildes and replace spaces with hyphens
+  section_names <- gsub("~", "", section_names)
+  section_names <- gsub(" ", "-", section_names)
 
   #3) Remove entire sections from .tex file
   tex_content <- stringr::str_remove_all(string = tex_content, pattern = pattern_total_section)
 
-  #4) Remove \hypertarget and \label{}} from section totals
-  ##only remove \\hypertarget{} before \\section
-  pattern_hypertarget <- "\\\\hypertarget\\{.*?\\}\\{\\%\\s+(?=\\\\section\\{\\\\texorpdfstring\\{[^}]+\\}\\{[^}]+\\}\\}\\\\label\\{[^}]+\\})"
-  section_total <- stringr::str_remove_all(string = section_total, pattern = pattern_hypertarget)
-
+  #4) Remove  \label{} from section totals
   ##only remove \\label after a section
-  pattern_label <- "(?!\\\\section\\{\\\\texorpdfstring\\{[^}]+\\}\\{[^}]+\\}\\}\\\\label\\{[^}]+\\})\\\\label\\{.*?\\}\\}"
-  section_total <- stringr::str_remove_all(string = section_total, pattern = pattern_label)
+  # pattern_label <- "(?<=\\\\section\\{\\\\texorpdfstring\\{[\\s\\S]*?\\}\\{[\\s\\S]*?\\})\\\\label\\{.*?\\}\\}"
+  # pattern_label <- "\\\\section\\{\\\\texorpdfstring\\{[^{}]*\\}\\{[^{}]*\\}}\\\\label\\{([^{}]*)\\}"
+  #section_total_test <- stringr::str_remove_all(string = section_total, pattern = pattern_label)
 
-
-  #5)Create metadata tags (insert <%*section_name> + pattern_section + <*section_name> into metadata.tex)
+  #5) Create metadata tags (insert <%*section_name> + pattern_section + <*section_name> into metadata.tex)
   metadata_tags <- paste(paste0("%<*",section_names, ">"),
                          section_total,
                          paste0("%</", section_names, ">"), sep = '\n')
-
   #get corrects paths for files
   resume_dir <- dirname(path = resume_pdf_path)
   metadata_path <- paste0(resume_dir, "/metadata.tex")
 
-  #make sure metadata.tex file is blank
+    #make sure metadata.tex file is blank
   readr::write_lines(x = metadata_tags, file = metadata_path)
   readr::write_lines(x = tex_content, file = resume_tex_path)
 

@@ -31,6 +31,11 @@
 %-------------------------------------------------------------------------------
 %                Declarations
 %-------------------------------------------------------------------------------
+% suppress warnings about everypage (see https://stackoverflow.com/questions/64921954/how-to-solve-latex-package-warning-for-everypage)
+\usepackage{silence}
+ % \WarningsOff[everypage]% Suppress warnings related to package everypage
+
+
 \RequirePackage{multicol}
 \RequirePackage{xcolor}
 \RequirePackage[]{geometry}

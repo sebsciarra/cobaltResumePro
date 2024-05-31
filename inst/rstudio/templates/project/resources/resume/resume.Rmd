@@ -1,8 +1,8 @@
 ---
 firstName: "Sebastian"
 lastName: "Sciarra, PhD"
-position: "Data Scientist" #job position being applied to 
-date: "August 2023" 
+position: "Senior Data Scientist" #job position being applied to 
+date: "May 2024" 
 output: 
   pdf_document:
     template: "cobaltResume.tex"
@@ -17,14 +17,14 @@ linkedinLink: "linkedin.com/in/sebsciarra"
 email: "seb\\@sciarra.io" 
 citizenship: "Canadian" #e.g., work permit/study %>% permit/Permanent resident/citizen, etc.
 #leave knit YAML variable uncommented if you want to join the CV and cover letter in one PDF
-knit: cobaltResumePro::knit_resume(merge_resume_cover_letter = T)
+knit: cobaltResumePro::knit_resume(merge_resume_cover_letter=FALSE)
 ---
 
 ```{r echo=F, message=F, warning=F, message = F}
 library(easypackages)
 packages <- c("cobaltResumePro", "devtools")
 libraries(packages)
-
+load_all()
 #allows R code chunks to print out LaTeX and for the LaTeX to be knit
 knitr::opts_chunk$set(results = "asis")
 ```
@@ -35,18 +35,19 @@ knitr::opts_chunk$set(results = "asis")
 
 
 ```{r echo=F}
-create_profile_entry(profile_summary = "Passionate about coding, machine learning, and statistics. Completed my PhD \\href{\\detokenize{https://atrium.lib.uoguelph.ca/server/api/core/bitstreams/8ed1891d-58ca-457b-b0d4-33a015fb2db9/content}}{\\textcolor{blue}{dissertation}} at the intersection of these fields to address a practical problem in Industrial-Organizational psychology and received the 2022/2023 Canadian Psychological Association Certificate of Academic Excellence for this work. In my dissertation, I coded and ran Monte Carlo simulations on an AWS instance to evaluate the performance of nonlinear longitudinal models. Writes white papers on machine learning topics at\ \\href{https://sebastiansciarra.com}{\\textcolor{blue}{sebastiansciarra.com}}. \\newline")
+create_profile_entry(profile_summary = "Passionate about coding, machine learning, and statistics. Completed my PhD \\href{\\detokenize{https://atrium.lib.uoguelph.ca/server/api/core/bitstreams/8ed1891d-58ca-457b-b0d4-33a015fb2db9/content}}{\\textcolor{blue}{dissertation}} at the intersection of these fields to address a practical problem in Industrial-Organizational psychology and received the 2022/2023 Canadian Psychological Association Certificate of Academic Excellence for this work. In my dissertation, I coded and ran Monte Carlo simulations on an AWS instance to evaluate the performance of nonlinear longitudinal models and wrote an R package (\\hyperlink{nonlinSimsAnalysis}{\\textcolor{blue}{nonlinSimsAnalysis}}) to automate the cleaning, analysis, and visualization of large data sets. Recently at J.D. Power, I have leveraged the Shiny (for Python) framework to automate the creation of Shiny APIs (\\href{https://jdpasims.shinyapps.io/kpi_simulator_poc/}{\\textcolor{blue}{Shiny example}}). Whenever I get a chance, I write white papers on machine learning topics at\ \\href{https://sebastiansciarra.com}{\\textcolor{blue}{sebastiansciarra.com}}. \\newline")
 ```
 
 # \faCogs\ Skills 
 
 ```{r echo=F}
 create_skills_entry(coding_languages = c("Python", "R", "SQL", "\\LaTeX", "Javascript", "HTML", "CSS"), 
-                    ides_platforms = c("PyCharm", "RStudio", "AWS", "Git", "MySQL"), 
-                    technical_skills = c("Data visualization (ggplot2, plotnine)", 
+                    ides_platforms = c("VSCode", "RStudio", "AWS", "GitHub", "MySQL"), 
+                    technical_skills = c("Data visualization (ggplot2, plotnine, matplotlib, seaborn) ", 
+                                         "Dynamic data visualization (\\href{https://shiny.posit.co/py/}{\\textcolor{blue}{Shiny}}, \\href{https://docs.manim.community/en/stable/examples.html}{\\textcolor{blue}{manim}})",
                                          "Data cleaning (tidyverse, pandas, numpy)", 
-                                         "Machine learning (e.g., regularized regression, decision trees, random forests, mixture models)", 
-                                         "Statistics (e.g., latent variable models, factor analysis, multilevel modelling)"))
+                                         "Machine learning (e.g., regularized regression, multiple imputation, mixture models, etc.)", 
+                                         "Statistics (e.g., latent variable models, factor analysis, multilevel modelling, multilevel modeling, etc.)"))
 ```
 
 
@@ -54,8 +55,9 @@ create_skills_entry(coding_languages = c("Python", "R", "SQL", "\\LaTeX", "Javas
 
 # \faUniversity\ Education
 
+
 ```{r phd, echo=F}
-create_education_entry(degree_type = 'PhD', degree_name = 'Industrial-Organizational Psychology', 
+create_education_entry(degree_type = '\\hspace{-0.1cm}PhD', degree_name = 'Industrial-Organizational Psychology', 
                        institution = 'University of Guelph', start_date = 'Sep. 2018', end_date = 'May 2023')
 
 create_education_entry(degree_type = 'MSc', degree_name = 'Cognitive Psychology', 
@@ -68,15 +70,18 @@ create_education_entry(degree_type = 'Honours BSc', degree_name = 'Psychology, N
 # \faCoffee\ Selected white papers
 
 ```{r echo=F}
-links = c("https://sebastiansciarra.com/technical_content/understanding_ml/",
+links = c("https://sebastiansciarra.com/technical_content",
+          "https://sebastiansciarra.com/technical_content/understanding_ml/",
           "https://sebastiansciarra.com/technical_content/em/", 
           "https://sebastiansciarra.com/technical_content/mle/")
 
-titles = c("The Game of Supervised Machine Learning: Understanding the Setup, Players, and Rules",
-          "The Expectation-Maximization Algorithm: A Method for Modelling Mixtures of Distributions", 
-          "Probability, Likelihood, and Maximum Likelihood Estimation")
+titles = c("The Theory, Meaning, and Applications of the Singular Value Decomposition", 
+           "The Game of Supervised Machine Learning: Understanding the Setup, Players, and Rules",
+           "The Expectation-Maximization Algorithm: A Method for Modelling Mixtures of Distributions", 
+           "Probability, Likelihood, and Maximum Likelihood Estimation")
 
-dates = c("10 August 2023", 
+dates = c("Upcoming",
+          "10 August 2023", 
           "28 April 2023", 
           "19 March 2023")
 
@@ -85,6 +90,16 @@ create_white_paper_entry(links = links, titles = titles, dates = dates)
 
 
 # \faSuitcase\ Employment \ experience 
+
+
+```{r jd-power, echo=F}
+create_resume_entry(title = "Research Data Scientist", 
+                 subtitle = "J.D. Power", 
+                 date = "Sep. 2023--Current", 
+                 first_point = "Conduct analyses for syndicated studies in healthcare and hospitality industries and convey results to non-technical (internal) stakeholders. Analyses include simpler ones like multiple regression to more complicated ones like factor analysis and MICE imputation. ", 
+                second_point = "Continuously improve data quality. Examples include investigating validity of digital fingerprinting tools that identify fraudulent/duplicate respondents, using longitudinal response patterns to identify poor-quality data, and devising trap questions to identify low-effort respondents.",
+                third_point = "Leveraged the Shiny (for Python) framework to create of web-based API versions of Excel-based deliverables. Code automated creation of deliverables, reduced incidence of errors, and enhanced user engagement \\href{https://jdpasims.shinyapps.io/kpi_simulator_poc/}{\\textcolor{blue}{Shiny example}}.")
+```
 
 ```{r ta-experience, echo=F}
 create_resume_entry(title = "Teaching Assistant", 
@@ -114,24 +129,18 @@ create_resume_entry(title = "Graduate Research Assistant",
 
 ```{r smltheory, echo=F, eval=T}
 create_resume_entry(title = "\\href{https://github.com/sebsciarra/smltheory}{smltheory}", subtitle = "Python package", date = "Aug. 2023", 
-                 first_point = "Package contains nine modules and 30 functions", 
-                 second_point = "Functions within package simulate data sets and demonstrate propositions of supervised machine
-                 learning propositions (e.g., bias-variance tradeoff, excess risk decomposition)") 
+                 first_point = "Functions within package (9 modules, 30 functions) simulate data sets and demonstrate propositions of supervised machine learning theories (e.g., bias-variance tradeoff, excess risk decomposition)") 
 ```
 
 ```{r cobalt-resume-pro, echo=F, eval=T}
 create_resume_entry(title = "\\href{https://github.com/sebsciarra/cobaltResumePro}{cobaltResumePro}", subtitle = "R Package", date = "Aug. 2023", 
-                 first_point = "Updated version of my cobaltResume package that generates resumes according to a more streamlined and professional design", 
-                 second_point = "A template and class file were created (\\textapprox 900 lines of \\LaTeX code) to specify a styling template that draws inspiration from the cobalt theme in the RStudio IDE", 
-                 third_point = "R functions were created to easily generate resume entries and merge resume and cover letters into one PDF file")
+                    first_point = "Automates generation of resumes and cover letters within RStudio", 
+
+                 second_point = "Updated version of my \\href{https://github.com/sebsciarra/cobaltResume}{cobaltResume} package that generates resumes according to a more streamlined and professional design", 
+                 third_point = "A template and class file were created (\\textapprox 900 lines of \\LaTeX code) to specify a styling template ", 
+                 fourth_point = "R functions were created to easily generate resume entries and merge resume and cover letters into one PDF file")
 ```
 
-```{r cobalt-resume, echo=F, eval=T}
-create_resume_entry(title = "\\href{https://github.com/sebsciarra/cobaltResume}{cobaltResume}", subtitle = "R Package", date = "May 2023", 
-                 first_point = "Automates generation of resumes and cover letters within RStudio", 
-                 second_point = "A template and class file were created (\\textapprox 700 lines of \\LaTeX code) to specify a styling template that draws inspiration from the cobalt theme in the RStudio IDE", 
-                 third_point = "R functions were created to easily generate resume entries and merge resume and cover letters into one PDF file")
-```
 
 ```{r personal-website, echo=F, eval=T}
 create_resume_entry(title = "\\href{https://sebastiansciarra.com}{sebastiansciarra.com}", subtitle = "Personal website", date = "Mar. 2023", 
@@ -144,32 +153,31 @@ create_resume_entry(title = "\\href{https://sebastiansciarra.com}{sebastiansciar
 create_resume_entry(title = "\\href{https://github.com/sebsciarra/guelphdown}{guelphdown}", 
                  subtitle = "R Package", 
                  date = "Mar. 2023", 
-                 first_point = "Created an R package that automates the generation of theses according to the University of Guelph formatting requirements", 
+                 first_point = "Package that automates the generation of theses according to the University of Guelph formatting requirements", 
                   second_point = "A template and class file were created (\\textapprox 1400 lines of \\LaTeX code) to specify formattings for the preamble, body, references, and appendices",
                  third_point = "An example of the formatting can be seen in my \ \\href{\\detokenize{https://atrium.lib.uoguelph.ca/server/api/core/bitstreams/8ed1891d-58ca-457b-b0d4-33a015fb2db9/content}}{\\textcolor{blue}{thesis}}")
 
 ```
 
-
 ```{r nonlinSimsAnalysis, echo=F,eval=T}
-create_resume_entry(title = "\\href{https://github.com/sebsciarra/nonlinSimsAnalysis}{nonlinSimsAnalysis}", 
+create_resume_entry(title = "\\hypertarget{nonlinSimsAnalysis}{\\href{https://github.com/sebsciarra/nonlinSimsAnalysis}{nonlinSimsAnalysis}}", 
                  subtitle = "R Package",
                  date = "Mar. 2022", 
-                 first_point = "Package contains 105 functions",
-                 second_point = "Functions automate the cleaning, analysis, and visualization of large data sets (e.g., 40 000+ rows) for my doctoral dissertation", 
-                 third_point = "The creation of several different types of tables and figures were automated by this package")
+                 first_point = "Package comprising 105 functions that automate the cleaning, analysis, and visualization of large data sets (e.g., 40 000+ rows) for my doctoral dissertation.", 
+                 second_point = "Common procedures automated by package include combinations of filtering, joining, grouping, aggregating, etc.",
+                 third_point = "Some examples of figures and tables produced by package:  \\href{https://bit.ly/3wZh7vp}{\\textcolor{blue}{Figure 1}}, \\href{https://bit.ly/3R1Yyxx}{\\textcolor{blue}{Figure 2}}, and \\href{https://bit.ly/3VkzPXz}{\\textcolor{blue}{Table 1}}.")
 ```
+
 
 ```{r nonlinSims, echo=F, eval=T}
 create_resume_entry(title = "\\href{https://github.com/sebsciarra/nonlinSims}{nonlinSims}", subtitle = "R Package", date = "Jan. 2022", 
-                 first_point = "Package contains 30 functions",
-                 second_point = "Functions run the simulation experiments of my doctoral dissertation",
-                 third_point = "The peformance of nonlinear longitudinal models are evaluated (e.g., structured latent growth curve models) are evaluated under several conditions")
+                 first_point = "Package of 30 functions for running simulation experiments of my doctoral dissertation",
+                 second_point = "The peformance of nonlinear longitudinal models (e.g., structured latent growth curve models) are evaluated under several conditions")
 ```
 
 ```{r sql-learning, echo=F, eval=T}
 create_resume_entry(title = "\\href{https://github.com/sebsciarra/learning_SQL}{Learning SQL}", subtitle = "Project", date = "Mar. 2021", 
-                 first_point = "Went through 16 of 18 chapters from Alan Beaulieu's \\href{https://www.amazon.ca/Learning-SQL-Generate-Manipulate-Retrieve/dp/1492057614/ref=sr_1_1?hvadid=324956203165&hvdev=c&hvlocphy=9000835&hvnetw=g&hvqmt=e&hvrand=9921433988929165270&hvtargid=kwd-312865785332&hydadcr=16084_10268182&keywords=learning+sql+by+alan+beaulieu&qid=1684158363&sr=8-1}{\\textcolor{blue}{Learning SQL}}", 
+                 first_point = "Completed through 16 of 18 chapters from Alan Beaulieu's \\href{https://www.amazon.ca/Learning-SQL-Generate-Manipulate-Retrieve/dp/1492057614/ref=sr_1_1?hvadid=324956203165&hvdev=c&hvlocphy=9000835&hvnetw=g&hvqmt=e&hvrand=9921433988929165270&hvtargid=kwd-312865785332&hydadcr=16084_10268182&keywords=learning+sql+by+alan+beaulieu&qid=1684158363&sr=8-1}{\\textcolor{blue}{Learning SQL}}", 
                  second_point = "Topics include filtering, querying multiple tables, sets, grouping and aggregates, subqueries, joins, transactions etc.")
 ```
 
