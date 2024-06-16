@@ -44,7 +44,7 @@ create_skills_entry <- function(coding_languages, ides_platforms, technical_skil
                       \\begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt,parsep=0pt,leftmargin=9pt,label=\\raisebox{0.04cm}{\\fontsize{3pt}{3pt}$\\blacksquare$}]",
                       technical_skills,
                       "\\end{itemize}
-                      \\end{tabularx}", sep = '')
+                      \\end{tabularx}\\", sep = '')
 }
 
 

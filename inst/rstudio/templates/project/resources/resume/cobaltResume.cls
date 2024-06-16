@@ -193,7 +193,7 @@
       {\fontsize{9}{9}\selectfont\bfseries #1} \newline
       {\fontsize{8}{8}\selectfont\textit{#2}}\par%
       &
-      {\color{bandcolor}\fontsize{8}{8}\bfseries #3} \\
+      {\color{bandcolor}\fontsize{8}{8}\bfseries #3} \\\\
 
   \end{tabular}
 

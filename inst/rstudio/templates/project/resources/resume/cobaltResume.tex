@@ -61,12 +61,17 @@ $for(header-includes)$
 	$header-includes$
 $endfor$
 
-\renewcommand{\familydefault}{qhv}
+% \renewcommand{\familydefault}{qhv}
+
+% set default font to Helvetica
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
 %\setlength{\headsep}{3cm}
 \usetikzlibrary{fit}
 
 
-\renewcommand{\rmdefault}{phv}
+\renewcommand{\rmdefault}{\sfdefault}
+
 \begin{document}
 
   \thispagestyle{cobaltHeader}
