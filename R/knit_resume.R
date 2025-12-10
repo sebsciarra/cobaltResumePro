@@ -43,7 +43,6 @@ knit_resume <- function(..., merge_resume_cover_letter = F) {
   resume_rmd <- rmd_files[file_identifier_ind]
   cover_letter_rmd <- rmd_files[!file_identifier_ind]
 
-  remove_metadata_tex()
 
   ##note that I want to work with the .tex file produced by rmarkdown::render()
   pdf_filenames = list(

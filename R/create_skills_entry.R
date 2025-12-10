@@ -33,7 +33,7 @@ create_skills_entry <- function(coding_languages, ides_platforms, technical_skil
                       "\\end{itemize}
                        %second column
                        &
-                       \\textbf{IDEs/platforms}
+                       \\textbf{Workflows/platforms}
                        \\begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt,parsep=0pt,leftmargin=9pt,label=\\raisebox{0.04cm}{\\fontsize{3pt}{3pt}$\\blacksquare$}]",
 
                       ides_platforms,
